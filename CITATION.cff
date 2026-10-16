@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "tiny-aya-edge: quantized Tiny Aya builds and on-device cost measurements"
+message: "If you use these builds or the device protocol, please cite it."
+type: software
+authors:
+  - family-names: "Al Mamun"
+    given-names: "Mo"
+repository-code: "https://github.com/grinder81/tiny-aya-edge"
+license: Apache-2.0
+year: 2026

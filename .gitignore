@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.gguf
+*.pte
+*.safetensors
+models/
+bench/q4_matvec/q4_matvec
+.DS_Store

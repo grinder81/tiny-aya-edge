@@ -1,0 +1,13 @@
+{
+  "build_id": "tiny-aya-global__gguf-q4_k_m__noimatrix__2026-10-27",
+  "base_model": {"repo": "CohereLabs/tiny-aya-global", "revision": "<commit sha>", "architecture": "cohere2", "params": 3.35e9},
+  "format": "gguf-q4_k_m",
+  "quantizer": {"tool": "llama-quantize", "version": "<llama.cpp build tag or commit>", "command": "<exact command line>"},
+  "calibration": {"set": "none", "samples": 0, "languages": [], "sha256": null},
+  "bits_per_weight_effective": null,
+  "group_size": 32,
+  "artifact": {"path": "models/tiny-aya-global-Q4_K_M.gguf", "sha256": "<sha256>", "size_bytes": null},
+  "license": "CC-BY-NC-4.0 with Cohere Acceptable Use Policy (derived from base model)",
+  "built_on": {"machine": "rtx5090-box", "os": "<uname -a>", "date": "<ISO date>"},
+  "notes": ""
+}

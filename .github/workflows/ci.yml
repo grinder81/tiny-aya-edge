@@ -1,0 +1,12 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python -m py_compile builds/*.py bench/q4_matvec/*.py
+      - run: python bench/q4_matvec/roofline.py --params 3.35e9 --layers 32 --kv-heads 8 --head-dim 128 --context 4096 | head -5
+      - run: bash -n setup/*.sh builds/*.sh
