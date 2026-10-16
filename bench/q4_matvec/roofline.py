@@ -20,7 +20,7 @@ DEVICES = {
     "rtx5090 (spec)": 1792.0,
     "m4-max (spec)": 546.0,
     "m4-pro (spec)": 273.0,
-    "iphone-17-pro (est, verify)": 70.0,
+    "iphone-15 LPDDR5-6400 x64 (est)": 51.2,
     "snapdragon-8-elite LPDDR5X-9600 x64 (spec)": 76.8,
     "android-tv-box DDR4 (est)": 12.0,
 }

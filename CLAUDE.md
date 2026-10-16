@@ -23,6 +23,15 @@ device measurements, not eval tables.
 - `device/` runner and protocol. Rows go to the harness schema with task `device_cost`.
 - `results/` manifests and raw device measurements (CC-BY-4.0). Weights are never committed.
 
+## Fixed rules of the study
+- Loop: baseline, inspect, intervene, measure, explain. One change per experiment.
+- Interventions in order: selective precision allocation, then multilingual calibration, then QAT.
+- Deployment budget for a final candidate: at most 5.0 effective bits per weight and 2.2 GB on
+  disk. Diagnostic builds may exceed it and are named `diag-*` so nobody ships them.
+- Every table with a non-English delta shows the English delta beside it.
+- Bangla deep, fourteen wide: Bangla gets human eval and the repair target; the matrix stays at 14.
+- Validation phones: iPhone 15 (6 GB RAM) and a Snapdragon 8 Elite device.
+
 ## Conventions
 - Every artifact published to the Hub carries its manifest and keeps CC-BY-NC terms.
 - Calibration sets are experiment variables: record language mix and sha256, never "default".

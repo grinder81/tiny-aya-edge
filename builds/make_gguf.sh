@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# GGUF matrix with and without imatrix. Run on the 5090 box after setup/5090_setup.sh and hf download.
+# GGUF bit-width sweep, plus imatrix variants. IQ2_M requires an imatrix in llama.cpp; the plain loop will skip it if llama-quantize refuses. Run on the 5090 box after setup/5090_setup.sh and hf download.
 # Usage: builds/make_gguf.sh models/tiny-aya-global out/gguf [calibration.txt]
 set -euo pipefail
 SRC="${1:?hf model dir}"; OUT="${2:?output dir}"; CALIB="${3:-}"
@@ -8,7 +8,7 @@ mkdir -p "$OUT"
 BF16="$OUT/tiny-aya-global-bf16.gguf"
 [ -f "$BF16" ] || python "$LL/convert_hf_to_gguf.py" "$SRC" --outtype bf16 --outfile "$BF16"
 
-TYPES=(Q8_0 Q6_K Q4_K_M Q4_0 Q3_K_M Q2_K)
+TYPES=(Q8_0 Q6_K Q4_K_M Q4_K_S Q4_0 Q3_K_M Q3_K_S Q2_K IQ2_M)   # the sweep, down to the cliff
 for T in "${TYPES[@]}"; do
   [ -f "$OUT/tiny-aya-global-$T.gguf" ] || "$LL/build/bin/llama-quantize" "$BF16" "$OUT/tiny-aya-global-$T.gguf" "$T"
 done
@@ -17,7 +17,7 @@ if [ -n "$CALIB" ]; then
   # imatrix: the calibration text's language mix is part of the experiment. Record its sha256 in the manifest.
   IM="$OUT/imatrix-$(basename "$CALIB" .txt).gguf"
   [ -f "$IM" ] || "$LL/build/bin/llama-imatrix" -m "$BF16" -f "$CALIB" -o "$IM" -ngl 999 -c 2048
-  for T in Q4_K_M Q4_0 Q3_K_M Q2_K; do
+  for T in Q4_K_M Q3_K_M IQ2_M; do
     [ -f "$OUT/tiny-aya-global-$T-imx.gguf" ] || "$LL/build/bin/llama-quantize" --imatrix "$IM" "$BF16" "$OUT/tiny-aya-global-$T-imx.gguf" "$T"
   done
 fi
