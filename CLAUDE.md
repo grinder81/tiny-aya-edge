@@ -26,11 +26,16 @@ device measurements, not eval tables.
 ## Fixed rules of the study
 - Loop: baseline, inspect, intervene, measure, explain. One change per experiment.
 - Interventions in order: selective precision allocation, then multilingual calibration, then QAT.
-- Deployment budget for a final candidate: at most 5.0 effective bits per weight and 2.2 GB on
-  disk. Diagnostic builds may exceed it and are named `diag-*` so nobody ships them.
+- Deployment budget for a final candidate: at most 2.2 GB total shipped bytes (model file plus
+  tokenizer plus any adapter). Bits per weight is descriptive. Diagnostic builds may exceed it and
+  are named `diag-*` so nobody ships them.
 - Every table with a non-English delta shows the English delta beside it.
 - Bangla deep, fourteen wide: Bangla gets human eval and the repair target; the matrix stays at 14.
-- Validation phones: iPhone 15 (6 GB RAM) and a Snapdragon 8 Elite device.
+- Validation phones: iPhone 15 (6 GB RAM) now; a Snapdragon 8 Elite device when it arrives. The
+  Hexagon work is a time-boxed systems track and never gates the main results.
+- Primary question is compression (which tensors carry Bangla under deployment formats; language-
+  aware allocation at equal shipped bytes). Adaptation placement is the secondary question. One
+  sensitivity map serves both. Simulated quantization is validated against real GGUF builds first.
 
 ## Conventions
 - Every artifact published to the Hub carries its manifest and keeps CC-BY-NC terms.
