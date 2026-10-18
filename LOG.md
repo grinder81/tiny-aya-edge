@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-10-17 (isolated setup completed)
+- Executed the reviewed LF-corrected setup recipe: all three isolated environments installed, dependency checks passed, and pinned llama.cpp built with CUDA.
+- Eval import, converter help, vLLM import, GPU calculation, and server version checks passed; setup exited 0.
+- Recorded installed package freezes and final preflight in reports/stage1-installed, including build warnings and remaining gates. No Tiny Aya weights downloaded or model inference performed.
+
 Dated entries: what changed, the numbers, open problems.
 
 ## 2026-10-16

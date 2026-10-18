@@ -1,0 +1,39 @@
+{
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.13.15",
+  "disk_free_bytes": 964425154560,
+  "nvidia_smi": {
+    "ok": true,
+    "stdout": "name, memory.total [MiB], driver_version\nNVIDIA GeForce RTX 5090, 32607 MiB, 610.88",
+    "stderr": ""
+  },
+  "nvcc": {
+    "ok": true,
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Fri_May_08_10:53:34_AM_PDT_2026\nCuda compilation tools, release 13.2, V13.2.86\nBuild cuda_13.2.r13.2/compiler.37953736_0",
+    "stderr": ""
+  },
+  "cmake": {
+    "ok": true,
+    "stdout": "cmake version 4.4.4\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).",
+    "stderr": ""
+  },
+  "packages": {
+    "torch": "2.13.0",
+    "vllm": "0.27.1",
+    "lm_eval": null
+  },
+  "llama_server": {
+    "ok": true,
+    "stdout": "",
+    "stderr": "version: 0.7.0-dev (build 1, commit 797de63)\nbuilt with GNU 15.2.0 for Linux x86_64"
+  },
+  "torch_cuda": {
+    "ok": true,
+    "cuda": "13.0",
+    "gpu": "NVIDIA GeForce RTX 5090"
+  },
+  "vllm_import": {
+    "ok": true,
+    "version": "0.27.1"
+  }
+}
