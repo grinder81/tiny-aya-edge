@@ -1,0 +1,9 @@
+# Mirrors converter requirements at the pinned llama.cpp revision.
+numpy~=2.2.6
+sentencepiece>=0.1.98,<0.3.0
+transformers==4.57.6
+gguf>=0.1.0
+protobuf>=4.21.0,<5.0.0
+torch==2.11.0
+cmake==4.4.4
+ninja==1.13.2
