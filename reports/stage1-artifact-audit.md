@@ -11,15 +11,16 @@ The original checkpoint has two weight shards totaling 6,698,488,528 bytes;
 configuration and tokenizer files are additional. Only required runtime files
 are selected; images, alternate quantizations and official BF16 GGUF are excluded.
 
-## Access blocker
+## Access verified after local login
 
 A metadata HEAD request for the pinned original `config.json`, using the WSL
 converter environment's default Hugging Face credentials, returned HTTP 401.
-This establishes that access is not currently usable from that environment; it
-does not establish whether the user's account has accepted terms elsewhere.
-Public repository metadata remains accessible. The user must authorize gated
-access on Hugging Face and authenticate locally; credentials must never enter Git
-or chat. No terms were accepted by this audit.
+After the user logged in locally, metadata HEAD requests from the same environment
+succeeded for the pinned configuration and both weight shards. Returned sizes were
+1,961, 4,992,396,352, and 1,706,092,176 bytes respectively, matching the pinned
+metadata. The access blocker is cleared. These requests did not download weights
+or verify their contents. No credentials were recorded and no terms were accepted
+by this audit.
 
 ## Evidence boundaries and next step
 
@@ -28,8 +29,8 @@ or chat. No terms were accepted by this audit.
   tokenizer/chat-template contents remain unverified until file access/download.
 - Official GGUF base revision, quantizer version, command, and calibration remain
   unknown. The serving runtime version cannot fill these fields.
-- Generate the same-runtime BF16 control from our pinned original after access is
-  available; an official BF16 GGUF with unverified lineage is not a substitute.
+- Generate the same-runtime BF16 control from our pinned original after download;
+  an official BF16 GGUF with unverified lineage is not a substitute.
 - Recheck physical storage, download only selected files, verify local hashes,
   and create full manifests using `builds/manifest_template.json` in the next PR.
 

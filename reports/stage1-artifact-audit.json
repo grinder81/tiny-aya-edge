@@ -78,6 +78,6 @@
     "command": null,
     "quantizer_version": null
   },
-  "original_access": "HTTP 401 from WSL cached/default credentials",
+  "original_access": "Verified after local login: metadata HEAD succeeded for pinned config.json and both weight shards; returned sizes match this record. Earlier HTTP 401 resolved. No weight download performed.",
   "notes": "Hub LFS hashes are remote metadata, not locally verified checksums. BF16 runtime control must be converted from the pinned original; do not substitute an unverified official BF16 GGUF."
 }
