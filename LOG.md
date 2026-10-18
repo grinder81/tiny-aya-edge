@@ -17,3 +17,8 @@ Dated entries: what changed, the numbers, open problems.
 ## 2026-10-17
 - Added read-only RTX preflight and recorded reports/stage1-environment-preflight.json.
 - Existing-environment CUDA calculation and vLLM import passed; CMake, lm_eval and pinned llama.cpp setup remain open. No dependency installation or model downloads. See the companion preflight report.
+
+## 2026-10-17 (setup recipe)
+- Prepared separate hash-pinned eval, vLLM and converter dependency locks and a fixed llama.cpp revision.
+- Dependency resolution, shell syntax, no-argument and existing-directory guards checked.
+- Recipe has not been installed or build-validated; issue #2 remains open.

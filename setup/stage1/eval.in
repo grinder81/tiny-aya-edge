@@ -1,0 +1,6 @@
+lm_eval[api]==0.4.13
+sacrebleu==2.6.0
+pyyaml==6.0.3
+pandas==3.0.6
+huggingface-hub==1.31.0
+datasets==5.1.0
