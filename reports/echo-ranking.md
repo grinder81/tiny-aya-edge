@@ -16,3 +16,5 @@ Twelve exact ordering comparisons pass, including tied finite scores and a
 262144-entry array. All eight complete synthetic Q4 response records match the
 pre-optimization records exactly. Real pilot replay validation is recorded
 separately before expanding evaluation. No general model-speed claim is made.
+
+Real Q4 replay completed all 40 candidates in 163 seconds versus 1680 seconds previously. All candidate scores and greedy flags match exactly, with identical document hashes. This roughly tenfold reduction is evaluation overhead improvement, not generation throughput. The original and replay result files remain under the Stage 1 pilot evidence directory.

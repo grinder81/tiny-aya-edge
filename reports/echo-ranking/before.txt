@@ -24,5 +24,3 @@
         1    0.000    0.000    0.002    0.002 /home/shohag/tiny-aya-stage1/llama-python-compat/lib/python3.13/site-packages/numpy/__init__.py:700(__getattr__)
       2/1    0.000    0.000    0.002    0.002 <frozen importlib._bootstrap>:1349(_find_and_load)
       2/1    0.000    0.000    0.002    0.002 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
-
-
