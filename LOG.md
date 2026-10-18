@@ -22,3 +22,7 @@ Dated entries: what changed, the numbers, open problems.
 - Prepared separate hash-pinned eval, vLLM and converter dependency locks and a fixed llama.cpp revision.
 - Dependency resolution, shell syntax, no-argument and existing-directory guards checked.
 - Recipe has not been installed or build-validated; issue #2 remains open.
+
+## 2026-10-17 (Windows checkout correction)
+- First setup execution stopped at Bash option parsing because the Windows checkout used CRLF. No environments or packages were created.
+- Added Git attributes forcing LF for shell scripts and Python/requirements files. Verified syntax and no-argument guard in WSL; full installation awaits this fix review.
