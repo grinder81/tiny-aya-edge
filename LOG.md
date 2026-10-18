@@ -1,5 +1,9 @@
 # LOG
 
+## BF16 stopping correction (same PR)
+- Isolated EOS metadata mismatch: converted GGUF uses token 6, source generation config and official GGUF use token 3. Runtime EOS override alone restored clean stops in both smoke prompts.
+- Preserved failed and corrected evidence. Smoke runner now rejects output-limit termination; verified positive and negative real-model runs. Artifact hash unchanged.
+
 ## Stage 1 BF16 GGUF control
 - Converted the verified original with pinned llama.cpp to a 6,710,484,480-byte GGUF; recorded SHA256, tensor types and parameter count.
 - BF16 GGUF loaded and generated nonempty English/Bangla text, but both responses repeated and hit the output limit. Stopping/readiness failed; investigate before matched evaluation. No accuracy, warmed speed or concurrent-capacity claim.

@@ -20,6 +20,7 @@ def main():
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--server")
     parser.add_argument("--port", type=int, default=18089)
+    parser.add_argument("--override-kv", action="append", default=[])
     args = parser.parse_args()
     if args.output.exists():
         raise FileExistsError(args.output)
@@ -44,6 +45,8 @@ def main():
             parser.error("--server is required for llama")
         command = [args.server, "-m", args.model, "-ngl", "99", "-c", "1024",
                    "--host", "127.0.0.1", "--port", str(args.port)]
+        for override in args.override_kv:
+            command.extend(["--override-kv", override])
         base = f"http://127.0.0.1:{args.port}"
         with args.output.with_suffix(".server.log").open("w") as log:
             process = subprocess.Popen(command, stdout=log, stderr=log)
@@ -84,8 +87,11 @@ def main():
     args.output.write_text(json.dumps(dict(backend=args.backend, temperature=0,
         max_tokens=64, seed=42, context_limit=1024,
         vllm_use_v2_model_runner=os.environ.get("VLLM_USE_V2_MODEL_RUNNER") if args.backend == "vllm" else None,
+        overrides=args.override_kv,
         results=rows), ensure_ascii=False, indent=2), encoding="utf-8")
-    print("Smoke outputs saved; nonempty generation passed. Not a quality score.")
+    if any(row["finish_reason"] != "stop" for row in rows):
+        raise RuntimeError("Outputs saved, but normal stopping failed")
+    print("Smoke outputs saved; nonempty generation and normal stopping passed. Not a quality score.")
 
 
 if __name__ == "__main__":
