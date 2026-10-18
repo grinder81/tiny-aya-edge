@@ -1,0 +1,277 @@
+{
+  "results": [
+    {
+      "context": "The library is closed on Friday.\nAnswer:",
+      "candidate": " A",
+      "token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40,
+        375
+      ],
+      "context_token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -3.9243521690368652
+      ],
+      "continuation_loglikelihood": -3.9243521690368652
+    },
+    {
+      "context": "The library is closed on Friday.\nAnswer:",
+      "candidate": " B",
+      "token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40,
+        437
+      ],
+      "context_token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -4.860601425170898
+      ],
+      "continuation_loglikelihood": -4.860601425170898
+    },
+    {
+      "context": "The library is closed on Friday.\nAnswer:",
+      "candidate": " C",
+      "token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40,
+        395
+      ],
+      "context_token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -6.360601425170898
+      ],
+      "continuation_loglikelihood": -6.360601425170898
+    },
+    {
+      "context": "The library is closed on Friday.\nAnswer:",
+      "candidate": " D",
+      "token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40,
+        441
+      ],
+      "context_token_ids": [
+        2,
+        948,
+        16629,
+        386,
+        14048,
+        447,
+        19404,
+        323,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -6.548101425170898
+      ],
+      "continuation_loglikelihood": -6.548101425170898
+    },
+    {
+      "context": "পাঠাগার শুক্রবার বন্ধ থাকে।\nAnswer:",
+      "candidate": " A",
+      "token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40,
+        375
+      ],
+      "context_token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -4.44561767578125
+      ],
+      "continuation_loglikelihood": -4.44561767578125
+    },
+    {
+      "context": "পাঠাগার শুক্রবার বন্ধ থাকে।\nAnswer:",
+      "candidate": " B",
+      "token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40,
+        437
+      ],
+      "context_token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -7.28936767578125
+      ],
+      "continuation_loglikelihood": -7.28936767578125
+    },
+    {
+      "context": "পাঠাগার শুক্রবার বন্ধ থাকে।\nAnswer:",
+      "candidate": " C",
+      "token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40,
+        395
+      ],
+      "context_token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -7.85186767578125
+      ],
+      "continuation_loglikelihood": -7.85186767578125
+    },
+    {
+      "context": "পাঠাগার শুক্রবার বন্ধ থাকে।\nAnswer:",
+      "candidate": " D",
+      "token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40,
+        441
+      ],
+      "context_token_ids": [
+        2,
+        3460,
+        35507,
+        12647,
+        1428,
+        255653,
+        38850,
+        45451,
+        2413,
+        7736,
+        40
+      ],
+      "candidate_logprobs": [
+        -9.22686767578125
+      ],
+      "continuation_loglikelihood": -9.22686767578125
+    }
+  ],
+  "scope": "Synthetic vLLM reference only; no benchmark score"
+}
