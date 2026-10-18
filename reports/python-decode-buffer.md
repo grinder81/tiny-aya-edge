@@ -25,3 +25,5 @@ splitting) and #19 (Python buffer handling). No upstream submission was made.
 The sibling `token_to_piece` convenience method also uses a fixed buffer and
 should be reviewed before an upstream proposal; this local patch targets the
 `detokenize` path used by our server.
+
+The affected 899-character Bangla request now passes the unchanged upstream get_result scorer with a finite likelihood and intact echoed text. Both CI checks passed.
