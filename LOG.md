@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-10-17 (artifact access verified)
+- After local Hugging Face login, metadata HEAD requests passed for the pinned original configuration and both weight shards, with matching sizes. The earlier access blocker is cleared.
+- No weights downloaded or local checksums verified; artifact inspection and checkpoint C1 remain pending.
+
+## 2026-10-17 (artifact metadata audit)
+- Pinned public Hub revisions and selected file metadata for Global and official Q4_K_M. No model weights downloaded; hashes remain remote expected values.
+- Original checkpoint access from WSL returned HTTP 401. Artifact verification and checkpoint C1 remain blocked on usable gated access; issue #3 stays open.
+
 ## 2026-10-17 (isolated setup completed)
 - Executed the reviewed LF-corrected setup recipe: all three isolated environments installed, dependency checks passed, and pinned llama.cpp built with CUDA.
 - Eval import, converter help, vLLM import, GPU calculation, and server version checks passed; setup exited 0.

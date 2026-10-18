@@ -1,0 +1,83 @@
+{
+  "status": "metadata_only_not_downloaded",
+  "observed_date": "2026-10-17",
+  "sources": [
+    {
+      "repo": "CohereLabs/tiny-aya-global",
+      "revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+      "gated": "auto",
+      "files": [
+        {
+          "filename": "config.json",
+          "size_bytes": 1961,
+          "hub_lfs_sha256": null,
+          "local_sha256": null
+        },
+        {
+          "filename": "generation_config.json",
+          "size_bytes": 132,
+          "hub_lfs_sha256": null,
+          "local_sha256": null
+        },
+        {
+          "filename": "model-00001-of-00002.safetensors",
+          "size_bytes": 4992396352,
+          "hub_lfs_sha256": "0590022d0efe06f12e08e1e94302f069dff404341b426f7435c6303725635fb1",
+          "local_sha256": null
+        },
+        {
+          "filename": "model-00002-of-00002.safetensors",
+          "size_bytes": 1706092176,
+          "hub_lfs_sha256": "2ac3809931d113785058809f27775620e0b8aec6fbc7e163c9c09c08b5f90dab",
+          "local_sha256": null
+        },
+        {
+          "filename": "model.safetensors.index.json",
+          "size_bytes": 23597,
+          "hub_lfs_sha256": null,
+          "local_sha256": null
+        },
+        {
+          "filename": "special_tokens_map.json",
+          "size_bytes": 567,
+          "hub_lfs_sha256": null,
+          "local_sha256": null
+        },
+        {
+          "filename": "tokenizer.json",
+          "size_bytes": 21376527,
+          "hub_lfs_sha256": "2227ea9c52e8afb3f98bfed2679008b275f2664de69dfde174b374389eb0225d",
+          "local_sha256": null
+        },
+        {
+          "filename": "tokenizer_config.json",
+          "size_bytes": 8169,
+          "hub_lfs_sha256": null,
+          "local_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "CohereLabs/tiny-aya-global-GGUF",
+      "revision": "a602ea7eeec3a4ad6f77a1b8cf6a53512824922b",
+      "gated": false,
+      "files": [
+        {
+          "filename": "tiny-aya-global-q4_k_m.gguf",
+          "size_bytes": 2143977056,
+          "hub_lfs_sha256": "d01d995272af305b2b843efcff8a10cf9869cf53e764cb72b0e91b777484570a",
+          "local_sha256": null
+        }
+      ]
+    }
+  ],
+  "official_gguf_provenance": {
+    "tensor_precision_mix": null,
+    "base_revision": null,
+    "calibration": null,
+    "command": null,
+    "quantizer_version": null
+  },
+  "original_access": "Verified after local login: metadata HEAD succeeded for pinned config.json and both weight shards; returned sizes match this record. Earlier HTTP 401 resolved. No weight download performed.",
+  "notes": "Hub LFS hashes are remote metadata, not locally verified checksums. BF16 runtime control must be converted from the pinned original; do not substitute an unverified official BF16 GGUF."
+}
