@@ -1,0 +1,24 @@
+{
+  "backend": "vllm",
+  "temperature": 0,
+  "max_tokens": 64,
+  "seed": 42,
+  "context_limit": 1024,
+  "vllm_use_v2_model_runner": "0",
+  "results": [
+    {
+      "language": "en",
+      "prompt": "The library is closed on Friday. On which day is the library closed? Answer briefly.",
+      "text": "The library is closed on **Friday**.",
+      "finish_reason": "stop",
+      "generated_tokens": 10
+    },
+    {
+      "language": "bn",
+      "prompt": "পাঠাগার শুক্রবার বন্ধ থাকে। পাঠাগার কোন দিন বন্ধ থাকে? সংক্ষেপে উত্তর দিন।",
+      "text": "পাঠাগার শুক্রবার বন্ধ থাকে।",
+      "finish_reason": "stop",
+      "generated_tokens": 10
+    }
+  ]
+}

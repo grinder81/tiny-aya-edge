@@ -1,5 +1,10 @@
 # LOG
 
+## Stage 1 runtime smoke
+- Both original BF16/vLLM and official Q4_K_M/llama.cpp generated nonempty English and Bangla answers and stopped normally. Synthetic development prompts only; no benchmark claim.
+- vLLM required V2 runner disabled and environment/CUDA binaries on PATH. No package changes. Recorded the llama.cpp EOS/EOG warning for follow-up.
+- Added reproducible smoke runner and outputs/logs in reports/stage1-smoke. BF16 runtime control and scoring parity remain pending.
+
 ## Stage 1 downloads and inspection
 - Downloaded all nine pinned files and verified sizes and available Hub LFS SHA256 values. Recorded local SHA256 for every file.
 - Inspected 290 original BF16 tensors and the official GGUF mix: 216 Q4_K, 37 Q6_K, 37 F32. Both contain 3,349,227,520 stored parameters.

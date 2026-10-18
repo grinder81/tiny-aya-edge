@@ -1,0 +1,63 @@
+INFO 10-17 23:49:21 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'seed': 42, 'max_model_len': 1024, 'gpu_memory_utilization': 0.5, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/home/shohag/tiny-aya-stage1/models/tiny-aya-global'}
+WARNING 10-17 23:49:21 [utils.py:149] Cohere2Config contains a deprecated attribute name 'rotary_pct'. Please use the preferred attribute name 'partial_rotary_factor' instead.
+INFO 10-17 23:49:21 [model.py:645] Resolved architecture: Cohere2ForCausalLM
+INFO 10-17 23:49:21 [model.py:1883] Using max model len 1024
+INFO 10-17 23:49:21 [scheduler.py:242] Chunked prefill is enabled with max_num_batched_tokens=8192.
+WARNING 10-17 23:49:21 [vllm.py:1194] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 10-17 23:49:21 [vllm.py:1247] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 10-17 23:49:21 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 10-17 23:49:21 [vllm.py:1426] Cudagraph is disabled under eager mode
+INFO 10-17 23:49:21 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+WARNING 10-17 23:49:24 [system_utils.py:157] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: WSL is detected and NVML is not compatible with fork
+(EngineCore pid=1274) INFO 10-17 23:49:28 [core.py:121] Initializing a V1 LLM engine (v0.27.1) with config: model='/home/shohag/tiny-aya-stage1/models/tiny-aya-global', speculative_config=None, tokenizer='/home/shohag/tiny-aya-stage1/models/tiny-aya-global', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=42, served_model_name=/home/shohag/tiny-aya-stage1/models/tiny-aya-global, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+(EngineCore pid=1274) INFO 10-17 23:49:29 [parallel_state.py:1640] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.29.148.91:55121 backend=nccl
+(EngineCore pid=1274) INFO 10-17 23:49:29 [parallel_state.py:1977] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=1274) INFO 10-17 23:49:30 [topk_topp_sampler.py:62] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=1274) INFO 10-17 23:49:30 [gpu_model_runner.py:5308] Starting to load model /home/shohag/tiny-aya-stage1/models/tiny-aya-global...
+(EngineCore pid=1274) INFO 10-17 23:49:30 [cuda.py:482] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=1274) INFO 10-17 23:49:30 [flash_attn.py:789] Using FlashAttention version 2
+(EngineCore pid=1274) INFO 10-17 23:49:30 [weight_utils.py:867] Filesystem type for checkpoints: EXT4. Checkpoint size: 6.24 GiB. Available RAM: 40.51 GiB.
+(EngineCore pid=1274) INFO 10-17 23:49:30 [weight_utils.py:890] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(EngineCore pid=1274)
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+(EngineCore pid=1274)
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  2.19it/s]
+(EngineCore pid=1274)
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00,  2.89it/s]
+(EngineCore pid=1274)
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00,  2.76it/s]
+(EngineCore pid=1274)
+(EngineCore pid=1274) INFO 10-17 23:49:31 [default_loader.py:430] Loading weights took 0.76 seconds
+(EngineCore pid=1274) INFO 10-17 23:49:31 [gpu_model_runner.py:5405] Model loading took 6.28 GiB memory and 0.970275 seconds
+(EngineCore pid=1274) INFO 10-17 23:50:21 [gpu_worker.py:563] Available KV cache memory: 8.36 GiB
+(EngineCore pid=1274) INFO 10-17 23:50:21 [kv_cache_utils.py:2235] GPU KV cache size: 120,290 tokens
+(EngineCore pid=1274) INFO 10-17 23:50:21 [kv_cache_utils.py:2236] Maximum concurrency for 1,024 tokens per request: 117.47x
+(EngineCore pid=1274) INFO 10-17 23:50:22 [kernel_warmup.py:256] Using FlashInfer autotune cache file: /home/shohag/.cache/vllm/flashinfer_autotune_cache/0.6.16.post3/120f/d6234f570d95ea08389aa39f9dfc6ea5c1222980b9a4ba8e5c94e460bfd5fba9/autotune_configs.json
+(EngineCore pid=1274) 2026-10-17 23:50:22,989 - INFO - autotuner.py:829 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=1274) 2026-10-17 23:50:23,013 - INFO - autotuner.py:852 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=1274) 2026-10-17 23:50:23,026 - INFO - autotuner.py:2269 - flashinfer.jit: [Autotuner]: Saved 0 configs to /home/shohag/.cache/vllm/flashinfer_autotune_cache/0.6.16.post3/120f/d6234f570d95ea08389aa39f9dfc6ea5c1222980b9a4ba8e5c94e460bfd5fba9/autotune_configs.json (0 new, 0 from previous config)
+(EngineCore pid=1274) INFO 10-17 23:50:23 [gpu_worker.py:789] Free memory on device (30.2/31.84 GiB) on startup. Desired GPU memory utilization is (0.5, 15.92 GiB). Actual usage is 6.66 GiB for consumed memory (weights + non-torch), 0.91 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=8815651840` (8.21 GiB) to fit into requested memory, or `--kv-cache-memory=24149732352` (22.49 GiB) to fully utilize gpu memory. Current kv cache memory in use is 8.36 GiB.
+(EngineCore pid=1274) INFO 10-17 23:50:24 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+(EngineCore pid=1274) INFO 10-17 23:50:24 [core.py:355] init engine (profile, create kv cache, warmup model) took 52.86 s
+(EngineCore pid=1274) WARNING 10-17 23:50:24 [utils.py:149] Cohere2Config contains a deprecated attribute name 'rotary_pct'. Please use the preferred attribute name 'partial_rotary_factor' instead.
+(EngineCore pid=1274) WARNING 10-17 23:50:25 [vllm.py:1194] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=1274) WARNING 10-17 23:50:25 [vllm.py:1247] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=1274) INFO 10-17 23:50:25 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=1274) INFO 10-17 23:50:25 [vllm.py:1426] Cudagraph is disabled under eager mode
+(EngineCore pid=1274) INFO 10-17 23:50:25 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+INFO 10-17 23:50:26 [hf.py:540] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+
+Rendering prompts:   0%|          | 0/2 [00:00<?, ?it/s]
+Rendering prompts: 100%|██████████| 2/2 [00:00<00:00, 234.19it/s]
+
+Processed prompts:   0%|          | 0/2 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+Processed prompts:  50%|█████     | 1/2 [00:57<00:57, 57.74s/it, est. speed input: 6.65 toks/s, output: 0.17 toks/s]
+Processed prompts: 100%|██████████| 2/2 [00:57<00:00, 23.89s/it, est. speed input: 13.33 toks/s, output: 0.35 toks/s]
+Processed prompts: 100%|██████████| 2/2 [00:57<00:00, 23.89s/it, est. speed input: 13.33 toks/s, output: 0.35 toks/s]
+Processed prompts: 100%|██████████| 2/2 [00:57<00:00, 28.96s/it, est. speed input: 13.33 toks/s, output: 0.35 toks/s]
+Smoke outputs saved; nonempty generation passed. Not a quality score.
+INFO 10-17 23:51:24 [utils.py:612] [shutdown] Process manager: send sigterm to process EngineCore
+(EngineCore pid=1274) INFO 10-17 23:51:24 [core.py:1332] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=1274) INFO 10-17 23:51:24 [core.py:1468] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=1274) INFO 10-17 23:51:24 [core.py:1499] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=1274) INFO 10-17 23:51:24 [core.py:1345] [shutdown] EngineCore: exiting busy loop
