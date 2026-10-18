@@ -1,5 +1,10 @@
 # LOG
 
+## Stage 1 downloads and inspection
+- Downloaded all nine pinned files and verified sizes and available Hub LFS SHA256 values. Recorded local SHA256 for every file.
+- Inspected 290 original BF16 tensors and the official GGUF mix: 216 Q4_K, 37 Q6_K, 37 F32. Both contain 3,349,227,520 stored parameters.
+- Added a reusable CPU/header inspection tool and evidence in reports/stage1-downloaded. No inference or benchmark results yet.
+
 ## 2026-10-17 (artifact access verified)
 - After local Hugging Face login, metadata HEAD requests passed for the pinned original configuration and both weight shards, with matching sizes. The earlier access blocker is cleared.
 - No weights downloaded or local checksums verified; artifact inspection and checkpoint C1 remain pending.
