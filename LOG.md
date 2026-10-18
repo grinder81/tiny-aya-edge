@@ -1,5 +1,9 @@
 # LOG
 
+## Stage 1 manifest consolidation
+- Added three artifact manifests using the repository template fields, preserving per-file original hashes and unknown official provenance.
+- Linked C1 environment/artifact evidence and recorded the mandatory BF16 control EOS override. Endpoint/scoring checkpoint C2 remains open.
+
 ## BF16 stopping correction (same PR)
 - Isolated EOS metadata mismatch: converted GGUF uses token 6, source generation config and official GGUF use token 3. Runtime EOS override alone restored clean stops in both smoke prompts.
 - Preserved failed and corrected evidence. Smoke runner now rejects output-limit termination; verified positive and negative real-model runs. Artifact hash unchanged.

@@ -1,0 +1,54 @@
+{
+  "build_id": "tiny-aya-global__control-bf16-gguf",
+  "base_model": {
+    "repo": "CohereLabs/tiny-aya-global",
+    "revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+    "architecture": "cohere2",
+    "params": 3349227520
+  },
+  "format": "gguf-bf16",
+  "quantizer": {
+    "command": null,
+    "version": null,
+    "tool": null
+  },
+  "calibration": {
+    "languages": null,
+    "samples": null,
+    "sha256": null,
+    "set": null
+  },
+  "bits_per_weight_effective": 16.028733646617116,
+  "group_size": null,
+  "artifact": {
+    "size_bytes": 6710484480,
+    "sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+    "path": "models/tiny-aya-global-control-bf16.gguf"
+  },
+  "license": "CC-BY-NC-4.0 with Cohere Acceptable Use Policy (derived from base model)",
+  "built_on": {
+    "machine": null,
+    "date": null,
+    "os": null
+  },
+  "notes": "Locally converted control, not low-bit quantization. 253 BF16 and 37 F32 tensors. Required runtime override corrects conflicting source EOS metadata. Ratio includes whole file.",
+  "runtime_requirements": {
+    "revision": "797de63b2fa7396dcc8caca76834c699ac84e1c3",
+    "runtime": "llama.cpp",
+    "arguments": [
+      "--override-kv",
+      "tokenizer.ggml.eos_token_id=int:3"
+    ]
+  },
+  "evidence": [
+    "reports/stage1-downloaded/verified-files.json",
+    "reports/stage1-downloaded/inspection.json",
+    "reports/stage1-bf16-control/README.md"
+  ],
+  "converter": {
+    "revision": "797de63b2fa7396dcc8caca76834c699ac84e1c3",
+    "command": "python <llama.cpp>/convert_hf_to_gguf.py <models>/tiny-aya-global --outtype bf16 --outfile <models>/tiny-aya-global-control-bf16.gguf",
+    "environment": "reports/stage1-installed/converter.freeze.txt",
+    "tool": "convert_hf_to_gguf.py"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "build_id": "tiny-aya-global__official-q4-k-m",
+  "base_model": {
+    "repo": "CohereLabs/tiny-aya-global",
+    "revision": null,
+    "architecture": "cohere2",
+    "params": 3349227520
+  },
+  "format": "gguf-q4_k_m",
+  "quantizer": {
+    "command": null,
+    "version": null,
+    "tool": null
+  },
+  "calibration": {
+    "languages": null,
+    "samples": null,
+    "sha256": null,
+    "set": null
+  },
+  "bits_per_weight_effective": 5.121126094174695,
+  "group_size": null,
+  "artifact": {
+    "size_bytes": 2143977056,
+    "sha256": "d01d995272af305b2b843efcff8a10cf9869cf53e764cb72b0e91b777484570a",
+    "path": "models/tiny-aya-global-GGUF/tiny-aya-global-q4_k_m.gguf"
+  },
+  "license": "CC-BY-NC-4.0 with Cohere Acceptable Use Policy (derived from base model)",
+  "built_on": {
+    "machine": null,
+    "date": null,
+    "os": null
+  },
+  "notes": "Official downloaded artifact. Source checkpoint revision, quantizer, calibration and build host/date are unknown. Distribution revision is not base-model revision. Whole-file bits/weight includes metadata. No calibration absence inferred.",
+  "runtime_requirements": {
+    "runtime": "llama.cpp",
+    "revision": "797de63b2fa7396dcc8caca76834c699ac84e1c3"
+  },
+  "evidence": [
+    "reports/stage1-downloaded/verified-files.json",
+    "reports/stage1-downloaded/inspection.json"
+  ],
+  "distribution": {
+    "revision": "a602ea7eeec3a4ad6f77a1b8cf6a53512824922b",
+    "repo": "CohereLabs/tiny-aya-global-GGUF",
+    "filename": "tiny-aya-global-q4_k_m.gguf"
+  }
+}
