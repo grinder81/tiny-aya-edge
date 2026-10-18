@@ -18,15 +18,15 @@ WARNING 10-17 23:49:24 [system_utils.py:157] We must use the `spawn` multiproces
 (EngineCore pid=1274) INFO 10-17 23:49:30 [flash_attn.py:789] Using FlashAttention version 2
 (EngineCore pid=1274) INFO 10-17 23:49:30 [weight_utils.py:867] Filesystem type for checkpoints: EXT4. Checkpoint size: 6.24 GiB. Available RAM: 40.51 GiB.
 (EngineCore pid=1274) INFO 10-17 23:49:30 [weight_utils.py:890] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
-(EngineCore pid=1274) 
+(EngineCore pid=1274)
 Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
-(EngineCore pid=1274) 
+(EngineCore pid=1274)
 Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  2.19it/s]
-(EngineCore pid=1274) 
+(EngineCore pid=1274)
 Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00,  2.89it/s]
-(EngineCore pid=1274) 
+(EngineCore pid=1274)
 Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00,  2.76it/s]
-(EngineCore pid=1274) 
+(EngineCore pid=1274)
 (EngineCore pid=1274) INFO 10-17 23:49:31 [default_loader.py:430] Loading weights took 0.76 seconds
 (EngineCore pid=1274) INFO 10-17 23:49:31 [gpu_model_runner.py:5405] Model loading took 6.28 GiB memory and 0.970275 seconds
 (EngineCore pid=1274) INFO 10-17 23:50:21 [gpu_worker.py:563] Available KV cache memory: 8.36 GiB
