@@ -1,0 +1,47 @@
+{
+  "results": [
+    [
+      -3.88108491897583,
+      false
+    ],
+    [
+      -4.837711811065674,
+      false
+    ],
+    [
+      -6.3508477210998535,
+      false
+    ],
+    [
+      -6.512867450714111,
+      false
+    ],
+    [
+      -4.401927471160889,
+      false
+    ],
+    [
+      -7.313636302947998,
+      false
+    ],
+    [
+      -7.894687175750732,
+      false
+    ],
+    [
+      -9.246305465698242,
+      false
+    ]
+  ],
+  "absolute_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "scope": "Unmodified upstream harness vs same-model direct probe; synthetic only"
+}
