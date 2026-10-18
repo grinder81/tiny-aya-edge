@@ -1,0 +1,9 @@
+{
+  "size_bytes": 6710484480,
+  "tensor_counts": {
+    "BF16": 253,
+    "F32": 37
+  },
+  "parameters": 3349227520,
+  "sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b"
+}
