@@ -1,0 +1,18 @@
+{
+  "base_artifact_sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+  "original_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+  "quantizer_revision": "797de63b2fa7396dcc8caca76834c699ac84e1c3",
+  "quantizer_binary_sha256": "6a2c2efac5f38ebe2c1994befd0dee745cb24ec5c33d6a2c5a50fb8b9fe1e5f0",
+  "command": [
+    "/home/shohag/tiny-aya-stage1/llama.cpp/build/bin/llama-quantize",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-control-bf16.gguf",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-local-q4_k_m.gguf",
+    "Q4_K_M",
+    "8"
+  ],
+  "calibration": null,
+  "importance_matrix": null,
+  "note": "Default Q4_K_M tensor allocation; no training or importance matrix. Runtime tokenizer patches are separate.",
+  "output_sha256": "5823bd1e52be1027a7ba6f31b43edfd40ae1766020cddec967f0d76618948290",
+  "output_bytes": 2143976960
+}

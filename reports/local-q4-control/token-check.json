@@ -1,0 +1,6 @@
+{
+  "contexts": 150,
+  "candidate_sequences": 600,
+  "token_ids_match_frozen_lock": true,
+  "candidate_roundtrip": true
+}
