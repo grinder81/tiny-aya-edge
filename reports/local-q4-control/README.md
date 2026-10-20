@@ -6,4 +6,5 @@ The local file is 2,143,976,960 bytes. Source, local output and official Q4 have
 
 manifest.json records exact command, source/revision and binary/output hashes. Original and official files are unchanged. The quantizer uses the original pinned native checkout; evaluation will use the already validated patched Python runtime, as for the previous GGUF arms.
 
-Pending: tokenizer metadata/token checks, runtime smoke validation, then the same frozen 150-question comparison in the evaluation repository. No accuracy result exists for this new arm yet. This is an experimental control, not a claimed improvement.
+Validated: all 150 frozen context token sequences and 600 candidate sequences match the original tokenizer lock; candidate text round-trips exactly using the patched Python runtime. Native generation smoke passes in English and Bangla with the same EOS override as the source BF16 control. The native smoke runtime differs from the patched Python scoring runtime; the latter passed the frozen token checks. The same frozen 150-question comparison is now running separately in the evaluation repository. No accuracy result exists for this new arm yet. This is an experimental control, not a claimed improvement.
+
