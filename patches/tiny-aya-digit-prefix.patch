@@ -1,8 +1,8 @@
 diff --git a/src/unicode.cpp b/src/unicode.cpp
-index 6c834cb..ddb2816 100644
+index 93996f9..693be93 100644
 --- a/src/unicode.cpp
 +++ b/src/unicode.cpp
-@@ -1101,7 +1101,7 @@ static std::vector<size_t> unicode_regex_split_custom_kimi_k2(const std::string
+@@ -945,7 +945,7 @@ static std::vector<size_t> unicode_regex_split_custom_kimi_k2(const std::string
  }
  
  // AFMOE digit handling: splits digits with leading 1-2 based on total length modulo 3
@@ -11,14 +11,14 @@ index 6c834cb..ddb2816 100644
      std::vector<size_t> bpe_offsets;
      bpe_offsets.reserve(offsets.size());
  
-@@ -1143,6 +1143,15 @@ static std::vector<size_t> unicode_regex_split_custom_afmoe(const std::string &
+@@ -987,6 +987,15 @@ static std::vector<size_t> unicode_regex_split_custom_afmoe(const std::string &
                      pos++;
                  }
  
 +                if (isolate_prefix) {
 +                    const auto next = _get_flags(pos);
 +                    if (next.is_letter || next.is_accent_mark ||
-+                        (pos < offset_end && (cpts[pos] == '_' || cpts[pos] == 0x200C || cpts[pos] == 0x200D))) {
++                        (pos < offset_end && cpts[pos] == '_')) {
 +                        continue;
 +                    }
 +                    _add_token(digit_start);
@@ -27,7 +27,7 @@ index 6c834cb..ddb2816 100644
                  // Split based on total length modulo 3
                  size_t remainder = digit_count % 3;
                  size_t current = digit_start;
-@@ -1236,7 +1245,7 @@ static std::vector<size_t> unicode_regex_split_custom(const std::string & text,
+@@ -1075,7 +1084,7 @@ static std::vector<size_t> unicode_regex_split_custom(const std::string & text,
          //   {"type": "Split", "pattern": {"Regex": "\\d{1,3}(?=(?:\\d{3})*\\b)"}, "behavior": "Isolated"}
          // Splits digits into groups of 3 from the right (e.g., 1234567 -> 1, 234, 567)
          // TODO: Revisit this regex, in case there are any subtle tokenization differences with the original regex.
