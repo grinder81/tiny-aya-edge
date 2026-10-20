@@ -1,0 +1,8 @@
+{
+  "contexts": 900,
+  "candidates": 3600,
+  "mismatches": [],
+  "lock_sha256": "7de16ffcfb75033d1c88ccc6299a00a4df956821f82dec580907539633f1321c",
+  "runtime_sha256": "82eb4435a7e680be716b44c2964fbf7da3649194dfe8563d2e8701717417535e",
+  "standalone_test": "15 Tiny Aya cases and AFMoE preservation passed"
+}
