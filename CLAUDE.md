@@ -33,9 +33,8 @@ device measurements, not eval tables.
 - Bangla deep, fourteen wide: Bangla gets human eval and the repair target; the matrix stays at 14.
 - Validation phones: iPhone 15 (6 GB RAM) now; a Snapdragon 8 Elite device when it arrives. The
   Hexagon work is a time-boxed systems track and never gates the main results.
-- Primary question is compression (which tensors carry Bangla under deployment formats; language-
-  aware allocation at equal shipped bytes). Adaptation placement is the secondary question. One
-  sensitivity map serves both. Simulated quantization is validated against real GGUF builds first.
+- Compression is the primary experimental objective: measure per-language damage under deployment formats and test precision allocation at matched shipped bytes. Adaptation is secondary and requires an explicit user decision after compression evidence; sensitivity results guide placement rather than presuming attention or MLP targets.
+- Follow `docs/stage2-plan.md` for the approved sequence and gates. Historical Stage 1 scoring remains unchanged; canonical changes require explicit validation and new run identities.
 
 ## Conventions
 - Every artifact published to the Hub carries its manifest and keeps CC-BY-NC terms.
