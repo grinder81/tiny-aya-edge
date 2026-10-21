@@ -4,6 +4,10 @@ Recipe validation: uv resolved 80 packages while retaining all 70 Stage 1 eval
 pins unchanged. Shell syntax, missing-opt-in refusal and existing-path preservation
 checks passed in WSL. This evidence alone does not claim installation or imports.
 
+Execution has now passed in a new WSL directory; see
+`results/a3-client-setup/` and `results/a3-client-offline.json`. Imports and the full
+offline request path passed. Live endpoint and direct-logit validation remain open.
+
 This recipe prepares the existing upstream `LocalCompletionsAPI` with an HF
 tokenizer. It is a client, not a model server, custom adapter or scoring-method
 change. A2 continues in its original environment. Do not install into that

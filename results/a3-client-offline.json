@@ -1,0 +1,36 @@
+{
+  "scope": "Offline upstream client request path and synthetic parser; no endpoint or model scores",
+  "lock_sha256": "75486c22c0c25f7c6c9d3da6abfaaa0165babf4a5de24970147ab9d1488d9844",
+  "model_args": {
+    "model": "offline-no-inference",
+    "base_url": "http://127.0.0.1:1/v1/completions",
+    "tokenizer": "/home/shohag/tiny-aya-stage1/models/tiny-aya-global",
+    "tokenizer_backend": "huggingface",
+    "tokenized_requests": false,
+    "add_bos_token": false,
+    "max_length": 8192,
+    "batch_size": 1
+  },
+  "versions": {
+    "lm-eval": "0.4.13",
+    "transformers": "5.20.1",
+    "tokenizers": "0.23.3",
+    "huggingface-hub": "1.31.0",
+    "datasets": "5.1.0"
+  },
+  "files": {
+    "/mnt/c/Users/shoha/Documents/ChatGPT/personal-development/tiny-aya-a3-verify/setup/probe_a3_client.py": "e7dceba3f4c0e3509160af6c0bb448040ded58666479bc92957cd66da4bace8b",
+    "/home/shohag/tiny-aya-stage1/a3-api-client/client/lib/python3.13/site-packages/lm_eval/models/openai_completions.py": "0afb2771209f9261a2ec0146cbd01928f22747e994a25225c24fd046c5c138ff",
+    "/home/shohag/tiny-aya-stage1/a3-api-client/client/lib/python3.13/site-packages/lm_eval/models/api_models.py": "8da25fde90c9a14ee7c603177a08814a3ac57aed7f18f6a00e040771335212cf",
+    "/home/shohag/tiny-aya-stage1/a3-api-client/client/lib/python3.13/site-packages/lm_eval/api/model.py": "b8b1db336e168b53d9ca808fe837d5bf8943d9dca76a14cf747e4f3a22d50545"
+  },
+  "tokenizer_files": {
+    "tokenizer.json": "2227ea9c52e8afb3f98bfed2679008b275f2664de69dfde174b374389eb0225d",
+    "tokenizer_config.json": "fb56a3ef7659346aae196a2ab877355f1e7fd871c36843f709bb2e23c606d972",
+    "special_tokens_map.json": "2b7ce39630f8a18705331a9b32c3b2236e96e7410791f98a9f8b6494e3ab2ea6"
+  },
+  "passed_contexts": 3600,
+  "passed_candidates": 14400,
+  "failures": [],
+  "live_echo_logits_bridge_required": true
+}
