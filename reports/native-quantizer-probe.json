@@ -1,0 +1,89 @@
+{
+  "scope": "Two representative tensors, first/middle/last rows only; no sensitivity map or quality evaluation",
+  "gguf_python_version": "0.19.0",
+  "artifacts": {
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-control-bf16.gguf": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-local-q4_k_m.gguf": "5823bd1e52be1027a7ba6f31b43edfd40ae1766020cddec967f0d76618948290",
+    "/home/shohag/tiny-aya-stage1/llama.cpp/build/bin/libggml-base.so": "e8591aa7ee912c0d06600c17e1e66b94d8af6eb6a06b4e58d9d03f52f49d4069"
+  },
+  "rows": [
+    {
+      "type": "Q4_K",
+      "tensor": "blk.0.attn_k.weight",
+      "row": 0,
+      "columns": 2048,
+      "python_quantizer": "NotImplementedError",
+      "quantized_bytes": 1152,
+      "matches_exported_bytes": true,
+      "native_python_dequant_max_abs_difference": 0.0,
+      "mean_squared_weight_error": 1.1313986760796979e-05,
+      "exported_row_sha256": "0fb393680580a483fb21bfc94fea67d6d43554a72217a1ea54d6c2c49953a1e8",
+      "native_row_sha256": "0fb393680580a483fb21bfc94fea67d6d43554a72217a1ea54d6c2c49953a1e8"
+    },
+    {
+      "type": "Q4_K",
+      "tensor": "blk.0.attn_k.weight",
+      "row": 256,
+      "columns": 2048,
+      "python_quantizer": "NotImplementedError",
+      "quantized_bytes": 1152,
+      "matches_exported_bytes": true,
+      "native_python_dequant_max_abs_difference": 0.0,
+      "mean_squared_weight_error": 1.2586803677550051e-05,
+      "exported_row_sha256": "7b0991477b1f870342c3d616f5b205d6a697219cb6a00854eb6beb4eeb339300",
+      "native_row_sha256": "7b0991477b1f870342c3d616f5b205d6a697219cb6a00854eb6beb4eeb339300"
+    },
+    {
+      "type": "Q4_K",
+      "tensor": "blk.0.attn_k.weight",
+      "row": 511,
+      "columns": 2048,
+      "python_quantizer": "NotImplementedError",
+      "quantized_bytes": 1152,
+      "matches_exported_bytes": true,
+      "native_python_dequant_max_abs_difference": 0.0,
+      "mean_squared_weight_error": 1.568982952449005e-05,
+      "exported_row_sha256": "e782670f88a8622ed81f70a52e916712fb9425edc8afd3575b665de5b4e9a29e",
+      "native_row_sha256": "e782670f88a8622ed81f70a52e916712fb9425edc8afd3575b665de5b4e9a29e"
+    },
+    {
+      "type": "Q6_K",
+      "tensor": "token_embd.weight",
+      "row": 0,
+      "columns": 2048,
+      "python_quantizer": "NotImplementedError",
+      "quantized_bytes": 1680,
+      "matches_exported_bytes": true,
+      "native_python_dequant_max_abs_difference": 0.0,
+      "mean_squared_weight_error": 1.3708559265523945e-07,
+      "exported_row_sha256": "53a7303145077b444b143ad5aa2227ee5b65f6cf2db8d3588ffb56d5744526a6",
+      "native_row_sha256": "53a7303145077b444b143ad5aa2227ee5b65f6cf2db8d3588ffb56d5744526a6"
+    },
+    {
+      "type": "Q6_K",
+      "tensor": "token_embd.weight",
+      "row": 131072,
+      "columns": 2048,
+      "python_quantizer": "NotImplementedError",
+      "quantized_bytes": 1680,
+      "matches_exported_bytes": true,
+      "native_python_dequant_max_abs_difference": 0.0,
+      "mean_squared_weight_error": 2.7919935519093997e-07,
+      "exported_row_sha256": "f2212c3bcb2ace423d62844f01418d9bfa770a466229870312c8a1e5d6ce0385",
+      "native_row_sha256": "f2212c3bcb2ace423d62844f01418d9bfa770a466229870312c8a1e5d6ce0385"
+    },
+    {
+      "type": "Q6_K",
+      "tensor": "token_embd.weight",
+      "row": 262143,
+      "columns": 2048,
+      "python_quantizer": "NotImplementedError",
+      "quantized_bytes": 1680,
+      "matches_exported_bytes": true,
+      "native_python_dequant_max_abs_difference": 0.0,
+      "mean_squared_weight_error": 6.511493921834699e-08,
+      "exported_row_sha256": "c244034a3cd94a12ae81ec0539a186ae289f1defe00b0e506e79a2c267396b88",
+      "native_row_sha256": "c244034a3cd94a12ae81ec0539a186ae289f1defe00b0e506e79a2c267396b88"
+    }
+  ]
+}
