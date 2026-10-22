@@ -1,0 +1,74 @@
+{
+  "scope": "Incomplete bounded explanation only; NOT full validation gate",
+  "files": {
+    "/home/shohag/tiny-aya-stage1/pilot/scoring-control/live-validation-v2/bf16-direct-stopped.json": "18fe70ce4e5766a18765a26bf8b9003bf31e05b1723d7908a4ee44c0c86a2571",
+    "/home/shohag/tiny-aya-stage1/pilot/scoring-control/live-validation-v1/bf16-client-stopped.json": "b7f8610bf8e17e3e4137f013153d04a22c4fc0c1e38b2846f9435d5e5fc98968",
+    "/home/shohag/tiny-aya-stage1/pilot/scoring-control/request-lock.json": "75486c22c0c25f7c6c9d3da6abfaaa0165babf4a5de24970147ab9d1488d9844",
+    "/mnt/c/Users/shoha/Documents/ChatGPT/personal-development/tiny-aya-edge/setup/compare_a3_schedule.py": "9f270e83df74d4f30a5afd448ab1fa85e85fa8af060d2c4488003b4d499423f7"
+  },
+  "records": [
+    {
+      "row": 0,
+      "candidate": 0,
+      "strings_match": true,
+      "count_matches": true,
+      "full_echo_max_error": 4.3342107147736897e-07,
+      "candidate_delta": 6.793712387098694e-08,
+      "suffix_delta": 1.7575541261249938e-07
+    },
+    {
+      "row": 0,
+      "candidate": 1,
+      "strings_match": true,
+      "count_matches": true,
+      "full_echo_max_error": 4.3342107147736897e-07,
+      "candidate_delta": -5.127216562428316e-08,
+      "suffix_delta": -1.1261686028163354e-08
+    },
+    {
+      "row": 0,
+      "candidate": 2,
+      "strings_match": true,
+      "count_matches": true,
+      "full_echo_max_error": 4.3342107147736897e-07,
+      "candidate_delta": -5.127216562428316e-08,
+      "suffix_delta": 6.401882013395976e-08
+    },
+    {
+      "row": 0,
+      "candidate": 3,
+      "strings_match": true,
+      "count_matches": true,
+      "full_echo_max_error": 4.3342107147736897e-07,
+      "candidate_delta": -5.127216606837237e-08,
+      "suffix_delta": 2.481371452756065e-08
+    },
+    {
+      "row": 1,
+      "candidate": 0,
+      "strings_match": true,
+      "count_matches": true,
+      "full_echo_max_error": 9.292946927530465e-07,
+      "candidate_delta": -3.782602409074798e-08,
+      "suffix_delta": 1.8870116763949896e-07
+    },
+    {
+      "row": 1,
+      "candidate": 1,
+      "strings_match": true,
+      "count_matches": true,
+      "full_echo_max_error": 9.292946927530465e-07,
+      "candidate_delta": -3.78260249789264e-08,
+      "suffix_delta": 9.739533506081255e-09
+    },
+    {
+      "row": 1,
+      "candidate": 2,
+      "strings_match": true,
+      "count_matches": true,
+      "full_echo_max_error": 9.292946927530465e-07,
+      "candidate_delta": -3.78260249789264e-08,
+      "suffix_delta": 9.36587866914862e-08
+    }
+  ]
+}

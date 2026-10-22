@@ -1,0 +1,164 @@
+{
+  "statuses": {
+    "v1": "FAILED cold-vs-prefix correctness gate;192 oracle,7 completed HTTP records",
+    "v2": "INCOMPLETE seven-candidate same-schedule explanation, not full gate",
+    "v3": "INCOMPLETE cold-only HTTP, stopped for exact ranking optimization",
+    "v4": "COMPLETE both-arm192-candidate primary and36-candidate reverse-order gates"
+  },
+  "raw_root": "/home/shohag/tiny-aya-stage1/pilot/scoring-control",
+  "files": {
+    "v1/bf16-client-stopped.json": {
+      "bytes": 451003,
+      "sha256": "b7f8610bf8e17e3e4137f013153d04a22c4fc0c1e38b2846f9435d5e5fc98968",
+      "storage": {
+        "path": "v1/bf16-client-stopped.json.gz",
+        "bytes": 75405,
+        "sha256": "a38c1e51f9d45b6cd83d454c9641b9dc7a03820466b3d834ddd41efaedc3034b",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v1/bf16-direct.json": {
+      "bytes": 4122842,
+      "sha256": "b41e3f54e43c0bc54c72a99b841de13010778291776ac2e7bc2104487ff87d92",
+      "storage": {
+        "path": "v1/bf16-direct.json.gz",
+        "bytes": 629856,
+        "sha256": "b09815325e70381f8519dba5ab7942794fca889934e91dd3fe66a44f0fe99a77",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v1/bf16-fresh-repeat-diagnosis.json": {
+      "bytes": 425852,
+      "sha256": "6b040e6418b6a66728502bdf7f2181e56eba0de6beed936f9a48a77c7743b269",
+      "storage": {
+        "path": "v1/bf16-fresh-repeat-diagnosis.json.gz",
+        "bytes": 91509,
+        "sha256": "26d1b41d53fbb82d19ffdc420e3880fdd21bb6ec17806efb3115e41b11ebd930",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v2/bf16-direct-stopped.json": {
+      "bytes": 133732,
+      "sha256": "18fe70ce4e5766a18765a26bf8b9003bf31e05b1723d7908a4ee44c0c86a2571",
+      "storage": {
+        "path": "v2/bf16-direct-stopped.json.gz",
+        "bytes": 13038,
+        "sha256": "aac78acdcd8a8f76dbeb22d727f180666ca8de1ad356f7597c844ffa84f1828c",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v2/bounded-comparison.json": {
+      "bytes": 2556,
+      "sha256": "a3e4bca1233be11bbbde2c8907bcbddb40f7629bdcd365547088f04fcfd0a55e"
+    },
+    "v3/bf16-client-stopped.json": {
+      "bytes": 1135984,
+      "sha256": "ec94bab3df7648c28601fd2f445d27b4edf1dd318ebbc90ce8d8c539e3873e40",
+      "storage": {
+        "path": "v3/bf16-client-stopped.json.gz",
+        "bytes": 189515,
+        "sha256": "98a084f46a2bfebd3b5534e109b3e87a01130928de09d88f3f026f034bd23fa8",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v3/bf16-gguf-runtime.json": {
+      "bytes": 2492,
+      "sha256": "14f4be575bc44328e2c55e84db2e83e21ed77ed534548ea331b2895230844622"
+    },
+    "v4/bf16-client.json": {
+      "bytes": 14057429,
+      "sha256": "33de8f1638ae2f1b4ebf31255a217cdb33b83b658fcc09554e38c456d16e6191",
+      "storage": {
+        "path": "v4/bf16-client.json.gz",
+        "bytes": 2541905,
+        "sha256": "ac668093de5cc27b4bac693f58719d476f8dfbe42916f479b8041e26d34e25d9",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v4/bf16-client.time": {
+      "bytes": 32,
+      "sha256": "cca0252215c11f52d7f4c4d44bb788e41bce6c9d47ddae2a3c58fe55c23d3691"
+    },
+    "v4/bf16-direct.json": {
+      "bytes": 4123295,
+      "sha256": "4d4dada69d47c4cf5a1bb2230d50421a964a2ca2bbbb289983a5d9ec7b82791a",
+      "storage": {
+        "path": "v4/bf16-direct.json.gz",
+        "bytes": 630090,
+        "sha256": "313daa2897704f88edc93d3fb220824c7dd7ab7a3782f96a4ecf9253f09280d6",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v4/bf16-gguf-runtime.json": {
+      "bytes": 2626,
+      "sha256": "f405c7da19b898e943d0dfba89465d39c9f04b940fca54c1a2ecb211da38429f"
+    },
+    "v4/bf16-order.json": {
+      "bytes": 2557003,
+      "sha256": "ff860fb0fcb0592fb58271e338e1d1cd8a70d61c9d8daf569480be1315e727a7",
+      "storage": {
+        "path": "v4/bf16-order.json.gz",
+        "bytes": 461176,
+        "sha256": "053d71bf430af717efb24f888ace2b3da62d2b2d3a1930730dadeec2c5ebaaf3",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v4/local-q4-runtime.json": {
+      "bytes": 2625,
+      "sha256": "ba55c25a5d962a7cf1286c8d151265ebb4ae972c0e970f8c85dc491ab56f013f"
+    },
+    "v4/q4-client.json": {
+      "bytes": 14090982,
+      "sha256": "ea21f66753ab5cc998af52f23be0565bae7230bad88b915348a185d8a75b9f3e",
+      "storage": {
+        "path": "v4/q4-client.json.gz",
+        "bytes": 2546171,
+        "sha256": "edaca65c92f6ad3aca9fea1b66902dbefa1b68f19cda223df5aa7f1b72638c62",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v4/q4-client.time": {
+      "bytes": 31,
+      "sha256": "0ae787680c97aa3288fae24dcd85f0d2c2774dc323020a51e63a739ce7a1ebf9"
+    },
+    "v4/q4-direct.json": {
+      "bytes": 4122542,
+      "sha256": "c1701e91765ce3734e8da49080ff25ca63b92332a4bdabf19b40ea0b25ee0aae",
+      "storage": {
+        "path": "v4/q4-direct.json.gz",
+        "bytes": 620983,
+        "sha256": "6d6f2ce57662009ddf9e4e6117b62024a7a237401b5cc2f17c7e625193abc80e",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v4/q4-order.json": {
+      "bytes": 2562421,
+      "sha256": "225073e08086c111fbb4c97a3c782d1931257f7951aa826e3ccb343cfc054da7",
+      "storage": {
+        "path": "v4/q4-order.json.gz",
+        "bytes": 461585,
+        "sha256": "38cc5cdee73f22228c930856e382bec8b645bc212af688a8d6924306460626df",
+        "format": "gzip; original decompressed bytes retain above identity"
+      }
+    },
+    "v4/runtime-preparation.json": {
+      "bytes": 1454,
+      "sha256": "0cd1a0cde1c69edc3063598fe32f0b4656702c9e5d2d0aed27ef6340c21f5601"
+    },
+    "v4/summary.json": {
+      "bytes": 30030,
+      "sha256": "c964e15b7439257cda31d65cd9330bb6a2dd5075d70685846156876b834d2527"
+    }
+  },
+  "retained_raw": {
+    "/home/shohag/tiny-aya-stage1/pilot/scoring-control/live-validation-v1/bf16-direct.json": {
+      "bytes": 4122842,
+      "sha256": "b41e3f54e43c0bc54c72a99b841de13010778291776ac2e7bc2104487ff87d92"
+    },
+    "/home/shohag/tiny-aya-stage1/pilot/scoring-control/live-validation-v3/bf16-direct.json": {
+      "bytes": 4123280,
+      "sha256": "cf2f9374be6a57bff8e78f16e789cd97fe6ed6f4ce3b01ec919c404ca62a549c"
+    }
+  },
+  "v3_v4_bf16_oracle_records_exactly_equal": true
+}

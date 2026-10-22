@@ -7,6 +7,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: python -m py_compile builds/*.py bench/q4_matvec/*.py
+      - run: python -m py_compile setup/*.py builds/*.py bench/q4_matvec/*.py
+      - run: python setup/verify_a3_archive.py --directory results/a3-live-validation
+      - run: pip install numpy
+      - run: python setup/test_echo_top1.py
       - run: python bench/q4_matvec/roofline.py --params 3.35e9 --layers 32 --kv-heads 8 --head-dim 128 --context 4096 | head -5
       - run: bash -n setup/*.sh builds/*.sh

@@ -1,0 +1,40 @@
+{
+  "arm": "local-q4",
+  "server_command": [
+    "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/bin/python",
+    "-m",
+    "llama_cpp.server",
+    "--model",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-local-q4_k_m.gguf",
+    "--n_gpu_layers",
+    "-1",
+    "--n_ctx",
+    "8192",
+    "--logits_all",
+    "true",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8098",
+    "--verbose",
+    "false"
+  ],
+  "files": {
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-local-q4_k_m.gguf": "5823bd1e52be1027a7ba6f31b43edfd40ae1766020cddec967f0d76618948290",
+    "/home/shohag/tiny-aya-stage1/llama-tokenizer-pinned-fix/build/bin/libllama.so": "82eb4435a7e680be716b44c2964fbf7da3649194dfe8563d2e8701717417535e",
+    "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/lib/python3.13/site-packages/llama_cpp/llama.py": "114c18646074b3ada403ac2963d12d298bb45b354329cb1d0e95e8bd072fdc8b",
+    "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/lib/python3.13/site-packages/llama_cpp/_internals.py": "1d7c702b0513bb2dcdeabdeb3475924d5ade0cf4029b2b9a65cf7df18f4e78cf",
+    "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/lib/python3.13/site-packages/llama_cpp/server/model.py": "b8a420be28a183bb7cdb9f361623747fbc0666b511ddae328b7328784896a848",
+    "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/lib/python3.13/site-packages/llama_cpp/server/settings.py": "8cd8036dea4ce73f16d525ecad2d267ab5786f6f2cd7cf40343f238ec2736b36"
+  },
+  "packages": "Jinja2==3.1.6\nMarkupSafe==3.0.4\nPyYAML==6.0.3\nannotated-doc==0.0.5\nannotated-types==0.8.0\nanyio==4.15.1\nclick==8.5.0\ndiskcache==5.6.3\nfastapi==0.143.3\nh11==0.16.0\nidna==3.20\nllama_cpp_python==0.3.36\nnumpy==2.5.4\nopentelemetry-api==1.45.1\npydantic-settings==2.16.0\npydantic==2.14.1\npydantic_core==2.50.1\npython-dotenv==1.2.4\nsse-starlette==3.5.0\nstarlette-context==0.3.6\nstarlette==1.8.0\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nuvicorn==0.54.0\n",
+  "provenance": {
+    "original_runtime_sha256": "ca2894e3a833bdaf584c084a1178a17e9b1cae7124730d6d187a26c3d165ba26",
+    "patch_sha256": "4f2f0a7028e8c1965b62ce6ca00170d76625da9e10295835546ed9a79ebc5c88",
+    "protocol_sha256": "eca3700839cacbc25b03c7452c19094f94b0c673a63af77ba90187ed5411b478",
+    "executable": "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/bin/python",
+    "prefix": "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast",
+    "scope": "Cold echo likelihood prefill; saved cache restore bypass; non-scoring unchanged",
+    "additional_patch_sha256": "e2a4b8405cdd20aa657a939ecb582ea5128619b94420c37aed7f222b2bfe3a70"
+  }
+}
