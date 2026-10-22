@@ -1,0 +1,17 @@
+diff --git a/llama_cpp/llama.py b/llama_cpp/llama.py
+--- a/llama_cpp/llama.py
++++ b/llama_cpp/llama.py
+@@ -1773,7 +1773,12 @@ class Llama:
+                 )
+                 tokens.append(token_str)
+                 # Preserve descending (score, token_id) ordering, including ties.
+-                top_ids = np.lexsort((np.arange(len(logprobs_token)), logprobs_token))[::-1][:logprobs]
++                if logprobs == 1 and len(logprobs_token):
++                    # Reversed argmax chooses the greatest token ID on ties.
++                    # Like lexsort, argmax ranks NaN above finite values.
++                    top_ids = [len(logprobs_token) - 1 - int(np.argmax(logprobs_token[::-1]))]
++                else:
++                    top_ids = np.lexsort((np.arange(len(logprobs_token)), logprobs_token))[::-1][:logprobs]
+                 sorted_logprobs = [(logprobs_token[i], int(i)) for i in top_ids]
+                 token_logprobs.append(logprobs_token[int(token)])
+                 top_logprob: Optional[Dict[str, float]] = {

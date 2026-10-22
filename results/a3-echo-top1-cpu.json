@@ -1,0 +1,20 @@
+{
+  "scope": "CPU ranking and echo dictionary parity only; no inference",
+  "numpy_version": "2.5.4",
+  "seed": 42,
+  "arrays": 19,
+  "selection_comparisons": 76,
+  "dictionary_comparisons": 360,
+  "benchmark_vocab": 262144,
+  "lexsort_seconds": 0.018513265799265356,
+  "top1_seconds": 7.51754199154675e-05,
+  "speedup": 246.2675409074265,
+  "counts_tested": [
+    0,
+    1,
+    2,
+    10
+  ],
+  "special_values": "ties, all-equal, signed zero, negative/positive infinity, NaN",
+  "note": "Timing is this CPU microbenchmark, not end-to-end model throughput"
+}

@@ -1,0 +1,19 @@
+diff --git a/llama_cpp/llama.py b/llama_cpp/llama.py
+--- a/llama_cpp/llama.py
++++ b/llama_cpp/llama.py
+@@ -1366,7 +1366,14 @@ class Llama:
+                 "logprobs is not supported for models created with logits_all=False"
+             )
+ 
+-        if self.cache:
++        # Echo likelihoods must not depend on an earlier request's prefix or
++        # cached forward partition. A fresh prefill preserves resumable scoring.
++        # Zero requested alternatives still requests supplied-token logprobs.
++        cold_echo = echo and logprobs is not None
++        if cold_echo:
++            self.reset()
++
++        if self.cache and not cold_echo:
+             try:
+                 cache_item = self.cache[prompt_tokens]
+                 cache_prefix_len = Llama.longest_token_prefix(

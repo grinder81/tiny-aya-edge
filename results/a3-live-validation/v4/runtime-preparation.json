@@ -1,0 +1,13 @@
+{
+  "executable": "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/bin/python",
+  "prefix": "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast",
+  "module": "/home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast/lib/python3.13/site-packages/llama_cpp/__init__.py",
+  "source": "/home/shohag/tiny-aya-stage1/llama-python-compat",
+  "original_wrapper_sha256": "6673e5584b3c6d300a4c087690ae73505d70b93ad31cfcd5e62862c06fa85058",
+  "wrapper_sha256": "114c18646074b3ada403ac2963d12d298bb45b354329cb1d0e95e8bd072fdc8b",
+  "patches": {
+    "/mnt/c/Users/shoha/Documents/ChatGPT/personal-development/tiny-aya-edge/patches/python-cold-echo.patch": "4f2f0a7028e8c1965b62ce6ca00170d76625da9e10295835546ed9a79ebc5c88",
+    "/mnt/c/Users/shoha/Documents/ChatGPT/personal-development/tiny-aya-edge/patches/python-echo-top1.patch": "e2a4b8405cdd20aa657a939ecb582ea5128619b94420c37aed7f222b2bfe3a70"
+  },
+  "invocation": "/mnt/c/Users/shoha/Documents/ChatGPT/personal-development/tiny-aya-edge/setup/prepare_a3_scoring_runtime.py --source /home/shohag/tiny-aya-stage1/llama-python-compat --destination /home/shohag/tiny-aya-stage1/llama-python-a3-cold-fast --patch /mnt/c/Users/shoha/Documents/ChatGPT/personal-development/tiny-aya-edge/patches/python-cold-echo.patch --patch /mnt/c/Users/shoha/Documents/ChatGPT/personal-development/tiny-aya-edge/patches/python-echo-top1.patch --library /home/shohag/tiny-aya-stage1/llama-tokenizer-pinned-fix/build/bin"
+}

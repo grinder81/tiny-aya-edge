@@ -4,3 +4,11 @@
 *.in text eol=lf
 *.lock text eol=lf
 *.patch text eol=lf whitespace=-blank-at-eol
+# Preserve the byte identities of live-validation evidence across platforms.
+results/a3-live-validation/**/*.json -text
+results/a3-live-validation/*.json -text
+results/a3-echo-top1-cpu.json -text
+results/a3-live-validation/**/*.time -text
+results/a3-live-validation/**/*.json.gz -text
+docs/a3-*.md text eol=lf
+results/a3-live-validation/README.md text eol=lf
