@@ -1,0 +1,1953 @@
+{
+ "runtime_label": "llama.cpp 9ff0d7e90f0faaa7c16017e6dcf9cf91c50a100e (master 2026-10-23, unpatched, CPU build)",
+ "backend": "llama-tokenize",
+ "gguf_basename": "tiny-aya-global-q4_k_m.gguf",
+ "gguf_bytes": 2143977056,
+ "tokenizer_basename": "tiny-aya-global",
+ "tokenizers_version": "0.22.2",
+ "summary": {
+  "regular_cases": 66,
+  "regular_mismatches": 15,
+  "probe_cases": 9,
+  "probe_differences": 0,
+  "errors": 0
+ },
+ "cases": [
+  {
+   "case_id": "two_spaces_46",
+   "case_class": "leading_space",
+   "text": "  46",
+   "hf_ids": [
+    271,
+    3621
+   ],
+   "llama_ids": [
+    235,
+    235,
+    3621
+   ],
+   "hf_pretokens": [
+    "ĠĠ",
+    "46"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "one_space_46",
+   "case_class": "leading_space",
+   "text": " 46",
+   "hf_ids": [
+    235,
+    3621
+   ],
+   "llama_ids": [
+    235,
+    3621
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "46"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "three_spaces_46",
+   "case_class": "leading_space",
+   "text": "   46",
+   "hf_ids": [
+    359,
+    3621
+   ],
+   "llama_ids": [
+    271,
+    235,
+    3621
+   ],
+   "hf_pretokens": [
+    "ĠĠĠ",
+    "46"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "tab_46",
+   "case_class": "leading_space",
+   "text": "\t46",
+   "hf_ids": [
+    212,
+    3621
+   ],
+   "llama_ids": [
+    212,
+    3621
+   ],
+   "hf_pretokens": [
+    "ĉ",
+    "46"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "newline_46",
+   "case_class": "leading_space",
+   "text": "\n46",
+   "hf_ids": [
+    213,
+    3621
+   ],
+   "llama_ids": [
+    213,
+    3621
+   ],
+   "hf_pretokens": [
+    "Ċ",
+    "46"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "word_space_year",
+   "case_class": "leading_space",
+   "text": "word 2007",
+   "hf_ids": [
+    3798,
+    235,
+    32,
+    5733
+   ],
+   "llama_ids": [
+    3798,
+    235,
+    32,
+    5733
+   ],
+   "hf_pretokens": [
+    "word",
+    "Ġ",
+    "2",
+    "007"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "sentence_space_number",
+   "case_class": "leading_space",
+   "text": "Population is 123456 people",
+   "hf_ids": [
+    129693,
+    386,
+    235,
+    16064,
+    38871,
+    2130
+   ],
+   "llama_ids": [
+    129693,
+    386,
+    235,
+    16064,
+    38871,
+    2130
+   ],
+   "hf_pretokens": [
+    "Population",
+    "Ġis",
+    "Ġ",
+    "123",
+    "456",
+    "Ġpeople"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "parens_year",
+   "case_class": "punctuation",
+   "text": "(2007)",
+   "hf_ids": [
+    22,
+    32,
+    5733,
+    23
+   ],
+   "llama_ids": [
+    22,
+    32,
+    5733,
+    23
+   ],
+   "hf_pretokens": [
+    "(",
+    "2",
+    "007",
+    ")"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "comma_grouped",
+   "case_class": "punctuation",
+   "text": "12,345",
+   "hf_ids": [
+    979,
+    26,
+    31323
+   ],
+   "llama_ids": [
+    979,
+    26,
+    31323
+   ],
+   "hf_pretokens": [
+    "12",
+    ",",
+    "345"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "decimal_point",
+   "case_class": "punctuation",
+   "text": "3.14",
+   "hf_ids": [
+    33,
+    28,
+    1430
+   ],
+   "llama_ids": [
+    33,
+    28,
+    1430
+   ],
+   "hf_pretokens": [
+    "3",
+    ".",
+    "14"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "colon_comma_mix",
+   "case_class": "punctuation",
+   "text": "x: 12, 3456",
+   "hf_ids": [
+    102,
+    40,
+    235,
+    979,
+    26,
+    235,
+    33,
+    38871
+   ],
+   "llama_ids": [
+    102,
+    40,
+    235,
+    979,
+    26,
+    235,
+    33,
+    38871
+   ],
+   "hf_pretokens": [
+    "x",
+    ":",
+    "Ġ",
+    "12",
+    ",",
+    "Ġ",
+    "3",
+    "456"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "dollar_amount",
+   "case_class": "punctuation",
+   "text": "$100",
+   "hf_ids": [
+    18,
+    1775
+   ],
+   "llama_ids": [
+    18,
+    1775
+   ],
+   "hf_pretokens": [
+    "$",
+    "100"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "percent",
+   "case_class": "punctuation",
+   "text": "50%",
+   "hf_ids": [
+    1627,
+    19
+   ],
+   "llama_ids": [
+    1627,
+    19
+   ],
+   "hf_pretokens": [
+    "50",
+    "%"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "trailing_period",
+   "case_class": "punctuation",
+   "text": "2007.",
+   "hf_ids": [
+    32,
+    5733,
+    28
+   ],
+   "llama_ids": [
+    32,
+    5733,
+    28
+   ],
+   "hf_pretokens": [
+    "2",
+    "007",
+    "."
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "phone_hyphens",
+   "case_class": "punctuation",
+   "text": "1-800-555-0199",
+   "hf_ids": [
+    31,
+    27,
+    8256,
+    27,
+    40890,
+    27,
+    30,
+    14926
+   ],
+   "llama_ids": [
+    31,
+    27,
+    8256,
+    27,
+    40890,
+    27,
+    30,
+    14926
+   ],
+   "hf_pretokens": [
+    "1",
+    "-",
+    "800",
+    "-",
+    "555",
+    "-",
+    "0",
+    "199"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "quoted_year",
+   "case_class": "punctuation",
+   "text": "\"2007\"",
+   "hf_ids": [
+    16,
+    32,
+    5733,
+    16
+   ],
+   "llama_ids": [
+    16,
+    32,
+    5733,
+    16
+   ],
+   "hf_pretokens": [
+    "\"",
+    "2",
+    "007",
+    "\""
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "slash_years",
+   "case_class": "punctuation",
+   "text": "2007/2008",
+   "hf_ids": [
+    32,
+    5733,
+    29,
+    32,
+    5892
+   ],
+   "llama_ids": [
+    32,
+    5733,
+    29,
+    32,
+    5892
+   ],
+   "hf_pretokens": [
+    "2",
+    "007",
+    "/",
+    "2",
+    "008"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "1990s",
+   "case_class": "letter_suffix",
+   "text": "1990s",
+   "hf_ids": [
+    14926,
+    30,
+    97
+   ],
+   "llama_ids": [
+    31,
+    15262,
+    97
+   ],
+   "hf_pretokens": [
+    "199",
+    "0",
+    "s"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "1480s",
+   "case_class": "letter_suffix",
+   "text": "1480s",
+   "hf_ids": [
+    32309,
+    30,
+    97
+   ],
+   "llama_ids": [
+    31,
+    35398,
+    97
+   ],
+   "hf_pretokens": [
+    "148",
+    "0",
+    "s"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "two_decades",
+   "case_class": "letter_suffix",
+   "text": "1970s and 1930s",
+   "hf_ids": [
+    18179,
+    30,
+    97,
+    344,
+    235,
+    27605,
+    30,
+    97
+   ],
+   "llama_ids": [
+    31,
+    18345,
+    97,
+    344,
+    235,
+    31,
+    33048,
+    97
+   ],
+   "hf_pretokens": [
+    "197",
+    "0",
+    "s",
+    "Ġand",
+    "Ġ",
+    "193",
+    "0",
+    "s"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "ordinal_3rd",
+   "case_class": "letter_suffix",
+   "text": "3rd",
+   "hf_ids": [
+    33,
+    9201
+   ],
+   "llama_ids": [
+    33,
+    9201
+   ],
+   "hf_pretokens": [
+    "3",
+    "rd"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "underscore_12_name",
+   "case_class": "letter_suffix",
+   "text": "12_name",
+   "hf_ids": [
+    979,
+    7445
+   ],
+   "llama_ids": [
+    979,
+    7445
+   ],
+   "hf_pretokens": [
+    "12",
+    "_name"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "letter_prefix_A4",
+   "case_class": "letter_suffix",
+   "text": "A4",
+   "hf_ids": [
+    47,
+    34
+   ],
+   "llama_ids": [
+    47,
+    34
+   ],
+   "hf_pretokens": [
+    "A",
+    "4"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "letter_prefix_x2007",
+   "case_class": "letter_suffix",
+   "text": "x2007",
+   "hf_ids": [
+    102,
+    32,
+    5733
+   ],
+   "llama_ids": [
+    102,
+    32,
+    5733
+   ],
+   "hf_pretokens": [
+    "x",
+    "2",
+    "007"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "letter_suffix_2007x",
+   "case_class": "letter_suffix",
+   "text": "2007x",
+   "hf_ids": [
+    3111,
+    37,
+    102
+   ],
+   "llama_ids": [
+    32,
+    5733,
+    102
+   ],
+   "hf_pretokens": [
+    "200",
+    "7",
+    "x"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "suffix_then_spaces_46",
+   "case_class": "letter_suffix",
+   "text": "1480s  46",
+   "hf_ids": [
+    32309,
+    30,
+    97,
+    271,
+    3621
+   ],
+   "llama_ids": [
+    31,
+    35398,
+    97,
+    235,
+    235,
+    3621
+   ],
+   "hf_pretokens": [
+    "148",
+    "0",
+    "s",
+    "ĠĠ",
+    "46"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "bn_2007",
+   "case_class": "bengali_digits",
+   "text": "২০০৭",
+   "hf_ids": [
+    10976,
+    69332,
+    31389
+   ],
+   "llama_ids": [
+    10976,
+    69332,
+    31389
+   ],
+   "hf_pretokens": [
+    "à§¨",
+    "à§¦à§¦à§Ń"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "bn_spaces_2007",
+   "case_class": "bengali_digits",
+   "text": "  ২০০৭",
+   "hf_ids": [
+    271,
+    10976,
+    69332,
+    31389
+   ],
+   "llama_ids": [
+    235,
+    235,
+    10976,
+    69332,
+    31389
+   ],
+   "hf_pretokens": [
+    "ĠĠ",
+    "à§¨",
+    "à§¦à§¦à§Ń"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "bn_1234567",
+   "case_class": "bengali_digits",
+   "text": "১২৩৪৫৬৭",
+   "hf_ids": [
+    10468,
+    91610,
+    20953,
+    197754,
+    31389
+   ],
+   "llama_ids": [
+    10468,
+    91610,
+    20953,
+    197754,
+    31389
+   ],
+   "hf_pretokens": [
+    "à§§",
+    "à§¨à§©à§ª",
+    "à§«à§¬à§Ń"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "bn_sentence",
+   "case_class": "bengali_digits",
+   "text": "তিনি ২০০৭ সালে জন্মগ্রহণ করেন।",
+   "hf_ids": [
+    85008,
+    235,
+    10976,
+    69332,
+    31389,
+    42344,
+    143143,
+    60881,
+    6313,
+    24102,
+    941
+   ],
+   "llama_ids": [
+    85008,
+    235,
+    10976,
+    69332,
+    31389,
+    42344,
+    143143,
+    60881,
+    6313,
+    24102,
+    941
+   ],
+   "hf_pretokens": [
+    "à¦¤à¦¿à¦¨à¦¿",
+    "Ġ",
+    "à§¨",
+    "à§¦à§¦à§Ń",
+    "Ġà¦¸à¦¾à¦²à§ĩ",
+    "Ġà¦ľà¦¨à§įà¦®à¦Ĺà§įà¦°à¦¹à¦£",
+    "Ġà¦ķà¦°à§ĩà¦¨",
+    "à¥¤"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "bn_currency_indian_grouping",
+   "case_class": "bengali_digits",
+   "text": "৳১,২৩,৪৫৬",
+   "hf_ids": [
+    412,
+    126,
+    10468,
+    26,
+    91610,
+    26,
+    20953,
+    197754
+   ],
+   "llama_ids": [
+    412,
+    126,
+    10468,
+    26,
+    91610,
+    26,
+    20953,
+    197754
+   ],
+   "hf_pretokens": [
+    "à§³",
+    "à§§",
+    ",",
+    "à§¨à§©",
+    ",",
+    "à§ªà§«à§¬"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "hi_2007",
+   "case_class": "devanagari_digits",
+   "text": "२००७",
+   "hf_ids": [
+    10639,
+    13814,
+    111554
+   ],
+   "llama_ids": [
+    10639,
+    13814,
+    111554
+   ],
+   "hf_pretokens": [
+    "à¥¨",
+    "à¥¦à¥¦à¥Ń"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "hi_spaces_2007",
+   "case_class": "devanagari_digits",
+   "text": "  २००७",
+   "hf_ids": [
+    271,
+    10639,
+    13814,
+    111554
+   ],
+   "llama_ids": [
+    235,
+    235,
+    10639,
+    13814,
+    111554
+   ],
+   "hf_pretokens": [
+    "ĠĠ",
+    "à¥¨",
+    "à¥¦à¥¦à¥Ń"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "hi_1234567",
+   "case_class": "devanagari_digits",
+   "text": "१२३४५६७",
+   "hf_ids": [
+    10218,
+    122314,
+    21159,
+    16723,
+    31090,
+    24309
+   ],
+   "llama_ids": [
+    10218,
+    122314,
+    21159,
+    16723,
+    31090,
+    24309
+   ],
+   "hf_pretokens": [
+    "à¥§",
+    "à¥¨à¥©à¥ª",
+    "à¥«à¥¬à¥Ń"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "hi_sentence",
+   "case_class": "devanagari_digits",
+   "text": "वह २००७ में पैदा हुआ।",
+   "hf_ids": [
+    1496,
+    925,
+    235,
+    10639,
+    13814,
+    111554,
+    1769,
+    129622,
+    22728,
+    941
+   ],
+   "llama_ids": [
+    1496,
+    925,
+    235,
+    10639,
+    13814,
+    111554,
+    1769,
+    129622,
+    22728,
+    941
+   ],
+   "hf_pretokens": [
+    "à¤µà¤¹",
+    "Ġ",
+    "à¥¨",
+    "à¥¦à¥¦à¥Ń",
+    "Ġà¤®à¥ĩà¤Ĥ",
+    "Ġà¤ªà¥Īà¤¦à¤¾",
+    "Ġà¤¹à¥ģà¤Ĩ",
+    "à¥¤"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "zwnj_after_2007",
+   "case_class": "join_control",
+   "text": "2007‌",
+   "hf_ids": [
+    32,
+    5733,
+    11482
+   ],
+   "llama_ids": [
+    32,
+    5733,
+    11482
+   ],
+   "hf_pretokens": [
+    "2",
+    "007",
+    "âĢĮ"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "zwj_after_2007",
+   "case_class": "join_control",
+   "text": "2007‍",
+   "hf_ids": [
+    32,
+    5733,
+    61293
+   ],
+   "llama_ids": [
+    32,
+    5733,
+    61293
+   ],
+   "hf_pretokens": [
+    "2",
+    "007",
+    "âĢį"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "bn_spaces_2007_zwnj",
+   "case_class": "join_control",
+   "text": "  ২০০৭‌",
+   "hf_ids": [
+    271,
+    10976,
+    69332,
+    31389,
+    11482
+   ],
+   "llama_ids": [
+    235,
+    235,
+    10976,
+    69332,
+    31389,
+    11482
+   ],
+   "hf_pretokens": [
+    "ĠĠ",
+    "à§¨",
+    "à§¦à§¦à§Ń",
+    "âĢĮ"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "hi_spaces_2007_zwj",
+   "case_class": "join_control",
+   "text": "  २००७‍",
+   "hf_ids": [
+    271,
+    10639,
+    13814,
+    111554,
+    61293
+   ],
+   "llama_ids": [
+    235,
+    235,
+    10639,
+    13814,
+    111554,
+    61293
+   ],
+   "hf_pretokens": [
+    "ĠĠ",
+    "à¥¨",
+    "à¥¦à¥¦à¥Ń",
+    "âĢį"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "zwnj_between_digit_runs",
+   "case_class": "join_control",
+   "text": "2007‌2008",
+   "hf_ids": [
+    32,
+    5733,
+    11482,
+    32,
+    5892
+   ],
+   "llama_ids": [
+    32,
+    5733,
+    11482,
+    32,
+    5892
+   ],
+   "hf_pretokens": [
+    "2",
+    "007",
+    "âĢĮ",
+    "2",
+    "008"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "acute_after_2007",
+   "case_class": "combining_mark",
+   "text": "2007́",
+   "hf_ids": [
+    3111,
+    37,
+    47088
+   ],
+   "llama_ids": [
+    32,
+    5733,
+    47088
+   ],
+   "hf_pretokens": [
+    "200",
+    "7",
+    "Ìģ"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "nukta_after_bn_2007",
+   "case_class": "combining_mark",
+   "text": "২০০৭়",
+   "hf_ids": [
+    10976,
+    69332,
+    31389,
+    1205
+   ],
+   "llama_ids": [
+    10976,
+    69332,
+    31389,
+    1205
+   ],
+   "hf_pretokens": [
+    "à§¨à§¦à§¦",
+    "à§Ń",
+    "à¦¼"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len1_bare",
+   "case_class": "group_length",
+   "text": "1",
+   "hf_ids": [
+    31
+   ],
+   "llama_ids": [
+    31
+   ],
+   "hf_pretokens": [
+    "1"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len1_after_space",
+   "case_class": "group_length",
+   "text": " 1",
+   "hf_ids": [
+    235,
+    31
+   ],
+   "llama_ids": [
+    235,
+    31
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "1"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len2_bare",
+   "case_class": "group_length",
+   "text": "12",
+   "hf_ids": [
+    979
+   ],
+   "llama_ids": [
+    979
+   ],
+   "hf_pretokens": [
+    "12"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len2_after_space",
+   "case_class": "group_length",
+   "text": " 12",
+   "hf_ids": [
+    235,
+    979
+   ],
+   "llama_ids": [
+    235,
+    979
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "12"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len3_bare",
+   "case_class": "group_length",
+   "text": "123",
+   "hf_ids": [
+    16064
+   ],
+   "llama_ids": [
+    16064
+   ],
+   "hf_pretokens": [
+    "123"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len3_after_space",
+   "case_class": "group_length",
+   "text": " 123",
+   "hf_ids": [
+    235,
+    16064
+   ],
+   "llama_ids": [
+    235,
+    16064
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "123"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len4_bare",
+   "case_class": "group_length",
+   "text": "1234",
+   "hf_ids": [
+    31,
+    31479
+   ],
+   "llama_ids": [
+    31,
+    31479
+   ],
+   "hf_pretokens": [
+    "1",
+    "234"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len4_after_space",
+   "case_class": "group_length",
+   "text": " 1234",
+   "hf_ids": [
+    235,
+    31,
+    31479
+   ],
+   "llama_ids": [
+    235,
+    31,
+    31479
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "1",
+    "234"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len5_bare",
+   "case_class": "group_length",
+   "text": "12345",
+   "hf_ids": [
+    979,
+    31323
+   ],
+   "llama_ids": [
+    979,
+    31323
+   ],
+   "hf_pretokens": [
+    "12",
+    "345"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len5_after_space",
+   "case_class": "group_length",
+   "text": " 12345",
+   "hf_ids": [
+    235,
+    979,
+    31323
+   ],
+   "llama_ids": [
+    235,
+    979,
+    31323
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "12",
+    "345"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len6_bare",
+   "case_class": "group_length",
+   "text": "123456",
+   "hf_ids": [
+    16064,
+    38871
+   ],
+   "llama_ids": [
+    16064,
+    38871
+   ],
+   "hf_pretokens": [
+    "123",
+    "456"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len6_after_space",
+   "case_class": "group_length",
+   "text": " 123456",
+   "hf_ids": [
+    235,
+    16064,
+    38871
+   ],
+   "llama_ids": [
+    235,
+    16064,
+    38871
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "123",
+    "456"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len7_bare",
+   "case_class": "group_length",
+   "text": "1234567",
+   "hf_ids": [
+    31,
+    31479,
+    47558
+   ],
+   "llama_ids": [
+    31,
+    31479,
+    47558
+   ],
+   "hf_pretokens": [
+    "1",
+    "234",
+    "567"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len7_after_space",
+   "case_class": "group_length",
+   "text": " 1234567",
+   "hf_ids": [
+    235,
+    31,
+    31479,
+    47558
+   ],
+   "llama_ids": [
+    235,
+    31,
+    31479,
+    47558
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "1",
+    "234",
+    "567"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "comma_million",
+   "case_class": "group_length",
+   "text": "1,000,000",
+   "hf_ids": [
+    31,
+    26,
+    1366,
+    26,
+    1366
+   ],
+   "llama_ids": [
+    31,
+    26,
+    1366,
+    26,
+    1366
+   ],
+   "hf_pretokens": [
+    "1",
+    ",",
+    "000",
+    ",",
+    "000"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "len8_bare",
+   "case_class": "group_length",
+   "text": "12345678",
+   "hf_ids": [
+    979,
+    31323,
+    49222
+   ],
+   "llama_ids": [
+    979,
+    31323,
+    49222
+   ],
+   "hf_pretokens": [
+    "12",
+    "345",
+    "678"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "words_and_numbers",
+   "case_class": "mixed",
+   "text": "abc 123 def 4567",
+   "hf_ids": [
+    173062,
+    235,
+    16064,
+    1490,
+    235,
+    34,
+    47558
+   ],
+   "llama_ids": [
+    173062,
+    235,
+    16064,
+    1490,
+    235,
+    34,
+    47558
+   ],
+   "hf_pretokens": [
+    "abc",
+    "Ġ",
+    "123",
+    "Ġdef",
+    "Ġ",
+    "4",
+    "567"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "chapter_line",
+   "case_class": "mixed",
+   "text": "Chapter 12: 1990s revisited (pp. 1234567-1234570)",
+   "hf_ids": [
+    45329,
+    235,
+    979,
+    40,
+    235,
+    14926,
+    30,
+    97,
+    23886,
+    2559,
+    389,
+    4523,
+    28,
+    235,
+    31,
+    31479,
+    47558,
+    27,
+    31,
+    31479,
+    66553,
+    23
+   ],
+   "llama_ids": [
+    45329,
+    235,
+    979,
+    40,
+    235,
+    31,
+    15262,
+    97,
+    23886,
+    2559,
+    389,
+    4523,
+    28,
+    235,
+    31,
+    31479,
+    47558,
+    27,
+    31,
+    31479,
+    66553,
+    23
+   ],
+   "hf_pretokens": [
+    "Chapter",
+    "Ġ",
+    "12",
+    ":",
+    "Ġ",
+    "199",
+    "0",
+    "s",
+    "Ġrevisited",
+    "Ġ(",
+    "pp",
+    ".",
+    "Ġ",
+    "1",
+    "234",
+    "567",
+    "-",
+    "1",
+    "234",
+    "570",
+    ")"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "date_iso",
+   "case_class": "mixed",
+   "text": "2026-10-23",
+   "hf_ids": [
+    32,
+    47311,
+    27,
+    775,
+    27,
+    1980
+   ],
+   "llama_ids": [
+    32,
+    47311,
+    27,
+    775,
+    27,
+    1980
+   ],
+   "hf_pretokens": [
+    "2",
+    "026",
+    "-",
+    "10",
+    "-",
+    "23"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "time_colon",
+   "case_class": "mixed",
+   "text": "10:45",
+   "hf_ids": [
+    775,
+    40,
+    2459
+   ],
+   "llama_ids": [
+    775,
+    40,
+    2459
+   ],
+   "hf_pretokens": [
+    "10",
+    ":",
+    "45"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "fullwidth_2007",
+   "case_class": "other_nd_digits",
+   "text": "２００７",
+   "hf_ids": [
+    150239,
+    133033,
+    133033,
+    634,
+    260
+   ],
+   "llama_ids": [
+    150239,
+    133033,
+    133033,
+    634,
+    260
+   ],
+   "hf_pretokens": [
+    "ï¼Ĵ",
+    "ï¼Ĳï¼Ĳï¼Ĺ"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "fullwidth_spaces_1234567",
+   "case_class": "other_nd_digits",
+   "text": "  １２３４５６７",
+   "hf_ids": [
+    271,
+    173906,
+    150239,
+    634,
+    256,
+    634,
+    257,
+    634,
+    258,
+    634,
+    259,
+    634,
+    260
+   ],
+   "llama_ids": [
+    235,
+    235,
+    173906,
+    150239,
+    634,
+    256,
+    634,
+    257,
+    634,
+    258,
+    634,
+    259,
+    634,
+    260
+   ],
+   "hf_pretokens": [
+    "ĠĠ",
+    "ï¼ĳ",
+    "ï¼Ĵï¼ĵï¼Ķ",
+    "ï¼ķï¼ĸï¼Ĺ"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "arabic_indic_2007",
+   "case_class": "other_nd_digits",
+   "text": "٢٠٠٧",
+   "hf_ids": [
+    18842,
+    107268,
+    68244
+   ],
+   "llama_ids": [
+    18842,
+    107268,
+    68244
+   ],
+   "hf_pretokens": [
+    "Ù¢",
+    "ÙłÙłÙ§"
+   ],
+   "match": true,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "case_id": "arabic_indic_spaces_2007",
+   "case_class": "other_nd_digits",
+   "text": "  ٢٠٠٧",
+   "hf_ids": [
+    271,
+    18842,
+    107268,
+    68244
+   ],
+   "llama_ids": [
+    235,
+    235,
+    18842,
+    107268,
+    68244
+   ],
+   "hf_pretokens": [
+    "ĠĠ",
+    "Ù¢",
+    "ÙłÙłÙ§"
+   ],
+   "match": false,
+   "status": "MISMATCH",
+   "error": null
+  },
+  {
+   "case_id": "superscript_two",
+   "case_class": "digit_class_probe",
+   "text": "x²",
+   "hf_ids": [
+    102,
+    24787
+   ],
+   "llama_ids": [
+    102,
+    24787
+   ],
+   "hf_pretokens": [
+    "x",
+    "Â²"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "superscript_run_2345",
+   "case_class": "digit_class_probe",
+   "text": "x²³⁴⁵",
+   "hf_ids": [
+    102,
+    24787,
+    71524,
+    159421,
+    127,
+    159421,
+    128
+   ],
+   "llama_ids": [
+    102,
+    24787,
+    71524,
+    159421,
+    127,
+    159421,
+    128
+   ],
+   "hf_pretokens": [
+    "x",
+    "Â²Â³âģ´",
+    "âģµ"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "superscript_run_after_space",
+   "case_class": "digit_class_probe",
+   "text": " ²³⁴⁵",
+   "hf_ids": [
+    235,
+    24787,
+    71524,
+    159421,
+    127,
+    159421,
+    128
+   ],
+   "llama_ids": [
+    235,
+    24787,
+    71524,
+    159421,
+    127,
+    159421,
+    128
+   ],
+   "hf_pretokens": [
+    "Ġ",
+    "Â²Â³âģ´",
+    "âģµ"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "decimal_then_superscript",
+   "case_class": "digit_class_probe",
+   "text": "12²",
+   "hf_ids": [
+    979,
+    24787
+   ],
+   "llama_ids": [
+    979,
+    24787
+   ],
+   "hf_pretokens": [
+    "12Â²"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "roman_numeral_twelve",
+   "case_class": "digit_class_probe",
+   "text": "Ⅻ",
+   "hf_ids": [
+    75163,
+    119
+   ],
+   "llama_ids": [
+    75163,
+    119
+   ],
+   "hf_pretokens": [
+    "âħ«"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "roman_run_1234",
+   "case_class": "digit_class_probe",
+   "text": "ⅠⅡⅢⅣ",
+   "hf_ids": [
+    184144,
+    184143,
+    75163,
+    110,
+    75163,
+    111
+   ],
+   "llama_ids": [
+    184144,
+    184143,
+    75163,
+    110,
+    75163,
+    111
+   ],
+   "hf_pretokens": [
+    "âħłâħ¡âħ¢",
+    "âħ£"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "circled_one",
+   "case_class": "digit_class_probe",
+   "text": "①",
+   "hf_ids": [
+    35732
+   ],
+   "llama_ids": [
+    35732
+   ],
+   "hf_pretokens": [
+    "âĳł"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "circled_run_1234",
+   "case_class": "digit_class_probe",
+   "text": "①②③④",
+   "hf_ids": [
+    35732,
+    40499,
+    43109,
+    80887
+   ],
+   "llama_ids": [
+    35732,
+    40499,
+    43109,
+    80887
+   ],
+   "hf_pretokens": [
+    "âĳłâĳ¡âĳ¢",
+    "âĳ£"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  },
+  {
+   "case_id": "vulgar_fraction_half",
+   "case_class": "digit_class_probe",
+   "text": "½",
+   "hf_ids": [
+    54495
+   ],
+   "llama_ids": [
+    54495
+   ],
+   "hf_pretokens": [
+    "Â½"
+   ],
+   "match": true,
+   "status": "probe-same",
+   "error": null
+  }
+ ]
+}
