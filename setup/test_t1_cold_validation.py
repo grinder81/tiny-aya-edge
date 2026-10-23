@@ -33,6 +33,16 @@ class Selection(unittest.TestCase):
             other.write_text('same source')
             pinned = {str(actual.resolve()): gate.sha(actual)}
             self.assertEqual(gate.bind_imports([actual], pinned), pinned)
+            link = Path(directory) / 'alias.py'
+            try:
+                link.symlink_to(actual)
+            except (OSError, NotImplementedError):
+                pass  # Windows may not permit unprivileged symlinks; CI/Linux does.
+            else:
+                self.assertEqual(gate.bind_imports([actual], {str(link): gate.sha(actual)}), pinned)
+                self.assertEqual(gate.bind_imports([link], pinned), pinned)
+                with self.assertRaises(ValueError):
+                    gate.bind_imports([link], {**pinned, str(link): '0'*64})
             with self.assertRaises(ValueError):
                 gate.bind_imports([other], pinned)
             actual.write_text('changed source')
