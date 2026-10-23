@@ -11,5 +11,6 @@ jobs:
       - run: python setup/verify_a3_archive.py --directory results/a3-live-validation
       - run: pip install numpy
       - run: python setup/test_echo_top1.py
+      - run: python setup/test_t1_cold_validation.py
       - run: python bench/q4_matvec/roofline.py --params 3.35e9 --layers 32 --kv-heads 8 --head-dim 128 --context 4096 | head -5
       - run: bash -n setup/*.sh builds/*.sh
