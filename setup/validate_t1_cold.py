@@ -47,7 +47,13 @@ def prediction(scores):
 
 def bind_imports(paths, frozen):
     actual = {str(Path(p).resolve()): sha(p) for p in paths}
-    if any(frozen.get(path) != digest for path, digest in actual.items()):
+    resolved = {}
+    for path, digest in frozen.items():
+        target = str(Path(path).resolve())
+        if target in resolved and resolved[target] != digest:
+            raise ValueError('Conflicting frozen hashes for one resolved runtime file')
+        resolved[target] = digest
+    if any(resolved.get(path) != digest for path, digest in actual.items()):
         raise ValueError('Actually imported runtime differs from the frozen manifest')
     return actual
 
