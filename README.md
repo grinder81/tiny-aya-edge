@@ -46,3 +46,9 @@ sliding-window layers with RoPE per one global layer without positional embeddin
 Regional variants: tiny-aya-fire (South Asia), tiny-aya-earth (Africa, West Asia), tiny-aya-water.
 
 Derived weights published from this repo keep the CC-BY-NC terms. Code is Apache-2.0.
+
+**Deployment research (29 October 2026).** The [Liquid AI/Cohere review](docs/liquid-cohere-deployment-review-2026-10-29.md)
+records architecture, tokenizer and compression findings, published performance comparisons,
+existing Cohere deployment work, and a proposed multilingual deployment opportunity. Its
+[source ledger](docs/liquid-cohere-source-ledger-2026-10-29.md) separates author claims from
+local evidence and unresolved questions. It reports no new experiment or protocol change.
