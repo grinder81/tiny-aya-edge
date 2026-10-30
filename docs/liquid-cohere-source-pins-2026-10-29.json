@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "research_date_local": "2026-10-29",
+  "timezone": "America/Los_Angeles",
+  "metadata_checked_utc_date": "2026-10-30",
+  "repository_baseline": "8a0d922ef40f86ba3ea11e0b4a2656d25d4bcea4",
+  "companion_evidence_commit": "c0ea61dc2d30fc7fcfd18e0b874563bf2056f918",
+  "method": "Public Hugging Face /api/models/<id> metadata for current repository heads; local Get-FileHash SHA256 for existing project documents; selected benchmark rows checked against three revision-pinned raw READMEs. README hashes below cover their decoded text re-encoded as UTF-8, not independently verified weight files. No model weights downloaded or executed for this review.",
+  "limitations": [
+    "Repository heads are not weight-file SHA256 hashes.",
+    "Public pages were read separately; three pinned README benchmark tables were spot-checked, but raw files at pinned heads were not all audited.",
+    "Blog and product pages remain mutable; no complete page archive is claimed.",
+    "Displayed Liquid GGUF sizes are rounded, not independently measured bytes.",
+    "Local evidence sha256 fields hash Windows CRLF working-tree bytes; git_blob_oid fields identify portable repository blobs at repository_baseline.",
+    "Source numbers are author-reported unless explicitly identified as prior local artifact evidence."
+  ],
+  "models": [
+    {"id":"LiquidAI/LFM3-1.7B","revision":"ac2586a34f1a1c03329dbdcdefabd8b6478ddaa7","last_modified":"2026-10-28T17:16:37Z","gated":false,"api_license":"other","declared_license":"LFM Open License v1.0"},
+    {"id":"LiquidAI/LFM3-VL-2B","revision":"ba44bd51db20a2753f28c273a1571ccaa210d954","last_modified":"2026-10-28T23:16:11Z","gated":false,"api_license":"other","declared_license":"LFM Open License v1.0"},
+    {"id":"LiquidAI/LFM3-Audio-2B","revision":"cddb56b5ec9b4703f9b3b2d0500143d1fff2fee0","last_modified":"2026-10-29T09:34:03Z","gated":false,"api_license":"other","declared_license":"LFM Open License v1.0"},
+    {"id":"LiquidAI/LFM3-Omni-2B","revision":"5797d07c125503bd4f4c0e7f915ae2d3d703e8de","last_modified":"2026-10-28T23:16:38Z","gated":false,"api_license":"other","declared_license":"LFM Open License v1.0"},
+    {"id":"LiquidAI/LFM2.5-8B-A1B","revision":"5dd22602c2e9f6a097b1de4c4efe0658b605015c","last_modified":"2026-08-24T21:05:21Z","gated":false,"api_license":"other","declared_license":"LFM Open License v1.0"},
+    {"id":"CohereLabs/tiny-aya-global","revision":"af89d219b53ed9b13b8a4645f9c8028973510324","last_modified":"2026-09-30T13:24:36Z","gated":"auto","api_license":"cc-by-nc-4.0","declared_license":"CC-BY-NC with acceptable-use addendum"},
+    {"id":"CohereLabs/North-Micro-Vision-Instruct","revision":"fa548d9aa62c1220bfd21fc6cfc465f1bd2a1a40","last_modified":"2026-09-30T13:30:59Z","gated":false,"api_license":"apache-2.0","declared_license":"Apache 2.0"},
+    {"id":"LiquidAI/LFM3-1.7B-GGUF","revision":"bad5729bba61d076fff20d2548e62526665af215","last_modified":"2026-10-28T22:16:43Z"},
+    {"id":"CohereLabs/tiny-aya-global-GGUF","revision":"a602ea7eeec3a4ad6f77a1b8cf6a53512824922b","last_modified":"2026-02-17T01:43:40Z"}
+  ],
+  "pinned_readme_spot_checks": [
+    {
+      "id":"LiquidAI/LFM3-1.7B",
+      "revision":"ac2586a34f1a1c03329dbdcdefabd8b6478ddaa7",
+      "path":"README.md",
+      "utf8_text_sha256":"ca4ea3e8ddda8690b0479d0bbcdd4539f92d42e0092aa396a2bd29a75b6d59d8",
+      "column_order":["LFM3-1.7B"],
+      "checked_rows":[
+        {"label":"BFCL V4","source_values":["71.39"]},
+        {"label":"SWE-bench Verified (OpenCode)","source_values":["43.40"]},
+        {"label":"IFEval","source_values":["96.66"]}
+      ]
+    },
+    {
+      "id":"LiquidAI/LFM3-VL-2B",
+      "revision":"ba44bd51db20a2753f28c273a1571ccaa210d954",
+      "path":"README.md",
+      "utf8_text_sha256":"5bf94c37626a07e676e7d97d3b0bcdb56946b64a1099c89b8324fd05bd5b5da2",
+      "column_order":["LFM3-VL-2B thinking","LFM3-VL-2B non-thinking"],
+      "checked_rows":[
+        {"label":"DocVQA (val)","source_values":["96.7","94.9"]},
+        {"label":"ChartQA (test)","source_values":["92.7","81.4"]},
+        {"label":"RealWorldQA","source_values":["79.3","73.1"]},
+        {"label":"OCRBench v1","source_values":["86.3","82.2"]}
+      ]
+    },
+    {
+      "id":"CohereLabs/North-Micro-Vision-Instruct",
+      "revision":"fa548d9aa62c1220bfd21fc6cfc465f1bd2a1a40",
+      "path":"README.md",
+      "utf8_text_sha256":"b7837743ea686f54cdc7377ba7bcf05b523649db6a0ef116d3a4ba1bf8059f12",
+      "column_order":["North-Micro-Vision-Instruct; source fractions, multiply by 100 for report"],
+      "checked_rows":[
+        {"label":"DocVQAVAL","source_values":["0.921"]},
+        {"label":"ChartQATest","source_values":["0.808"]},
+        {"label":"RealWorldQA","source_values":["0.622"]},
+        {"label":"OCRBench","source_values":["0.792"]}
+      ]
+    }
+  ],
+  "local_evidence": [
+    {"path":"reports/stage1-downloaded/inspection.json","sha256":"3684505a6cce0f411404d59823174735387fd846eac6fb92859f0332d5c03941","working_tree_line_endings":"CRLF","git_blob_oid":"619f2eb1687257c9b41acd5a69d72f1b039d4603"},
+    {"path":"reports/control-tensor-inventory.md","sha256":"a9e9bead6fd1c687b65659bedaaf058f0623aaf8684a37bfea40767cc5bef0b1","working_tree_line_endings":"CRLF","git_blob_oid":"5fd946ae3e83222208bb5d9617653bfc021d6bdd"},
+    {"path":"device/README.md","sha256":"f5dca2d0073dfa82bd5ecdce896e960f25e51aea6e3d9c7ff826289baf7ac183","working_tree_line_endings":"CRLF","git_blob_oid":"87a6655397f540abd1070540bf5b80a54f3330f5"},
+    {"path":"docs/stage2-plan.md","sha256":"2edece453d09b2e176d2298ed249e6225f4cc5da4342268e5bccac549baf818a","working_tree_line_endings":"CRLF","git_blob_oid":"dc7f01cb9d5beeca46dfbb6d538c11aa52d1e3a3"}
+  ]
+}
