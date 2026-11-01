@@ -88,6 +88,8 @@ def main():
         source_sha256=SOURCE_SHA,implementation_sha256=sha(__file__),native_library_sha256=sha(a.library),
         formats=dict(lower=low,higher=high,operating_gate_type=gate.name),base_inventory=base,
         targets=TARGETS,diagnostics=diagnostics,pairs=pairs,
+        probe_sources={str(rep):[row['source'] for row in json.loads(a.pool.read_text())['pools'][f'rep{rep}_probe']] for rep in (1,2,3)},
+        construction_sources={str(rep):[row['source'] for row in json.loads(a.pool.read_text())['pools'][f'rep{rep}_construction']] for rep in (1,2,3)},
         cap=dict(native_minutes=90,proxy_minutes=30,local_artifact_bytes=400_000_000_000),
         note='Mechanical pre-outcome derivation. No C8 language score used for formats, sites, budgets or pair eligibility.')
     a.output.parent.mkdir(parents=True,exist_ok=True)
