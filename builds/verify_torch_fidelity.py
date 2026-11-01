@@ -14,6 +14,14 @@ def main():
     p=argparse.ArgumentParser(description=__doc__,add_help=False)
     p.add_argument('--torch-site',type=Path,required=True)
     a,remaining=p.parse_known_args()
+    # Initialize the native CUDA backend before Torch can resolve competing
+    # CUDA/cuBLAS shared libraries from its separate environment.
+    runtime_path=Path(remaining[remaining.index('--bf16-runtime')+1])
+    runtime=json.loads(runtime_path.read_text())
+    model_path=runtime['server_command'][runtime['server_command'].index('--model')+1]
+    from llama_cpp import Llama
+    vocabulary=Llama(model_path=model_path,vocab_only=True,n_gpu_layers=0,verbose=False)
+    vocabulary.close()
     reducer=TorchReducer(a.torch_site)
     sys.argv=[sys.argv[0]]+remaining
     profile()  # Existing T1 three-prompt bridge, now with Torch already imported.
@@ -36,6 +44,7 @@ def main():
         native_t1_max_letter_error=max(r['t1_letter_max_error_nats'] for r in report['records']),
         torch_version=torch.__version__,torch_source_sha256=sha(torch.__file__),torch_extension_sha256=sha(torch._C.__file__),
         reducer_source_sha256=sha(Path(__file__).with_name('t3_fidelity.py')),
+        native_backend_initialized_before_torch=True,
         hardware=subprocess.check_output(['nvidia-smi','--query-gpu=name,driver_version','--format=csv,noheader'],text=True).strip(),
         interpretation='Nontrivial synthetic perturbations of actual logits verify reduction math; three T1 prompts bound native inference compatibility after Torch import. No C8 language rankings or new task results.')
     with (output/'torch-verification.json').open('x') as stream:
