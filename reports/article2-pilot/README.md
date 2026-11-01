@@ -25,7 +25,7 @@ The actual GGUF has one stored `token_embd.weight` with 536,870,912 parameters a
 
 The existing BF16 and Q4 models were profiled sequentially on exactly original development index0 in English, Bangla and Hindi, under the [frozen resource specification](../../docs/article2-resource-profile.md). All tokens matched the T1 lock. Their twelve final letter probabilities per arm matched the verified T1 scores with maximum absolute error2.12e-7nats, below the0.0002 gate. Full-vocabulary KL was reduced in float64 chunks of at most8rows.
 
-The profile completed in26.00seconds after runtime verification. It cached628content-token distributions, approximately629MiB including array headers. Across the complete900prompt lock,176,756content-token distributions would require185,342,099,456raw float32bytes, about172.6GiB, before headers. This is a storage projection, not a measured full-900 runtime. Three prompts do not estimate a language effect. Individual forward timings include warm-up and are not phone performance or an inference throughput benchmark.
+The recorded profile interval was 26.00 seconds, including runtime verification and model execution. It cached 628 content-token distributions, approximately 628 MiB plus array headers. Across the complete 900-prompt lock, 176,756 content-token distributions would require 185,342,099,456 raw float32 bytes, about 172.6 GiB, before headers. This is a storage projection, not a measured full-900 runtime. Three prompts do not estimate a language effect. Individual forward timings include warm-up and are not phone performance or an inference throughput benchmark.
 
 ## Fisher resource profile
 
