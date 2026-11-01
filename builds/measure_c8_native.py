@@ -88,6 +88,8 @@ def main():
         if nominee['pair'] is None or exported['nomination_sha256']!=sha(a.nomination) or exported['plan_sha256']!=sha(a.plan):
             raise ValueError('Wrong frozen nominee/export')
         cases=exported['cases']
+        if exported['pair']!=nominee['pair'] or len(cases)!=2 or {c['label'] for c in cases}!={'mapA','mapB'} or any(c['bytes']!=nominee['pair']['map_a_bytes'] or c['bytes']>plan['operating_point']['bytes'] for c in cases):
+            raise ValueError('Confirmation models violate nominated pair or equal-byte budget')
     a.directory.mkdir(parents=True,exist_ok=True)
     marker=a.directory/'identity.json'
     identity=dict(schema='c8-native-measurement-v1',mode=a.mode,repetitions=a.repeat,
@@ -100,6 +102,8 @@ def main():
         reference_identity=reference_report['identity']
         if reference_identity['mode']!='reference' or reference_identity['plan_sha256']!=sha(a.plan) or reference_identity['repetitions']!=a.repeat:
             raise ValueError('Wrong frozen native reference report')
+        if len(reference_identity['cases'])!=1 or reference_identity['cases'][0]['sha256']!=plan['source_sha256']:
+            raise ValueError('Native reference is not the BF16 control')
         identity['reference_report_sha256']=sha(a.reference/'report.json')
     if marker.exists():
         if read(marker)!=identity:
