@@ -164,7 +164,7 @@ def main():
             model.eval(ids)
             record=expected|dict(forward_seconds=time.monotonic()-before)
             scores=model._scores[:len(ids)-1]
-            if scores.shape!=(len(ids)-1,262144) or not np.isfinite(scores).all():
+            if scores.shape!=(len(ids)-1,262144) or scores.dtype!=np.float32 or not np.isfinite(scores).all():
                 raise ValueError('Invalid direct logits')
             before=time.monotonic()
             if a.mode=='reference':
