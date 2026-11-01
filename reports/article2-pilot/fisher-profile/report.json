@@ -1,0 +1,36 @@
+{
+  "scope": "G1 one-example sequence-level empirical Fisher proxy resource profile; no training or language ranking",
+  "implementation_sha256": "fcb0ff683fb4c13f45f8265fa09cdc1f32f5bd13d35f0b08d7053695f65ccb48",
+  "pool_sha256": "c17a79fede7ff993f247d4a23cce533ea796887b0ce416c227407bc471997fd3",
+  "source": "TED2020:talk:127",
+  "language": "eng_Latn",
+  "tokens": 64,
+  "model_ids_sha256": "eae8ef1481ad0f3410cf6c989e50b93afe796de5906bd9763ca58ba2f0d189f2",
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.20.1"
+  },
+  "dtype": "float32",
+  "attention": "eager",
+  "tf32": false,
+  "parameter": "model.layers.17.mlp.down_proj.weight",
+  "objective": "Mean next-token NLL over64 content tokens; square the per-example gradient before any across-example average",
+  "checkpoint_files": {
+    "model-00001-of-00002.safetensors": "0590022d0efe06f12e08e1e94302f069dff404341b426f7435c6303725635fb1",
+    "model-00002-of-00002.safetensors": "2ac3809931d113785058809f27775620e0b8aec6fbc7e163c9c09c08b5f90dab"
+  },
+  "config_sha256": "458a9265b6a96e5ad4bbe1857716bd69e434f062f8b32fae48f5f06197d26384",
+  "source_gguf_sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+  "whole_selected_weight_exact": true,
+  "load_and_weight_gate_seconds": 53.186308639124036,
+  "loaded_torch_allocated_bytes": 13396911104,
+  "forward_seconds": 0.6956777239684016,
+  "backward_seconds": 0.07979937898926437,
+  "mean_next_token_nll": 3.415313243865967,
+  "selected_parameters": 22544384,
+  "gradient_l2": 1.3537296056747437,
+  "squared_per_example_gradient_sum": 1.8325839216946946,
+  "torch_peak_allocated_bytes": 13984115200,
+  "status": "complete",
+  "elapsed_seconds": 54.04551220405847
+}
