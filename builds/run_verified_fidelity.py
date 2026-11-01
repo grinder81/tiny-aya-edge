@@ -39,6 +39,8 @@ def main():
         raise ValueError('Non-model inference settings or native imports changed')
     if receipt['status']!='passed' or not receipt['native_backend_initialized_before_torch'] or receipt['reducer_source_sha256']!=sha(core) or receipt['native_t1_max_letter_error']>.0002 or any(r['max_error_nats']>1e-10 for r in receipt['checks']):
         raise ValueError('Optional GPU path lacks its numerical verification')
+    if receipt.get('torch_cpu_threads')!=1:
+        raise ValueError('Verified host-thread setting missing')
     if sha(a.verification.parent/'report.json')!=receipt['native_profile_sha256']:
         raise ValueError('Native compatibility evidence changed')
     from llama_cpp import Llama
@@ -46,6 +48,7 @@ def main():
     vocabulary.close()
     reducer=t3_fidelity.TorchReducer(a.torch_site)
     torch=reducer.torch
+    torch.set_num_threads(receipt['torch_cpu_threads'])
     if sha(torch.__file__)!=receipt['torch_source_sha256'] or sha(torch._C.__file__)!=receipt['torch_extension_sha256']:
         raise ValueError('Verified Torch implementation changed')
     sys.argv=[sys.argv[0]]+remaining+['--torch-site',str(a.torch_site)]
@@ -56,6 +59,7 @@ def main():
             verification_sha256=sha(a.verification),reference_manifest_sha256=a.reference_manifest_sha256,
             manifest_sha256=sha(directory/'manifest.json'),runtime_sha256=sha(arg('runtime')),
             native_backend_initialized_before_torch=True)
+        result['torch_cpu_threads']=torch.get_num_threads()
         path=directory.parent/(directory.name+'-verified.json')
         if path.exists():
             if json.loads(path.read_text())!=result:

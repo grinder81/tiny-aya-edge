@@ -23,6 +23,7 @@ def main():
     vocabulary=Llama(model_path=model_path,vocab_only=True,n_gpu_layers=0,verbose=False)
     vocabulary.close()
     reducer=TorchReducer(a.torch_site)
+    reducer.torch.set_num_threads(1)
     sys.argv=[sys.argv[0]]+remaining
     profile()  # Existing T1 three-prompt bridge, now with Torch already imported.
     output=Path(remaining[remaining.index('--output')+1])
@@ -45,6 +46,7 @@ def main():
         torch_version=torch.__version__,torch_source_sha256=sha(torch.__file__),torch_extension_sha256=sha(torch._C.__file__),
         reducer_source_sha256=sha(Path(__file__).with_name('t3_fidelity.py')),
         native_backend_initialized_before_torch=True,
+        torch_cpu_threads=torch.get_num_threads(),
         hardware=subprocess.check_output(['nvidia-smi','--query-gpu=name,driver_version','--format=csv,noheader'],text=True).strip(),
         interpretation='Nontrivial synthetic perturbations of actual logits verify reduction math; three T1 prompts bound native inference compatibility after Torch import. No C8 language rankings or new task results.')
     with (output/'torch-verification.json').open('x') as stream:
