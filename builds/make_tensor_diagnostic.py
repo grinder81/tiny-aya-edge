@@ -12,6 +12,7 @@ import gguf
 import numpy as np
 
 from builds.profile_pilot_bytes import QUANTIZER_REV,QUANTIZER_SHA,SOURCE_SHA,sha
+from builds.native_gguf import NativeGGUF
 
 
 def main():
@@ -30,9 +31,10 @@ def main():
         raise ValueError('Quantizer tracked modifications')
     if a.output.exists() or a.evidence.exists():
         raise FileExistsError('Existing diagnostic or evidence')
-    original=gguf.GGUFReader(str(a.source))
-    before={t.name:t for t in original.tensors}
-    if a.tensor not in before or len(before[a.tensor].shape)!=2:
+    native_file=a.checkout/'build/bin/libggml-base.so'
+    original=NativeGGUF(a.source,native_file)
+    before=original.tensors
+    if a.tensor not in before or len(before[a.tensor]['shape_gguf'])!=2:
         raise ValueError('Expected one two-dimensional stored tensor')
     a.evidence.mkdir(parents=True)
     temporary=a.output.with_suffix('.partial.gguf')
@@ -48,42 +50,41 @@ def main():
     try:
         with (a.evidence/'quantize.log').open('x') as log:
             subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,check=True)
-        exported=gguf.GGUFReader(str(temporary))
-        after={t.name:t for t in exported.tensors}
+        exported=NativeGGUF(temporary,native_file)
+        after=exported.tensors
         if before.keys()!=after.keys():
             raise ValueError('Stored tensor membership changed')
         unchanged={}
         for name,src in before.items():
             dst=after[name]
-            if not np.array_equal(src.shape,dst.shape):
+            if src['shape_gguf']!=dst['shape_gguf']:
                 raise ValueError('Tensor shape changed: '+name)
             if name==a.tensor:
-                if dst.tensor_type.name!=a.native_type:
+                if dst['type']!=a.native_type:
                     raise ValueError('Native target override was not applied')
             else:
-                source_hash=hashlib.sha256(src.data).hexdigest()
-                target_hash=hashlib.sha256(dst.data).hexdigest()
-                if src.tensor_type!=dst.tensor_type or source_hash!=target_hash:
+                source_hash=hashlib.sha256(np.memmap(a.source,mode='r',dtype=np.uint8,offset=src['offset'],shape=(src['payload_bytes'],))).hexdigest()
+                target_hash=hashlib.sha256(np.memmap(temporary,mode='r',dtype=np.uint8,offset=dst['offset'],shape=(dst['payload_bytes'],))).hexdigest()
+                if src['type']!=dst['type'] or source_hash!=target_hash:
                     raise ValueError('Non-target tensor changed: '+name)
                 unchanged[name]=source_hash
-        native_file=a.checkout/'build/bin/libggml-base.so'
         native=ctypes.CDLL(str(native_file))
         native.ggml_quantize_chunk.argtypes=[ctypes.c_int,ctypes.c_void_p,ctypes.c_void_p,ctypes.c_int64,ctypes.c_int64,ctypes.c_int64,ctypes.c_void_p]
         native.ggml_quantize_chunk.restype=ctypes.c_size_t
         native.ggml_row_size.argtypes=[ctypes.c_int,ctypes.c_int64]
         native.ggml_row_size.restype=ctypes.c_size_t
         src,dst=before[a.tensor],after[a.tensor]
-        width,height=map(int,src.shape)
+        width,height=src['shape_gguf']
         sampled=[]
         for row in sorted({0,height//2,height-1}):
-            values=np.ascontiguousarray(gguf.dequantize(src.data[row:row+1],src.tensor_type).ravel(),dtype=np.float32)
-            packed=np.empty(native.ggml_row_size(int(dst.tensor_type),width),dtype=np.uint8)
-            written=native.ggml_quantize_chunk(int(dst.tensor_type),values.ctypes.data,packed.ctypes.data,0,1,width,None)
-            if written!=packed.nbytes or not np.array_equal(packed,dst.data[row:row+1].ravel()):
+            values=np.ascontiguousarray(original.rows(a.tensor,row,row+1).ravel(),dtype=np.float32)
+            packed=np.empty(native.ggml_row_size(dst['type_id'],width),dtype=np.uint8)
+            written=native.ggml_quantize_chunk(dst['type_id'],values.ctypes.data,packed.ctypes.data,0,1,width,None)
+            if written!=packed.nbytes or not np.array_equal(packed,exported.raw_rows(a.tensor,row,row+1).ravel()):
                 raise ValueError('Native/exported target row disagreement')
             sampled.append(dict(row=row,bytes=packed.nbytes,sha256=hashlib.sha256(packed).hexdigest()))
         report.update(output_sha256=sha(temporary),output_bytes=temporary.stat().st_size,
-            output_path=str(a.output),target_payload_bytes=int(dst.n_bytes),
+            output_path=str(a.output),target_payload_bytes=dst['payload_bytes'],
             native_library_sha256=sha(native_file),native_row_parity=sampled,
             unchanged_tensor_payload_sha256=unchanged,seconds=time.monotonic()-started,status='complete')
         # Readers mmap the partial file; rename is safe on the Linux build host.
