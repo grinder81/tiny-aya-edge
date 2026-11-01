@@ -17,7 +17,8 @@ def main():
         p.add_argument('--'+key,type=Path,required=True)
     p.add_argument('--file-type',choices=('Q6_K','Q3_K_M','Q3_K_S','Q2_K','IQ3_S'),required=True)
     a=p.parse_args()
-    blob=subprocess.check_output(['git','hash-object',str(a.specification)],text=True).strip()
+    content=a.specification.read_bytes().replace(b'\r\n',b'\n')
+    blob=hashlib.sha1(b'blob '+str(len(content)).encode()+b'\0'+content).hexdigest()
     if blob!=FREEZE_BLOB:
         raise ValueError('T3 frozen specification differs')
     binary=a.checkout/'build/bin/llama-quantize'
