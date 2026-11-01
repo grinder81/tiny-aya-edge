@@ -107,6 +107,7 @@ def main():
     projected=sum(len(r['model_context_ids'])-1 for r in rows)*262144*4
     if projected>220_000_000_000:
         raise ValueError('Frozen raw reference-cache cap exceeded')
+    a.directory.parent.mkdir(parents=True,exist_ok=True)
     if not a.directory.exists() and a.mode=='reference' and shutil.disk_usage(a.directory.parent).free<270_000_000_000:
         raise ValueError('Insufficient free space for frozen cache cap and50GB reserve')
     a.directory.mkdir(parents=True,exist_ok=True)

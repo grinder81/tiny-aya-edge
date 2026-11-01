@@ -95,6 +95,12 @@ def main():
         implementation_sha256=sha(__file__),math_sha256=sha(Path(__file__).with_name('profile_pilot_kl.py')),
         imported_runtime=imported,nomination_sha256=sha(a.nomination) if a.nomination else None,
         cases=cases)
+    if a.mode!='reference':
+        reference_report=read(a.reference/'report.json')
+        reference_identity=reference_report['identity']
+        if reference_identity['mode']!='reference' or reference_identity['plan_sha256']!=sha(a.plan) or reference_identity['repetitions']!=a.repeat:
+            raise ValueError('Wrong frozen native reference report')
+        identity['reference_report_sha256']=sha(a.reference/'report.json')
     if marker.exists():
         if read(marker)!=identity:
             raise ValueError('Native C8 checkpoint identity changed')
@@ -146,7 +152,7 @@ def main():
                     record.update(cache_sha256=sha(cache),cache_bytes=cache.stat().st_size)
                 else:
                     cache=a.reference/(label+'.npy')
-                    metadata=read(a.reference/'case-00.json')
+                    metadata=reference_report['cases'][0]
                     expected=next(r for r in metadata['records'] if all(r[k]==record[k] for k in ('repeat','index','source','language')))
                     if sha(cache)!=expected['cache_sha256']:
                         raise ValueError('C8 reference cache changed')
