@@ -1,0 +1,21 @@
+{
+  "implementation_sha256": "d451d6405a70ca01c75be87b8bc91b9ba956031454f794caee546c0150e7d5a0",
+  "reference_sha256": "38d35514d2ddfc5b1eb98ce2c73f9db766d247d1b39d696ac3b5787f86d31d3a",
+  "reference_bytes": 263192704,
+  "sha_seconds": 0.30077173584140837,
+  "results": [
+    {
+      "torch_cpu_threads": 16,
+      "seconds": 0.7646763899829239,
+      "tokens": 251,
+      "cpu_oracle_error": 1.2343641733747468e-15
+    },
+    {
+      "torch_cpu_threads": 1,
+      "seconds": 0.19713087705895305,
+      "tokens": 251,
+      "cpu_oracle_error": 1.2343641733747468e-15
+    }
+  ],
+  "scope": "Fixed-logit fixture; complete host/device reduction with CPU oracle, no model forward or language comparison"
+}

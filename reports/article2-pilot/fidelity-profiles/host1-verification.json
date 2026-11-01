@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "implementation_sha256": "68d528e8ed271b4348a30ed61dbb9b36a2c6495c5b25aa4becece1825149fd01",
+  "native_profile_sha256": "b38a27c7daeee87c102b324a89284fad9f7febae6c3851709a033dd06f12c3bc",
+  "checks": [
+    {
+      "language": "eng_Latn",
+      "tokens": 11,
+      "max_error_nats": 1.580488940677166e-15
+    },
+    {
+      "language": "ben_Beng",
+      "tokens": 11,
+      "max_error_nats": 2.6254497707822733e-15
+    },
+    {
+      "language": "hin_Deva",
+      "tokens": 11,
+      "max_error_nats": 1.4096796646656529e-15
+    }
+  ],
+  "native_t1_max_letter_error": 2.1194783750289048e-07,
+  "torch_version": "2.13.0+cu130",
+  "torch_source_sha256": "cf40c075c95864036e835795756d69b8cccfafa76f3bcde5eba9d06065ccd3d1",
+  "torch_extension_sha256": "819a187ea3b1f4d781200fe73fba3264689835d2285f7e6d10b986257a802dce",
+  "reducer_source_sha256": "c1e2b8bddb935aaca6e3a564c55149029e8ba36ea80b60de69998923b9d44eba",
+  "native_backend_initialized_before_torch": true,
+  "torch_cpu_threads": 1,
+  "hardware": "NVIDIA GeForce RTX 5090, 610.88",
+  "interpretation": "Nontrivial synthetic perturbations of actual logits verify reduction math; three T1 prompts bound native inference compatibility after Torch import. No C8 language rankings or new task results."
+}
