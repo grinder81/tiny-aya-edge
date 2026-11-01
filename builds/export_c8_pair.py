@@ -16,12 +16,12 @@ def read(path):
     return json.loads(Path(path).read_text())
 
 
-def main():
-    p=argparse.ArgumentParser(description=__doc__)
-    for key in ('plan','nomination','source','checkout','directory'):
-        p.add_argument('--'+key,type=Path,required=True)
-    a=p.parse_args()
-    plan,nomination=read(a.plan),read(a.nomination)
+from builds.c8_budget import BudgetOperation,require_passed_operation
+from builds.c8_nomination import validate_nomination
+
+
+def run(a,budget):
+    plan,nomination=read(a.plan),validate_nomination(a.nomination,a.plan)
     pair=nomination['pair']
     if pair is None or nomination['plan_sha256']!=sha(a.plan) or pair not in plan['pairs'] or not pair['eligible']:
         raise ValueError('No valid frozen feasible nominee')
@@ -34,11 +34,13 @@ def main():
     if subprocess.check_output(['git','-C',str(a.checkout),'rev-parse','HEAD'],text=True).strip()!=QUANTIZER_REV or subprocess.check_output(['git','-C',str(a.checkout),'diff','HEAD'],text=True):
         raise ValueError('Quantizer source changed')
     a.directory.mkdir(parents=True)
+    budget.reserve(2*plan['operating_point']['bytes']+2_000_000)
     low,high=plan['formats']['lower'],plan['formats']['higher']
     source=NativeGGUF(a.source,library)
     cases=[]
     hashes={}
     for label,first_type,second_type in [('mapA',high,low),('mapB',low,high)]:
+        budget.check()
         layout={name:row['type'] for name,row in plan['base_inventory'].items()}
         layout[pair['first']]=first_type
         layout[pair['second']]=second_type
@@ -48,12 +50,13 @@ def main():
         command=[str(binary),'--tensor-type-file',str(assignment),str(a.source),str(output),'Q4_K_M','8']
         started=time.monotonic()
         with (a.directory/(label+'-quantize.log')).open('x') as log:
-            subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,check=True)
+            subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=budget.remaining())
         model=NativeGGUF(output,library)
         if model.tensors.keys()!=source.tensors.keys():
             raise ValueError('Exported model membership differs')
         payloads={}
         for name,tensor in model.tensors.items():
+            budget.check(False)
             if tensor['type']!=layout[name] or tensor['shape_gguf']!=source.tensors[name]['shape_gguf']:
                 raise ValueError('Locked complete-map layout differs: '+name)
             if name not in (pair['first'],pair['second']):
@@ -64,6 +67,7 @@ def main():
         if actual!=predicted or actual>plan['operating_point']['bytes'] or actual>2_200_000_000:
             raise ValueError('Actual complete-map bytes violate frozen budget')
         hashes[label]=payloads
+        budget.check()
         cases.append(dict(label=label,path=str(output),sha256=sha(output),bytes=actual,
             command=command,assignment_sha256=sha(assignment),seconds=time.monotonic()-started))
     if cases[0]['bytes']!=cases[1]['bytes'] or hashes['mapA']!=hashes['mapB']:
@@ -71,12 +75,24 @@ def main():
     report=dict(schema='c8-nominated-pair-export-v1',plan_sha256=sha(a.plan),nomination_sha256=sha(a.nomination),
         source_sha256=SOURCE_SHA,quantizer_revision=QUANTIZER_REV,quantizer_binary_sha256=QUANTIZER_SHA,
         implementation_sha256=sha(__file__),pair=pair,cases=cases,
+        budget_operation_id=budget.operation_id,
         unchanged_nonpair_payload_sha256=hashes['mapA'],
         note='Exact actual-byte equality; all nonpair format assignments and payloads match. No padding or importance matrix.')
+    budget.check()
     with (a.directory/'pair-export.json').open('x') as stream:
         json.dump(report,stream,indent=2)
         stream.write('\n')
     print(json.dumps(dict(cases=cases)),flush=True)
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    for key in ('plan','nomination','source','checkout','directory'):
+        p.add_argument('--'+key,type=Path,required=True)
+    a=p.parse_args()
+    context=BudgetOperation(a.plan,'native','nominated-pair-export',(a.directory,))
+    with context as budget:
+        run(a,budget)
 
 
 if __name__=='__main__':

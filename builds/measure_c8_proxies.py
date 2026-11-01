@@ -20,7 +20,7 @@ def save(path,value):
         stream.write('\n')
 
 
-def errors(plan,plan_path,source,library,directory):
+def errors(plan,plan_path,source,library,directory,budget):
     marker=directory/'manifest.json'
     identity=dict(plan_sha256=sha(plan_path),implementation_sha256=sha(__file__),
         native_reader_sha256=sha(Path(__file__).with_name('native_gguf.py')),
@@ -41,18 +41,24 @@ def errors(plan,plan_path,source,library,directory):
     original=NativeGGUF(source,library)
     entries=[]
     for number,diagnostic in enumerate(plan['diagnostics']):
+        budget.check()
         manifest=read(Path(diagnostic['evidence_path'])/'manifest.json')
         if manifest['status']!='complete' or manifest['tensor']!=diagnostic['tensor'] or manifest['native_type']!=diagnostic['native_type'] or sha(diagnostic['output_path'])!=manifest['output_sha256']:
             raise ValueError('Native error diagnostic differs')
+        if manifest.get('budget_plan_sha256')!=sha(plan_path):
+            raise ValueError('Native diagnostic export was not budgeted')
+        require_passed_operation(plan_path,manifest['budget_operation_id'],'native')
         candidate=NativeGGUF(diagnostic['output_path'],library)
         name=diagnostic['tensor']
         width,height=original.tensors[name]['shape_gguf']
         if candidate.tensors[name]['shape_gguf']!=[width,height]:
             raise ValueError('Quantized error shape changed')
         path=directory/(f'error-{number:02}.npy')
+        budget.reserve(height*width*4+2_000_000)
         error=np.lib.format.open_memmap(path,mode='w+',dtype=np.float32,shape=(height,width))
         columns=np.zeros(width,dtype=np.float64)
         for start in range(0,height,512):
+            budget.check(False)
             end=min(start+512,height)
             delta=original.rows(name,start,end)-candidate.rows(name,start,end)
             squared=delta*delta
@@ -65,24 +71,25 @@ def errors(plan,plan_path,source,library,directory):
             diagnostic_sha256=manifest['output_sha256']))
         print('cached native errors',name,diagnostic['native_type'],flush=True)
     save(marker,dict(identity=identity,entries=entries))
+    budget.check()
     return entries
 
 
-def main():
-    p=argparse.ArgumentParser(description=__doc__)
-    for key in ('plan','pool','model','source','library','checkpoint-proof','directory'):
-        p.add_argument('--'+key,type=Path,required=True)
-    p.add_argument('--repeat',type=int,choices=(1,2,3),action='append',required=True)
-    p.add_argument('--nomination',type=Path)
-    a=p.parse_args()
+from builds.c8_budget import BudgetOperation,require_passed_operation
+from builds.c8_nomination import validate_nomination
+
+
+def run(a,budget):
     plan,pool,proof=read(a.plan),read(a.pool),read(a.checkpoint_proof)
     if plan['private_pool_sha256']!=POOL_SHA or sha(a.pool)!=POOL_SHA or plan['specification_git_blob']!=SPEC_BLOB:
         raise ValueError('Frozen proxy plan/pool changed')
     if len(a.repeat)!=len(set(a.repeat)):
         raise ValueError('Duplicate repetition')
-    if 3 in a.repeat and (not a.nomination or read(a.nomination)['plan_sha256']!=sha(a.plan)):
-        raise ValueError('Freeze discovery nomination before repetition3 proxies')
-    entries=errors(plan,a.plan,a.source,a.library,a.directory/'errors')
+    if 3 in a.repeat:
+        if not a.nomination:
+            raise ValueError('Freeze discovery nomination before repetition3 proxies')
+        validate_nomination(a.nomination,a.plan)
+    entries=errors(plan,a.plan,a.source,a.library,a.directory/'errors',budget)
     import torch
     import transformers
     from transformers import AutoModelForCausalLM,AutoTokenizer
@@ -101,7 +108,8 @@ def main():
         implementation_sha256=sha(__file__),error_manifest_sha256=sha(a.directory/'errors/manifest.json'),
         checkpoint_proof_sha256=sha(a.checkpoint_proof),repetitions=a.repeat,
         nomination_sha256=sha(a.nomination) if a.nomination else None,torch=torch.__version__,transformers=transformers.__version__,
-        dtype='float32',tf32=False,objective='Per-example mean64-token NLL; gradient squared before averaging')
+        dtype='float32',tf32=False,objective='Per-example mean64-token NLL; gradient squared before averaging',
+        budget_operation_id=budget.operation_id)
     run=a.directory/('repeats-'+'-'.join(map(str,a.repeat)))
     if run.exists():
         raise FileExistsError('Proxy run already exists; preserve and inspect')
@@ -117,6 +125,7 @@ def main():
     parameters=dict(model.named_parameters())
     original=NativeGGUF(a.source,a.library)
     for name,hf in plan['targets'].items():
+        budget.check()
         parameter=parameters[hf]
         width,height=original.tensors[name]['shape_gguf']
         if list(parameter.shape)!=[height,width]:
@@ -147,6 +156,7 @@ def main():
         for repeat in a.repeat:
             for index,example in enumerate(pool['pools'][f'rep{repeat}_construction']):
                 for language in ('eng_Latn','ben_Beng','hin_Deva'):
+                    budget.check()
                     if time.monotonic()-started>1800:
                         raise TimeoutError('Frozen proxy time cap')
                     ids=example['model_ids'][language]
@@ -163,12 +173,14 @@ def main():
                     record=dict(repeat=repeat,index=index,source=example['source'],language=language,tokens=64,
                         mean_next_token_nll=float(loss.detach().cpu()),forward_backward_seconds=time.monotonic()-before,scores=[])
                     for entry in entries:
+                        budget.check(False)
                         gradient=parameters[entry['hf_parameter']].grad
                         if gradient is None or not bool(torch.isfinite(gradient).all()):
                             raise ValueError('Missing/nonfinite per-example gradient')
                         squared=mmap[entry['path']]
                         weighted=torch.zeros((),device='cuda',dtype=torch.float64)
                         for start in range(0,squared.shape[0],512):
+                            budget.check(False)
                             end=min(start+512,squared.shape[0])
                             e=torch.tensor(np.asarray(squared[start:end]),device='cuda',dtype=torch.float64)
                             weighted+=torch.sum(gradient[start:end].double().square()*e)
@@ -184,14 +196,28 @@ def main():
                         record['scores'].append(dict(tensor=entry['tensor'],native_type=entry['native_type'],
                             fisher_score=.5*float(weighted.detach().cpu()),activation_score=activation,activation_components=components))
                     records.append(record)
+                    budget.check()
                     save(run/(f'r{repeat}-{index}-{language}.json'),record)
                     print(repeat,index,language,'proxy complete',flush=True)
+        budget.check()
         save(run/'report.json',dict(identity=identity,whole_selected_matrices_exact=list(plan['targets']),records=records,
             torch_peak_allocated_bytes=torch.cuda.max_memory_allocated(),seconds=time.monotonic()-started,
             interpretation='Descriptive sequence-Fisher and activation proxies; no optimizer steps or native-runtime equivalence claim.'))
     finally:
         for handle in handles:
             handle.remove()
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    for key in ('plan','pool','model','source','library','checkpoint-proof','directory'):
+        p.add_argument('--'+key,type=Path,required=True)
+    p.add_argument('--repeat',type=int,choices=(1,2,3),action='append',required=True)
+    p.add_argument('--nomination',type=Path)
+    a=p.parse_args()
+    context=BudgetOperation(a.plan,'proxy','proxies-'+str(a.repeat),(a.directory,))
+    with context as budget:
+        run(a,budget)
 
 
 if __name__=='__main__':

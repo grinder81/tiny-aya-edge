@@ -33,11 +33,13 @@ def choose_formats(kind,block_bytes):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    for key in ('curve','operating-model','source','pool','specification','library','artifacts','output'):
+    for key in ('curve','operating-model','source','pool','specification','library','artifacts','workspace','output'):
         p.add_argument('--'+key,type=Path,required=True)
     a=p.parse_args()
     if a.output.exists():
         raise FileExistsError(a.output)
+    if not a.artifacts.resolve().is_relative_to(a.workspace.resolve()) or not a.output.resolve().is_relative_to(a.workspace.resolve()):
+        raise ValueError('C8 artifacts and plan must share the frozen workspace')
     curve=json.loads(a.curve.read_text())
     point=curve['final_operating_point']
     if point is None:
@@ -87,7 +89,7 @@ def main():
         curve_report_sha256=sha(a.curve),operating_point=point,operating_model_sha256=expected,
         source_sha256=SOURCE_SHA,implementation_sha256=sha(__file__),native_library_sha256=sha(a.library),
         formats=dict(lower=low,higher=high,operating_gate_type=gate.name),base_inventory=base,
-        targets=TARGETS,diagnostics=diagnostics,pairs=pairs,
+        targets=TARGETS,diagnostics=diagnostics,pairs=pairs,artifact_workspace=str(a.workspace.resolve()),
         probe_sources={str(rep):[row['source'] for row in json.loads(a.pool.read_text())['pools'][f'rep{rep}_probe']] for rep in (1,2,3)},
         construction_sources={str(rep):[row['source'] for row in json.loads(a.pool.read_text())['pools'][f'rep{rep}_construction']] for rep in (1,2,3)},
         cap=dict(native_minutes=90,proxy_minutes=30,local_artifact_bytes=400_000_000_000),
