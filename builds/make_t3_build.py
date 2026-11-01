@@ -7,6 +7,7 @@ import subprocess
 import time
 
 from builds.profile_pilot_bytes import QUANTIZER_REV,QUANTIZER_SHA,SOURCE_SHA,sha
+from builds.native_gguf import NativeGGUF
 
 FREEZE_BLOB='700a0f601e6503d95b485ad5d048c20b4ef96910'
 
@@ -41,6 +42,12 @@ def main():
     try:
         with (a.evidence/'quantize.log').open('x') as log:
             subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,check=True)
+        actual=NativeGGUF(temporary,a.checkout/'build/bin/libggml-base.so')
+        original=NativeGGUF(a.source,a.checkout/'build/bin/libggml-base.so')
+        if actual.tensors.keys()!=original.tensors.keys() or any(row['shape_gguf']!=original.tensors[name]['shape_gguf'] for name,row in actual.tensors.items()):
+            raise ValueError('T3 inventory membership or shapes changed')
+        manifest['tensor_inventory']=actual.tensors
+        manifest['native_inventory_library_sha256']=sha(a.checkout/'build/bin/libggml-base.so')
         manifest.update(output_sha256=sha(temporary),output_bytes=temporary.stat().st_size,
             output_path=str(a.output),seconds=time.monotonic()-started,status='complete')
         temporary.rename(a.output)
