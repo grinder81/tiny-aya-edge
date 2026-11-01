@@ -9,7 +9,7 @@ from builds import t3_fidelity
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__,add_help=False)
+    p=argparse.ArgumentParser(description=__doc__,add_help=False,allow_abbrev=False)
     for key in ('verification','reference-runtime','torch-site'):
         p.add_argument('--'+key,type=Path,required=True)
     p.add_argument('--reference-manifest-sha256',required=True)
