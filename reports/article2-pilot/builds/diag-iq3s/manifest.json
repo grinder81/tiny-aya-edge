@@ -1,0 +1,2890 @@
+{
+  "source_sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+  "source_bytes": 6710484480,
+  "quantizer_revision": "797de63b2fa7396dcc8caca76834c699ac84e1c3",
+  "quantizer_binary_sha256": "6a2c2efac5f38ebe2c1994befd0dee745cb24ec5c33d6a2c5a50fb8b9fe1e5f0",
+  "specification_git_blob": "700a0f601e6503d95b485ad5d048c20b4ef96910",
+  "implementation_sha256": "0338a47709faddf23f78492450ebed3cc3a6fecc8e26794f6ccc8157a9902af4",
+  "command": [
+    "/home/shohag/tiny-aya-stage1/llama.cpp/build/bin/llama-quantize",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-control-bf16.gguf",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-diag-iq3s.partial.gguf",
+    "IQ3_S",
+    "8"
+  ],
+  "file_type": "IQ3_S",
+  "importance_matrix": null,
+  "calibration": null,
+  "scope": "T3 diagnostic precision point; no training",
+  "tensor_inventory": {
+    "output_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 11877888,
+      "payload_bytes": 8192
+    },
+    "token_embd.weight": {
+      "shape_gguf": [
+        2048,
+        262144
+      ],
+      "type_id": 14,
+      "type": "Q6_K",
+      "offset": 11886080,
+      "payload_bytes": 440401920
+    },
+    "blk.0.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 452288000,
+      "payload_bytes": 450560
+    },
+    "blk.0.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 452738560,
+      "payload_bytes": 8192
+    },
+    "blk.0.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 452746752,
+      "payload_bytes": 1802240
+    },
+    "blk.0.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 454548992,
+      "payload_bytes": 1802240
+    },
+    "blk.0.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 456351232,
+      "payload_bytes": 589824
+    },
+    "blk.0.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 456941056,
+      "payload_bytes": 9687040
+    },
+    "blk.0.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 466628096,
+      "payload_bytes": 9687040
+    },
+    "blk.0.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 476315136,
+      "payload_bytes": 9687040
+    },
+    "blk.1.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 486002176,
+      "payload_bytes": 450560
+    },
+    "blk.1.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 486452736,
+      "payload_bytes": 8192
+    },
+    "blk.1.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 486460928,
+      "payload_bytes": 1802240
+    },
+    "blk.1.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 488263168,
+      "payload_bytes": 1802240
+    },
+    "blk.1.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 490065408,
+      "payload_bytes": 589824
+    },
+    "blk.1.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 490655232,
+      "payload_bytes": 9687040
+    },
+    "blk.1.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 500342272,
+      "payload_bytes": 9687040
+    },
+    "blk.1.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 510029312,
+      "payload_bytes": 9687040
+    },
+    "blk.2.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 519716352,
+      "payload_bytes": 450560
+    },
+    "blk.2.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 520166912,
+      "payload_bytes": 8192
+    },
+    "blk.2.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 520175104,
+      "payload_bytes": 1802240
+    },
+    "blk.2.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 521977344,
+      "payload_bytes": 1802240
+    },
+    "blk.2.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 523779584,
+      "payload_bytes": 589824
+    },
+    "blk.2.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 524369408,
+      "payload_bytes": 9687040
+    },
+    "blk.2.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 534056448,
+      "payload_bytes": 9687040
+    },
+    "blk.2.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 543743488,
+      "payload_bytes": 9687040
+    },
+    "blk.3.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 553430528,
+      "payload_bytes": 450560
+    },
+    "blk.3.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 553881088,
+      "payload_bytes": 8192
+    },
+    "blk.3.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 553889280,
+      "payload_bytes": 1802240
+    },
+    "blk.3.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 555691520,
+      "payload_bytes": 1802240
+    },
+    "blk.3.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 557493760,
+      "payload_bytes": 589824
+    },
+    "blk.3.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 558083584,
+      "payload_bytes": 9687040
+    },
+    "blk.3.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 567770624,
+      "payload_bytes": 9687040
+    },
+    "blk.3.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 577457664,
+      "payload_bytes": 9687040
+    },
+    "blk.4.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 587144704,
+      "payload_bytes": 450560
+    },
+    "blk.4.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 587595264,
+      "payload_bytes": 8192
+    },
+    "blk.4.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 587603456,
+      "payload_bytes": 1802240
+    },
+    "blk.4.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 589405696,
+      "payload_bytes": 1802240
+    },
+    "blk.4.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 591207936,
+      "payload_bytes": 589824
+    },
+    "blk.4.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 591797760,
+      "payload_bytes": 9687040
+    },
+    "blk.4.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 601484800,
+      "payload_bytes": 9687040
+    },
+    "blk.4.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 611171840,
+      "payload_bytes": 9687040
+    },
+    "blk.5.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 620858880,
+      "payload_bytes": 450560
+    },
+    "blk.5.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 621309440,
+      "payload_bytes": 8192
+    },
+    "blk.5.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 621317632,
+      "payload_bytes": 1802240
+    },
+    "blk.5.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 623119872,
+      "payload_bytes": 1802240
+    },
+    "blk.5.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 624922112,
+      "payload_bytes": 589824
+    },
+    "blk.5.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 625511936,
+      "payload_bytes": 9687040
+    },
+    "blk.5.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 635198976,
+      "payload_bytes": 9687040
+    },
+    "blk.5.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 644886016,
+      "payload_bytes": 9687040
+    },
+    "blk.6.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 654573056,
+      "payload_bytes": 450560
+    },
+    "blk.6.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 655023616,
+      "payload_bytes": 8192
+    },
+    "blk.6.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 655031808,
+      "payload_bytes": 1802240
+    },
+    "blk.6.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 656834048,
+      "payload_bytes": 1802240
+    },
+    "blk.6.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 658636288,
+      "payload_bytes": 589824
+    },
+    "blk.6.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 659226112,
+      "payload_bytes": 9687040
+    },
+    "blk.6.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 668913152,
+      "payload_bytes": 9687040
+    },
+    "blk.6.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 678600192,
+      "payload_bytes": 9687040
+    },
+    "blk.7.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 688287232,
+      "payload_bytes": 450560
+    },
+    "blk.7.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 688737792,
+      "payload_bytes": 8192
+    },
+    "blk.7.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 688745984,
+      "payload_bytes": 1802240
+    },
+    "blk.7.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 690548224,
+      "payload_bytes": 1802240
+    },
+    "blk.7.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 692350464,
+      "payload_bytes": 589824
+    },
+    "blk.7.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 692940288,
+      "payload_bytes": 9687040
+    },
+    "blk.7.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 702627328,
+      "payload_bytes": 9687040
+    },
+    "blk.7.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 712314368,
+      "payload_bytes": 9687040
+    },
+    "blk.8.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 722001408,
+      "payload_bytes": 450560
+    },
+    "blk.8.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 722451968,
+      "payload_bytes": 8192
+    },
+    "blk.8.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 722460160,
+      "payload_bytes": 1802240
+    },
+    "blk.8.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 724262400,
+      "payload_bytes": 1802240
+    },
+    "blk.8.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 726064640,
+      "payload_bytes": 589824
+    },
+    "blk.8.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 726654464,
+      "payload_bytes": 9687040
+    },
+    "blk.8.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 736341504,
+      "payload_bytes": 9687040
+    },
+    "blk.8.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 746028544,
+      "payload_bytes": 9687040
+    },
+    "blk.9.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 755715584,
+      "payload_bytes": 450560
+    },
+    "blk.9.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 756166144,
+      "payload_bytes": 8192
+    },
+    "blk.9.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 756174336,
+      "payload_bytes": 1802240
+    },
+    "blk.9.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 757976576,
+      "payload_bytes": 1802240
+    },
+    "blk.9.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 759778816,
+      "payload_bytes": 589824
+    },
+    "blk.9.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 760368640,
+      "payload_bytes": 9687040
+    },
+    "blk.9.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 770055680,
+      "payload_bytes": 9687040
+    },
+    "blk.9.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 779742720,
+      "payload_bytes": 9687040
+    },
+    "blk.10.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 789429760,
+      "payload_bytes": 450560
+    },
+    "blk.10.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 789880320,
+      "payload_bytes": 8192
+    },
+    "blk.10.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 789888512,
+      "payload_bytes": 1802240
+    },
+    "blk.10.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 791690752,
+      "payload_bytes": 1802240
+    },
+    "blk.10.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 793492992,
+      "payload_bytes": 589824
+    },
+    "blk.10.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 794082816,
+      "payload_bytes": 9687040
+    },
+    "blk.10.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 803769856,
+      "payload_bytes": 9687040
+    },
+    "blk.10.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 813456896,
+      "payload_bytes": 9687040
+    },
+    "blk.11.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 823143936,
+      "payload_bytes": 450560
+    },
+    "blk.11.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 823594496,
+      "payload_bytes": 8192
+    },
+    "blk.11.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 823602688,
+      "payload_bytes": 1802240
+    },
+    "blk.11.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 825404928,
+      "payload_bytes": 1802240
+    },
+    "blk.11.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 827207168,
+      "payload_bytes": 589824
+    },
+    "blk.11.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 827796992,
+      "payload_bytes": 9687040
+    },
+    "blk.11.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 837484032,
+      "payload_bytes": 9687040
+    },
+    "blk.11.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 847171072,
+      "payload_bytes": 9687040
+    },
+    "blk.12.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 856858112,
+      "payload_bytes": 450560
+    },
+    "blk.12.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 857308672,
+      "payload_bytes": 8192
+    },
+    "blk.12.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 857316864,
+      "payload_bytes": 1802240
+    },
+    "blk.12.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 859119104,
+      "payload_bytes": 1802240
+    },
+    "blk.12.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 860921344,
+      "payload_bytes": 589824
+    },
+    "blk.12.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 861511168,
+      "payload_bytes": 9687040
+    },
+    "blk.12.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 871198208,
+      "payload_bytes": 9687040
+    },
+    "blk.12.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 880885248,
+      "payload_bytes": 9687040
+    },
+    "blk.13.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 890572288,
+      "payload_bytes": 450560
+    },
+    "blk.13.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 891022848,
+      "payload_bytes": 8192
+    },
+    "blk.13.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 891031040,
+      "payload_bytes": 1802240
+    },
+    "blk.13.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 892833280,
+      "payload_bytes": 1802240
+    },
+    "blk.13.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 894635520,
+      "payload_bytes": 589824
+    },
+    "blk.13.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 895225344,
+      "payload_bytes": 9687040
+    },
+    "blk.13.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 904912384,
+      "payload_bytes": 9687040
+    },
+    "blk.13.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 914599424,
+      "payload_bytes": 9687040
+    },
+    "blk.14.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 924286464,
+      "payload_bytes": 450560
+    },
+    "blk.14.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 924737024,
+      "payload_bytes": 8192
+    },
+    "blk.14.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 924745216,
+      "payload_bytes": 1802240
+    },
+    "blk.14.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 926547456,
+      "payload_bytes": 1802240
+    },
+    "blk.14.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 928349696,
+      "payload_bytes": 589824
+    },
+    "blk.14.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 928939520,
+      "payload_bytes": 9687040
+    },
+    "blk.14.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 938626560,
+      "payload_bytes": 9687040
+    },
+    "blk.14.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 948313600,
+      "payload_bytes": 9687040
+    },
+    "blk.15.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 958000640,
+      "payload_bytes": 450560
+    },
+    "blk.15.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 958451200,
+      "payload_bytes": 8192
+    },
+    "blk.15.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 958459392,
+      "payload_bytes": 1802240
+    },
+    "blk.15.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 960261632,
+      "payload_bytes": 1802240
+    },
+    "blk.15.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 962063872,
+      "payload_bytes": 589824
+    },
+    "blk.15.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 962653696,
+      "payload_bytes": 9687040
+    },
+    "blk.15.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 972340736,
+      "payload_bytes": 9687040
+    },
+    "blk.15.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 982027776,
+      "payload_bytes": 9687040
+    },
+    "blk.16.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 991714816,
+      "payload_bytes": 450560
+    },
+    "blk.16.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 992165376,
+      "payload_bytes": 8192
+    },
+    "blk.16.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 992173568,
+      "payload_bytes": 1802240
+    },
+    "blk.16.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 993975808,
+      "payload_bytes": 1802240
+    },
+    "blk.16.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 995778048,
+      "payload_bytes": 589824
+    },
+    "blk.16.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 996367872,
+      "payload_bytes": 9687040
+    },
+    "blk.16.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1006054912,
+      "payload_bytes": 9687040
+    },
+    "blk.16.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1015741952,
+      "payload_bytes": 9687040
+    },
+    "blk.17.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1025428992,
+      "payload_bytes": 450560
+    },
+    "blk.17.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1025879552,
+      "payload_bytes": 8192
+    },
+    "blk.17.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1025887744,
+      "payload_bytes": 1802240
+    },
+    "blk.17.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1027689984,
+      "payload_bytes": 1802240
+    },
+    "blk.17.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1029492224,
+      "payload_bytes": 589824
+    },
+    "blk.17.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1030082048,
+      "payload_bytes": 9687040
+    },
+    "blk.17.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1039769088,
+      "payload_bytes": 9687040
+    },
+    "blk.17.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1049456128,
+      "payload_bytes": 9687040
+    },
+    "blk.18.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1059143168,
+      "payload_bytes": 450560
+    },
+    "blk.18.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1059593728,
+      "payload_bytes": 8192
+    },
+    "blk.18.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1059601920,
+      "payload_bytes": 1802240
+    },
+    "blk.18.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1061404160,
+      "payload_bytes": 1802240
+    },
+    "blk.18.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1063206400,
+      "payload_bytes": 589824
+    },
+    "blk.18.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1063796224,
+      "payload_bytes": 9687040
+    },
+    "blk.18.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1073483264,
+      "payload_bytes": 9687040
+    },
+    "blk.18.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1083170304,
+      "payload_bytes": 9687040
+    },
+    "blk.19.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1092857344,
+      "payload_bytes": 450560
+    },
+    "blk.19.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1093307904,
+      "payload_bytes": 8192
+    },
+    "blk.19.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1093316096,
+      "payload_bytes": 1802240
+    },
+    "blk.19.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1095118336,
+      "payload_bytes": 1802240
+    },
+    "blk.19.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1096920576,
+      "payload_bytes": 589824
+    },
+    "blk.19.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1097510400,
+      "payload_bytes": 9687040
+    },
+    "blk.19.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1107197440,
+      "payload_bytes": 9687040
+    },
+    "blk.19.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1116884480,
+      "payload_bytes": 9687040
+    },
+    "blk.20.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1126571520,
+      "payload_bytes": 450560
+    },
+    "blk.20.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1127022080,
+      "payload_bytes": 8192
+    },
+    "blk.20.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1127030272,
+      "payload_bytes": 1802240
+    },
+    "blk.20.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1128832512,
+      "payload_bytes": 1802240
+    },
+    "blk.20.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1130634752,
+      "payload_bytes": 589824
+    },
+    "blk.20.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1131224576,
+      "payload_bytes": 9687040
+    },
+    "blk.20.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1140911616,
+      "payload_bytes": 9687040
+    },
+    "blk.20.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1150598656,
+      "payload_bytes": 9687040
+    },
+    "blk.21.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1160285696,
+      "payload_bytes": 450560
+    },
+    "blk.21.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1160736256,
+      "payload_bytes": 8192
+    },
+    "blk.21.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1160744448,
+      "payload_bytes": 1802240
+    },
+    "blk.21.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1162546688,
+      "payload_bytes": 1802240
+    },
+    "blk.21.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1164348928,
+      "payload_bytes": 589824
+    },
+    "blk.21.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1164938752,
+      "payload_bytes": 9687040
+    },
+    "blk.21.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1174625792,
+      "payload_bytes": 9687040
+    },
+    "blk.21.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1184312832,
+      "payload_bytes": 9687040
+    },
+    "blk.22.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1193999872,
+      "payload_bytes": 450560
+    },
+    "blk.22.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1194450432,
+      "payload_bytes": 8192
+    },
+    "blk.22.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1194458624,
+      "payload_bytes": 1802240
+    },
+    "blk.22.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1196260864,
+      "payload_bytes": 1802240
+    },
+    "blk.22.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1198063104,
+      "payload_bytes": 589824
+    },
+    "blk.22.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1198652928,
+      "payload_bytes": 9687040
+    },
+    "blk.22.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1208339968,
+      "payload_bytes": 9687040
+    },
+    "blk.22.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1218027008,
+      "payload_bytes": 9687040
+    },
+    "blk.23.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1227714048,
+      "payload_bytes": 450560
+    },
+    "blk.23.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1228164608,
+      "payload_bytes": 8192
+    },
+    "blk.23.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1228172800,
+      "payload_bytes": 1802240
+    },
+    "blk.23.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1229975040,
+      "payload_bytes": 1802240
+    },
+    "blk.23.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1231777280,
+      "payload_bytes": 589824
+    },
+    "blk.23.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1232367104,
+      "payload_bytes": 9687040
+    },
+    "blk.23.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1242054144,
+      "payload_bytes": 9687040
+    },
+    "blk.23.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1251741184,
+      "payload_bytes": 9687040
+    },
+    "blk.24.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1261428224,
+      "payload_bytes": 450560
+    },
+    "blk.24.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1261878784,
+      "payload_bytes": 8192
+    },
+    "blk.24.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1261886976,
+      "payload_bytes": 1802240
+    },
+    "blk.24.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1263689216,
+      "payload_bytes": 1802240
+    },
+    "blk.24.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1265491456,
+      "payload_bytes": 589824
+    },
+    "blk.24.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1266081280,
+      "payload_bytes": 9687040
+    },
+    "blk.24.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1275768320,
+      "payload_bytes": 9687040
+    },
+    "blk.24.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1285455360,
+      "payload_bytes": 9687040
+    },
+    "blk.25.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1295142400,
+      "payload_bytes": 450560
+    },
+    "blk.25.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1295592960,
+      "payload_bytes": 8192
+    },
+    "blk.25.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1295601152,
+      "payload_bytes": 1802240
+    },
+    "blk.25.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1297403392,
+      "payload_bytes": 1802240
+    },
+    "blk.25.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1299205632,
+      "payload_bytes": 589824
+    },
+    "blk.25.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1299795456,
+      "payload_bytes": 9687040
+    },
+    "blk.25.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1309482496,
+      "payload_bytes": 9687040
+    },
+    "blk.25.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1319169536,
+      "payload_bytes": 9687040
+    },
+    "blk.26.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1328856576,
+      "payload_bytes": 450560
+    },
+    "blk.26.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1329307136,
+      "payload_bytes": 8192
+    },
+    "blk.26.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1329315328,
+      "payload_bytes": 1802240
+    },
+    "blk.26.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1331117568,
+      "payload_bytes": 1802240
+    },
+    "blk.26.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1332919808,
+      "payload_bytes": 589824
+    },
+    "blk.26.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1333509632,
+      "payload_bytes": 9687040
+    },
+    "blk.26.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1343196672,
+      "payload_bytes": 9687040
+    },
+    "blk.26.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1352883712,
+      "payload_bytes": 9687040
+    },
+    "blk.27.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1362570752,
+      "payload_bytes": 450560
+    },
+    "blk.27.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1363021312,
+      "payload_bytes": 8192
+    },
+    "blk.27.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1363029504,
+      "payload_bytes": 1802240
+    },
+    "blk.27.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1364831744,
+      "payload_bytes": 1802240
+    },
+    "blk.27.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1366633984,
+      "payload_bytes": 589824
+    },
+    "blk.27.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1367223808,
+      "payload_bytes": 9687040
+    },
+    "blk.27.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1376910848,
+      "payload_bytes": 9687040
+    },
+    "blk.27.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1386597888,
+      "payload_bytes": 9687040
+    },
+    "blk.28.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1396284928,
+      "payload_bytes": 450560
+    },
+    "blk.28.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1396735488,
+      "payload_bytes": 8192
+    },
+    "blk.28.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1396743680,
+      "payload_bytes": 1802240
+    },
+    "blk.28.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1398545920,
+      "payload_bytes": 1802240
+    },
+    "blk.28.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1400348160,
+      "payload_bytes": 589824
+    },
+    "blk.28.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1400937984,
+      "payload_bytes": 9687040
+    },
+    "blk.28.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1410625024,
+      "payload_bytes": 9687040
+    },
+    "blk.28.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1420312064,
+      "payload_bytes": 9687040
+    },
+    "blk.29.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1429999104,
+      "payload_bytes": 450560
+    },
+    "blk.29.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1430449664,
+      "payload_bytes": 8192
+    },
+    "blk.29.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1430457856,
+      "payload_bytes": 1802240
+    },
+    "blk.29.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1432260096,
+      "payload_bytes": 1802240
+    },
+    "blk.29.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1434062336,
+      "payload_bytes": 589824
+    },
+    "blk.29.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1434652160,
+      "payload_bytes": 9687040
+    },
+    "blk.29.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1444339200,
+      "payload_bytes": 9687040
+    },
+    "blk.29.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1454026240,
+      "payload_bytes": 9687040
+    },
+    "blk.30.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1463713280,
+      "payload_bytes": 450560
+    },
+    "blk.30.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1464163840,
+      "payload_bytes": 8192
+    },
+    "blk.30.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1464172032,
+      "payload_bytes": 1802240
+    },
+    "blk.30.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1465974272,
+      "payload_bytes": 1802240
+    },
+    "blk.30.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1467776512,
+      "payload_bytes": 589824
+    },
+    "blk.30.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1468366336,
+      "payload_bytes": 9687040
+    },
+    "blk.30.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1478053376,
+      "payload_bytes": 9687040
+    },
+    "blk.30.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1487740416,
+      "payload_bytes": 9687040
+    },
+    "blk.31.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1497427456,
+      "payload_bytes": 450560
+    },
+    "blk.31.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1497878016,
+      "payload_bytes": 8192
+    },
+    "blk.31.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1497886208,
+      "payload_bytes": 1802240
+    },
+    "blk.31.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1499688448,
+      "payload_bytes": 1802240
+    },
+    "blk.31.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1501490688,
+      "payload_bytes": 589824
+    },
+    "blk.31.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1502080512,
+      "payload_bytes": 9687040
+    },
+    "blk.31.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1511767552,
+      "payload_bytes": 9687040
+    },
+    "blk.31.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1521454592,
+      "payload_bytes": 9687040
+    },
+    "blk.32.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1531141632,
+      "payload_bytes": 450560
+    },
+    "blk.32.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1531592192,
+      "payload_bytes": 8192
+    },
+    "blk.32.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1531600384,
+      "payload_bytes": 1802240
+    },
+    "blk.32.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1533402624,
+      "payload_bytes": 1802240
+    },
+    "blk.32.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1535204864,
+      "payload_bytes": 589824
+    },
+    "blk.32.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1535794688,
+      "payload_bytes": 9687040
+    },
+    "blk.32.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1545481728,
+      "payload_bytes": 9687040
+    },
+    "blk.32.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1555168768,
+      "payload_bytes": 9687040
+    },
+    "blk.33.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1564855808,
+      "payload_bytes": 450560
+    },
+    "blk.33.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1565306368,
+      "payload_bytes": 8192
+    },
+    "blk.33.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1565314560,
+      "payload_bytes": 1802240
+    },
+    "blk.33.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1567116800,
+      "payload_bytes": 1802240
+    },
+    "blk.33.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1568919040,
+      "payload_bytes": 589824
+    },
+    "blk.33.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1569508864,
+      "payload_bytes": 9687040
+    },
+    "blk.33.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1579195904,
+      "payload_bytes": 9687040
+    },
+    "blk.33.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1588882944,
+      "payload_bytes": 9687040
+    },
+    "blk.34.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1598569984,
+      "payload_bytes": 450560
+    },
+    "blk.34.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1599020544,
+      "payload_bytes": 8192
+    },
+    "blk.34.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1599028736,
+      "payload_bytes": 1802240
+    },
+    "blk.34.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1600830976,
+      "payload_bytes": 1802240
+    },
+    "blk.34.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1602633216,
+      "payload_bytes": 589824
+    },
+    "blk.34.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1603223040,
+      "payload_bytes": 9687040
+    },
+    "blk.34.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1612910080,
+      "payload_bytes": 9687040
+    },
+    "blk.34.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1622597120,
+      "payload_bytes": 9687040
+    },
+    "blk.35.attn_k.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1632284160,
+      "payload_bytes": 450560
+    },
+    "blk.35.attn_norm.weight": {
+      "shape_gguf": [
+        2048
+      ],
+      "type_id": 0,
+      "type": "F32",
+      "offset": 1632734720,
+      "payload_bytes": 8192
+    },
+    "blk.35.attn_output.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1632742912,
+      "payload_bytes": 1802240
+    },
+    "blk.35.attn_q.weight": {
+      "shape_gguf": [
+        2048,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1634545152,
+      "payload_bytes": 1802240
+    },
+    "blk.35.attn_v.weight": {
+      "shape_gguf": [
+        2048,
+        512
+      ],
+      "type_id": 12,
+      "type": "Q4_K",
+      "offset": 1636347392,
+      "payload_bytes": 589824
+    },
+    "blk.35.ffn_down.weight": {
+      "shape_gguf": [
+        11008,
+        2048
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1636937216,
+      "payload_bytes": 9687040
+    },
+    "blk.35.ffn_gate.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1646624256,
+      "payload_bytes": 9687040
+    },
+    "blk.35.ffn_up.weight": {
+      "shape_gguf": [
+        2048,
+        11008
+      ],
+      "type_id": 21,
+      "type": "IQ3_S",
+      "offset": 1656311296,
+      "payload_bytes": 9687040
+    }
+  },
+  "native_inventory_library_sha256": "e8591aa7ee912c0d06600c17e1e66b94d8af6eb6a06b4e58d9d03f52f49d4069",
+  "output_sha256": "145a8c482bf6d69c69a3d61faa4afeb354a2ea541b7d62045fe1eee1957d16f7",
+  "output_bytes": 1665998336,
+  "output_path": "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-diag-iq3s.gguf",
+  "seconds": 68.60367607697845,
+  "status": "complete"
+}

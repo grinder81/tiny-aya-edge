@@ -1,0 +1,7 @@
+{
+  "stage": 3,
+  "previous_report_sha256": "41d8d773db339a94b70d34374fc011a4884def0a7a00fd2b4f2b3893ebd46e38",
+  "previous_report_commit": "40400be924716c6340f3d2bc24fdf41ac86a7e57",
+  "previous_archive": "results/t3-precision-curve/stage2/complete-report.json.gz",
+  "orchestration_sha256": "9f67f951c3331f974274e6a901bb1de646c292a48dc577ed2f8b14b7620b7164"
+}
