@@ -1,0 +1,24 @@
+{
+  "scope": "CPU build and vocabulary-only checks; no inference",
+  "prediction_report_sha256": "228d4a7c7d5e04bc09b6eead88c46481007f3a1c8d568c9e11976f9d50326192",
+  "builds": [
+    {
+      "arm": "diag-q3ks",
+      "output_sha256": "ff5a51a3818a88ab2ba04bd153df5ea5808fc00996ddf66e3a967a634f33e95e",
+      "bytes": 1660984832,
+      "matched_tensor_types_and_payloads": 290,
+      "contexts": 900,
+      "candidates": 3600,
+      "failures": []
+    },
+    {
+      "arm": "diag-q2k",
+      "output_sha256": "90cefaac61b3adb71255b2bad2a44d40bea05dd5b306d40377fe9097a9c4bd8a",
+      "bytes": 1481973248,
+      "matched_tensor_types_and_payloads": 290,
+      "contexts": 900,
+      "candidates": 3600,
+      "failures": []
+    }
+  ]
+}
