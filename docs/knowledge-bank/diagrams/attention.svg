@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 860" role="img" aria-label="Attention projections and grouped query heads">
+<title>Attention projections and grouped query heads</title>
+<desc>Q and K form attention weights; V supplies mixed content; O returns to residual width.</desc>
+<rect width="1000" height="860" fill="white"/>
+<text x="40" y="48" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="start" fill="#17324d">Attention projections and grouped query heads</text>
+<text x="40" y="82" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#526678">Q and K form attention weights; V supplies mixed content; O returns to residual width.</text>
+<rect x="350" y="135" width="300" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="500.0" y="179.3" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#17324d">Normalized input x: 2,048</text>
+<rect x="40" y="290" width="260" height="110" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="170.0" y="324.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">Query Q</text>
+<text x="170.0" y="351.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">16 heads x 128</text>
+<text x="170.0" y="378.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">W_Q: 2,048 x 2,048</text>
+<polyline points="500,210 500,245 170,245 170,290" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="170.00,290.00 165.51,279.96 174.49,279.96" fill="#17324d"/>
+<rect x="370" y="290" width="260" height="110" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="500.0" y="324.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">Key K</text>
+<text x="500.0" y="351.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">4 heads x 128</text>
+<text x="500.0" y="378.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">W_K: 512 x 2,048</text>
+<polyline points="500,210 500,245 500,245 500,290" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="500.00,290.00 495.51,279.96 504.49,279.96" fill="#17324d"/>
+<rect x="700" y="290" width="260" height="110" rx="12" fill="#e6f5ee" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="830.0" y="324.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">Value V</text>
+<text x="830.0" y="351.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">4 heads x 128</text>
+<text x="830.0" y="378.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">W_V: 512 x 2,048</text>
+<polyline points="500,210 500,245 830,245 830,290" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="830.00,290.00 825.51,279.96 834.49,279.96" fill="#17324d"/>
+<rect x="65" y="490" width="500" height="105" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="315.0" y="521.62" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">Q/K scores + mask -&gt; softmax</text>
+<text x="315.0" y="548.62" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Local blocks apply RoPE to Q and K</text>
+<text x="315.0" y="575.62" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Four query heads share each KV head</text>
+<polyline points="170,400 170,490" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="170.00,490.00 165.51,479.96 174.49,479.96" fill="#17324d"/>
+<polyline points="500,400 500,490" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="500.00,490.00 495.51,479.96 504.49,479.96" fill="#17324d"/>
+<rect x="650" y="490" width="310" height="105" rx="12" fill="#e6f5ee" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="805.0" y="535.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">Weighted sum of V</text>
+<text x="805.0" y="562.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">One result per query head</text>
+<polyline points="830,400 830,490" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="830.00,490.00 825.51,479.96 834.49,479.96" fill="#17324d"/>
+<polyline points="565,542 650,542" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="650.00,542.00 639.96,546.49 639.96,537.51" fill="#17324d"/>
+<polyline points="805,595 805,675" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="805.00,675.00 800.51,664.96 809.49,664.96" fill="#17324d"/>
+<rect x="600" y="675" width="360" height="100" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="780.0" y="704.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">Concatenate and project with O</text>
+<text x="780.0" y="731.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">W_O: 2,048 x 2,048</text>
+<text x="780.0" y="758.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Output: 2,048 features</text>
+<text x="40" y="824" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" fill="#17324d">All attention is causal. Global blocks omit explicit RoPE; they still receive contextual states.</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" role="img" aria-label="One Tiny Aya block has parallel branches">
+<title>One Tiny Aya block has parallel branches</title>
+<desc>Both branches consume the same normalized incoming state.</desc>
+<rect width="1000" height="900" fill="white"/>
+<text x="40" y="48" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="start" fill="#17324d">One Tiny Aya block has parallel branches</text>
+<text x="40" y="82" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#526678">Both branches consume the same normalized incoming state.</text>
+<rect x="40" y="140" width="250" height="90" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="165.0" y="177.3" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#17324d">Incoming residual h</text>
+<text x="165.0" y="206.3" font-family="Arial, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#17324d">2,048 features</text>
+<rect x="380" y="140" width="270" height="90" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="515.0" y="177.3" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#17324d">LayerNorm(h)</text>
+<text x="515.0" y="206.3" font-family="Arial, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#17324d">Center, scale, learned gain</text>
+<polyline points="290,185 380,185" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="380.00,185.00 369.96,189.49 369.96,180.51" fill="#17324d"/>
+<rect x="200" y="350" width="290" height="110" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="345.0" y="397.3" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#17324d">Attention(x)</text>
+<text x="345.0" y="426.3" font-family="Arial, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#17324d">Mix permitted token states</text>
+<rect x="640" y="350" width="290" height="110" rx="12" fill="#e6f5ee" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="785.0" y="397.3" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#17324d">Gated MLP(x)</text>
+<text x="785.0" y="426.3" font-family="Arial, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#17324d">Transform each token state</text>
+<polyline points="515,230 515,285 345,285 345,350" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="345.00,350.00 340.51,339.96 349.49,339.96" fill="#17324d"/>
+<polyline points="515,285 785,285 785,350" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="785.00,350.00 780.51,339.96 789.49,339.96" fill="#17324d"/>
+<text x="530" y="271" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="start" fill="#17324d">x</text>
+<rect x="430" y="620" width="180" height="70" rx="12" fill="#fff0d9" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="520.0" y="661.8" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#17324d">Add all three</text>
+<polyline points="345,460 345,550 470,550 470,620" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="470.00,620.00 465.51,609.96 474.49,609.96" fill="#17324d"/>
+<polyline points="785,460 785,550 570,550 570,620" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="570.00,620.00 565.51,609.96 574.49,609.96" fill="#17324d"/>
+<polyline points="165,230 165,655 430,655" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="430.00,655.00 419.96,659.49 419.96,650.51" fill="#17324d"/>
+<text x="185" y="510" font-family="Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start" fill="#17324d">Residual bypass</text>
+<polyline points="520,690 520,750" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="520.00,750.00 515.51,739.96 524.49,739.96" fill="#17324d"/>
+<rect x="350" y="750" width="340" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="520.0" y="793.28" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#17324d">h_next = h + Attention(x) + MLP(x)</text>
+<text x="40" y="866" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" fill="#17324d">The next block receives the combined result. There is one shared input norm in each block.</text>
+</svg>

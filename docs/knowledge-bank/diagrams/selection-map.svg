@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1180" role="img" aria-label="Where the eight pilot matrices are located">
+<title>Where the eight pilot matrices are located</title>
+<desc>All 36 blocks; orange outlines mark selected blocks, not measured importance.</desc>
+<rect width="1000" height="1180" fill="white"/>
+<text x="40" y="48" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="start" fill="#17324d">Where the eight pilot matrices are located</text>
+<text x="40" y="82" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#526678">All 36 blocks; orange outlines mark selected blocks, not measured importance.</text>
+<rect x="40" y="120" width="920" height="75" rx="12" fill="#e6f5ee" stroke="#bd7619" stroke-width="3"/>
+<text x="500.0" y="150.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">One additional selected matrix: shared embedding and output</text>
+<text x="500.0" y="177.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">It is outside the decoder blocks and has no same-shape swap partner here.</text>
+<rect x="40" y="255" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#bd7619" stroke-width="3"/>
+<text x="147.5" y="274.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 0 / layer 1</text>
+<text x="147.5" y="297.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="320.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Selected: down, V</text>
+<rect x="275" y="255" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="274.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 1 / layer 2</text>
+<text x="382.5" y="297.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="320.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="255" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="274.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 2 / layer 3</text>
+<text x="617.5" y="297.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="320.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="255" width="215" height="75" rx="12" fill="#eeeaff" stroke="#bd7619" stroke-width="3"/>
+<text x="852.5" y="274.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 3 / layer 4</text>
+<text x="852.5" y="297.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="320.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Selected: V</text>
+<rect x="40" y="344" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="363.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 4 / layer 5</text>
+<text x="147.5" y="386.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="409.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="344" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="363.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 5 / layer 6</text>
+<text x="382.5" y="386.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="409.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="344" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="363.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 6 / layer 7</text>
+<text x="617.5" y="386.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="409.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="344" width="215" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="852.5" y="363.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 7 / layer 8</text>
+<text x="852.5" y="386.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="409.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="40" y="433" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="452.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 8 / layer 9</text>
+<text x="147.5" y="475.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="498.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="433" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="452.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 9 / layer 10</text>
+<text x="382.5" y="475.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="498.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="433" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="452.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 10 / layer 11</text>
+<text x="617.5" y="475.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="498.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="433" width="215" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="852.5" y="452.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 11 / layer 12</text>
+<text x="852.5" y="475.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="498.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="40" y="522" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="541.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 12 / layer 13</text>
+<text x="147.5" y="564.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="587.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="522" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="541.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 13 / layer 14</text>
+<text x="382.5" y="564.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="587.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="522" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="541.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 14 / layer 15</text>
+<text x="617.5" y="564.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="587.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="522" width="215" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="852.5" y="541.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 15 / layer 16</text>
+<text x="852.5" y="564.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="587.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="40" y="611" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="630.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 16 / layer 17</text>
+<text x="147.5" y="653.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="676.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="611" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#bd7619" stroke-width="3"/>
+<text x="382.5" y="630.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 17 / layer 18</text>
+<text x="382.5" y="653.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="676.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Selected: down, gate, up</text>
+<rect x="510" y="611" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="630.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 18 / layer 19</text>
+<text x="617.5" y="653.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="676.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="611" width="215" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="852.5" y="630.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 19 / layer 20</text>
+<text x="852.5" y="653.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="676.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="40" y="700" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="719.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 20 / layer 21</text>
+<text x="147.5" y="742.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="765.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="700" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="719.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 21 / layer 22</text>
+<text x="382.5" y="742.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="765.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="700" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="719.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 22 / layer 23</text>
+<text x="617.5" y="742.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="765.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="700" width="215" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="852.5" y="719.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 23 / layer 24</text>
+<text x="852.5" y="742.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="765.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="40" y="789" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="808.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 24 / layer 25</text>
+<text x="147.5" y="831.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="854.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="789" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="808.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 25 / layer 26</text>
+<text x="382.5" y="831.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="854.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="789" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="808.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 26 / layer 27</text>
+<text x="617.5" y="831.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="854.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="789" width="215" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="852.5" y="808.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 27 / layer 28</text>
+<text x="852.5" y="831.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="854.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="40" y="878" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="897.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 28 / layer 29</text>
+<text x="147.5" y="920.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="943.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="878" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="897.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 29 / layer 30</text>
+<text x="382.5" y="920.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="943.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="878" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="897.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 30 / layer 31</text>
+<text x="617.5" y="920.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="943.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="878" width="215" height="75" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="852.5" y="897.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 31 / layer 32</text>
+<text x="852.5" y="920.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="943.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="40" y="967" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="147.5" y="986.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 32 / layer 33</text>
+<text x="147.5" y="1009.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="147.5" y="1032.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="275" y="967" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="382.5" y="986.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 33 / layer 34</text>
+<text x="382.5" y="1009.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="382.5" y="1032.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="510" y="967" width="215" height="75" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="617.5" y="986.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 34 / layer 35</text>
+<text x="617.5" y="1009.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Local + RoPE</text>
+<text x="617.5" y="1032.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">No selected matrix</text>
+<rect x="745" y="967" width="215" height="75" rx="12" fill="#eeeaff" stroke="#bd7619" stroke-width="3"/>
+<text x="852.5" y="986.26" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#17324d">Block 35 / layer 36</text>
+<text x="852.5" y="1009.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Global, no explicit RoPE</text>
+<text x="852.5" y="1032.26" font-family="Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle" fill="#17324d">Selected: down</text>
+<text x="40" y="1100" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" fill="#17324d">Global blocks: 3, 7, 11, 15, 19, 23, 27, 31, 35 (code indices).</text>
+<text x="40" y="1134" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" fill="#17324d">Selection spans roles and depth. It does not prove language localization or the best sites.</text>
+</svg>
