@@ -46,3 +46,8 @@ sliding-window layers with RoPE per one global layer without positional embeddin
 Regional variants: tiny-aya-fire (South Asia), tiny-aya-earth (Africa, West Asia), tiny-aya-water.
 
 Derived weights published from this repo keep the CC-BY-NC terms. Code is Apache-2.0.
+
+**Learn the internals.** The [Tiny Aya architecture knowledge bank](docs/knowledge-bank/README.md)
+maps all 36 blocks and 290 stored tensors, explains attention, MLP, tokenization and
+compression, and audits the rationale and limitations of the proposed eight-site pilot.
+It includes six diagrams, exact shape/type tables, a glossary and a study notebook.

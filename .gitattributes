@@ -12,3 +12,8 @@ results/a3-live-validation/**/*.time -text
 results/a3-live-validation/**/*.json.gz -text
 docs/a3-*.md text eol=lf
 results/a3-live-validation/README.md text eol=lf
+docs/knowledge-bank/**/*.json -text
+docs/knowledge-bank/**/*.csv text eol=lf
+docs/knowledge-bank/**/*.md text eol=lf
+docs/knowledge-bank/*.md text eol=lf
+docs/knowledge-bank/**/*.svg text eol=lf

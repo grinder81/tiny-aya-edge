@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 920" role="img" aria-label="What the proposed intervention study would measure">
+<title>What the proposed intervention study would measure</title>
+<desc>Design only: comparative C8 measurements have not been collected; execution is paused.</desc>
+<rect width="1000" height="920" fill="white"/>
+<text x="40" y="48" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="start" fill="#17324d">What the proposed intervention study would measure</text>
+<text x="40" y="82" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" fill="#526678">Design only: comparative C8 measurements have not been collected; execution is paused.</text>
+<rect x="40" y="140" width="290" height="105" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="185.0" y="184.96" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#17324d">BF16 reference</text>
+<text x="185.0" y="212.96" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#17324d">All original stored matrices</text>
+<rect x="420" y="140" width="540" height="105" rx="12" fill="#e6f5ee" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="690.0" y="171.62" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">One matrix changed per diagnostic</text>
+<text x="690.0" y="198.62" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Eight sites x two actual native formats = 16 files</text>
+<text x="690.0" y="225.62" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">All other BF16 tensor payloads preserved</text>
+<polyline points="330,192 420,192" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="420.00,192.00 409.96,196.49 409.96,187.51" fill="#17324d"/>
+<polyline points="690,245 690,305" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="690.00,305.00 685.51,294.96 694.49,294.96" fill="#17324d"/>
+<rect x="40" y="305" width="920" height="110" rx="12" fill="#e9f2ff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="500.0" y="339.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">Measure prediction damage on independent probe sources</text>
+<text x="500.0" y="366.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Compare real native KL with separate construction-sample proxies</text>
+<text x="500.0" y="393.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Repeat 1 and repeat 2: compare English and Bangla precision preferences</text>
+<polyline points="500,415 500,475" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="500.00,475.00 495.51,464.96 504.49,464.96" fill="#17324d"/>
+<rect x="100" y="475" width="800" height="95" rx="12" fill="#fff0d9" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="500.0" y="514.96" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#17324d">Freeze one qualifying pair, or explicitly none</text>
+<text x="500.0" y="542.96" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#17324d">A numerical preference screen is not a task-quality claim.</text>
+<polyline points="500,570 500,630" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="500.00,630.00 495.51,619.96 504.49,619.96" fill="#17324d"/>
+<rect x="40" y="630" width="920" height="110" rx="12" fill="#eeeaff" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="500.0" y="664.12" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#17324d">If nominated: export two complete maps with equal actual bytes</text>
+<text x="500.0" y="691.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Swap higher/lower precision within the pair; lock all other operating-model types</text>
+<text x="500.0" y="718.12" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#17324d">Confirm the opposite language preferences on repetition 3</text>
+<polyline points="500,740 500,800" fill="none" stroke="#17324d" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="500.00,800.00 495.51,789.96 504.49,789.96" fill="#17324d"/>
+<rect x="100" y="800" width="800" height="75" rx="12" fill="#e6f5ee" stroke="#b5c6d6" stroke-width="1.5"/>
+<text x="500.0" y="843.96" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#17324d">Decide whether a larger task and generation study is justified</text>
+</svg>

@@ -1,0 +1,33 @@
+{
+  "schema": "tiny-aya-knowledge-sources-v1",
+  "review_date_local": "2026-11-01",
+  "model_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+  "configuration_sha256": "458a9265b6a96e5ad4bbe1857716bd69e434f062f8b32fae48f5f06197d26384",
+  "bf16_gguf_sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+  "native_source": {
+    "revision": "797de63b2fa7396dcc8caca76834c699ac84e1c3",
+    "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/797de63b2fa7396dcc8caca76834c699ac84e1c3/src/models/cohere2.cpp",
+    "sha256": "b5c4fdf1c3050f2ddbb9881aed09ddcfc41c61e0ed14476c444cb36cc2fa6732",
+    "scope": "Source inspection of loader and graph; no native execution"
+  },
+  "transformers_reference": {
+    "tag": "v4.51.3",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/v4.51.3/src/transformers/models/cohere2/modeling_cohere2.py",
+    "sha256": "81750a9746f8abba97c3bf36340851bfd31a37010896d42e3da504bd9999ec9b",
+    "scope": "Architecture reference matching original config version; not a claim of executed pilot environment identity"
+  },
+  "companion_plan": {
+    "revision": "34db052fc98de4c15b511d831fe23f77d8c3153f",
+    "url": "https://github.com/grinder81/polyglot-quant-eval/blob/34db052fc98de4c15b511d831fe23f77d8c3153f/results/article2-pilot/c8-plan.json",
+    "snapshot": "c8-plan.json",
+    "sha256": "e7ccdb50be254ee8bdde307f73c58bc9a9c9d68882a40aa453b9b516ec8be64f",
+    "scope": "Unchanged frozen design snapshot; no comparative C8 outcomes"
+  },
+  "evidence_boundaries": {
+    "new_model_execution": false,
+    "new_weight_download": false,
+    "wsl_recovery_performed": false,
+    "holdout_access": false,
+    "new_language_sensitivity_result": false
+  }
+}

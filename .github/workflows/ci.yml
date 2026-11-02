@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: python -m py_compile setup/*.py builds/*.py bench/q4_matvec/*.py
+      - run: python builds/build_tiny_aya_atlas.py --check
+      - run: python builds/draw_tiny_aya_knowledge.py --check
       - run: python setup/verify_a3_archive.py --directory results/a3-live-validation
       - run: pip install numpy
       - run: python setup/test_echo_top1.py
