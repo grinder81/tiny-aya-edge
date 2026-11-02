@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "schema": "c8-resource-sampler-v1",
+    "plan_sha256": "da820734fab80b5de492515e6abb180bd04c0df861299226412623859fdcbdd3",
+    "implementation_sha256": "356405ab95826881bf2b6f550f412e0707a001f7fb9826530c327b652abfed89",
+    "interval_seconds": 0.2,
+    "scope": "Sampled global GPU use includes unrelated desktop apps; observed process RSS/HWM is a lower bound on continuous peak. No model forward or GPU allocation."
+  },
+  "samples": 3,
+  "error": null,
+  "first_gpu_used_bytes": 11190403072,
+  "max_observed_global_gpu_used_bytes": 11195645952,
+  "max_observed_process_memory": {},
+  "samples_sha256": "6a1b184e07407eb679160d10b1a7ccbaaaa004e26902177d67f35dd415739671",
+  "smoke_scope": "Read-only NVML and memory-parser fixture; no model inference or C8 outcome"
+}
