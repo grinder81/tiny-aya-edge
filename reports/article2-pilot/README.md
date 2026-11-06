@@ -2,6 +2,8 @@
 
 Measured 1 November 2026 for [pilot tracker47](https://github.com/grinder81/polyglot-quant-eval/issues/47) and [resource task42](https://github.com/grinder81/tiny-aya-edge/issues/42). This package contains readiness measurements, not a completed allocation or language-specific improvement.
 
+Subsequent status: the [complete T3 curve](https://github.com/grinder81/polyglot-quant-eval/tree/codex/article2-pilot/results/t3-precision-curve/final) selects Q3_K_M under the frozen English floor. The historical readiness narrative below predates that collection. C8 export was then interrupted by a [host-storage failure](storage-incident/README.md); its language comparisons and final decision remain pending.
+
 ## Byte feasibility
 
 The pinned native quantizer's dry-run assignments, combined with exact native row sizes and GGUF metadata/alignment, predict the following file bytes. Q4_K_M agrees exactly with its existing real export; the new Q6_K and Q3_K_M builds also agree with their predictions.

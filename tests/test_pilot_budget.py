@@ -1,9 +1,11 @@
 import json
+import os
 from pathlib import Path
 import signal
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
 
 from builds.c8_budget import BudgetOperation
 from builds.c8_nomination import validate_nomination
@@ -15,6 +17,9 @@ class CumulativeBudgets(unittest.TestCase):
     def setUp(self):
         self.temporary=tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
+        host_storage=patch.dict(os.environ,{'C8_HOST_STORAGE_PATH':self.temporary.name})
+        host_storage.start()
+        self.addCleanup(host_storage.stop)
         self.root=Path(self.temporary.name)/'workspace'
         self.root.mkdir()
         self.plan=self.root/'plan.json'

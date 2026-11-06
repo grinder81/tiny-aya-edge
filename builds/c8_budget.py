@@ -8,6 +8,7 @@ import time
 import uuid
 
 from builds.profile_pilot_kl import sha
+from builds.host_storage_guard import HostStorageGuard
 
 
 class BudgetOperation:
@@ -42,6 +43,8 @@ class BudgetOperation:
         with self.lock.open('x') as stream:
             stream.write(self.operation_id+'\n')
         try:
+            self.host_storage=HostStorageGuard()
+            self.host_storage.check()
             self.ledger=json.loads(self.path.read_text()) if self.path.exists() else dict(
                 schema='c8-cumulative-budget-v1',plan_sha256=sha(self.plan_path),operations=[])
             if self.ledger['plan_sha256']!=sha(self.plan_path) or any(row['status']=='active' for row in self.ledger['operations']):
@@ -52,18 +55,22 @@ class BudgetOperation:
             self.started=time.monotonic()
             self.deadline=self.started+(self.limit-self.used)
             self.row=dict(id=self.operation_id,category=self.category,name=self.name,
-                pid=os.getpid(),started_unix=time.time(),seconds=0.,status='active')
+                pid=os.getpid(),started_unix=time.time(),seconds=0.,status='active',
+                host_storage=self.host_storage.receipt())
             self.ledger['operations'].append(self.row)
             self._write()
             self.stop=threading.Event()
             def monitor():
                 while not self.stop.wait(.5):
                     try:
+                        self.host_storage.check()
                         if self._bytes()>self.plan['cap']['local_artifact_bytes']:
                             self.reason='Cumulative local artifact cap exceeded'
                             os.kill(os.getpid(),signal.SIGALRM)
-                    except OSError as error:
-                        self.reason='Artifact accounting failed: '+repr(error)
+                    except (OSError,TimeoutError) as error:
+                        self.reason='Storage guard failed: '+repr(error)
+                        os.kill(os.getpid(),signal.SIGALRM)
+                        return
             self.thread=threading.Thread(target=monitor,daemon=True)
             self.thread.start()
             self.prior_alarm=signal.getsignal(signal.SIGALRM)
@@ -80,6 +87,7 @@ class BudgetOperation:
         return max(.001,self.deadline-time.monotonic())
 
     def check(self,check_bytes=True):
+        self.host_storage.check()
         if self.reason or time.monotonic()>self.deadline:
             raise TimeoutError(self.reason or 'Cumulative C8 deadline exceeded')
         if check_bytes and self._bytes()>self.plan['cap']['local_artifact_bytes']:
@@ -87,6 +95,7 @@ class BudgetOperation:
 
     def reserve(self,additional_bytes):
         self.check()
+        self.host_storage.check(additional_bytes)
         if additional_bytes<0 or self._bytes()+additional_bytes>self.plan['cap']['local_artifact_bytes']:
             raise TimeoutError('Insufficient frozen C8 artifact budget for next output')
 
@@ -103,7 +112,8 @@ class BudgetOperation:
                 failure=budget_error
         self.row.update(seconds=time.monotonic()-self.started,ended_unix=time.time(),
             artifact_bytes=self._bytes(),status='failed' if failure else 'passed',
-            error=repr(failure) if failure else None)
+            error=repr(failure) if failure else None,
+            host_storage=self.host_storage.receipt())
         self._write()
         if self.lock.read_text().strip()!=self.operation_id:
             raise ValueError('C8 operation lock changed unexpectedly')
