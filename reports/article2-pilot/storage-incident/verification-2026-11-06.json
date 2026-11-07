@@ -1,0 +1,522 @@
+{
+  "schema": "c8-recovery-verification-v1",
+  "recorded": "2026-11-06",
+  "scope": "Read-only verification of the pilot workspace after the 1 Nov 2026 host-storage interruption. Nothing inside the distro was changed by these checks.",
+  "distro": {
+    "boot": "Started deliberately at 19:59:59 PST on 6 Nov 2026 after the disk copy had finished; ext4 root mounted read-write cleanly, no I/O or filesystem errors in the kernel log",
+    "journal_replay": "An inspection command had already started the distro at 08:44 the same day, before the backup; the kernel replayed the ext4 journal then (recorded deviation from the recovery gate)",
+    "gpu": "RTX 5090 visible, driver 610.88",
+    "tests": "15 edge tests pass under the converter environment, including the budget, host-storage and recovery tests"
+  },
+  "backup": {
+    "source_bytes": 352540688384,
+    "source_sha256": "ef4714bca042482de4ced8290ed13f322896ff606c1213e7c7065047abb4c0eb",
+    "copy_started": "2026-11-06T13:57:10-08:00",
+    "copy_finished": "2026-11-06T19:58:32-08:00",
+    "robocopy_exit": 1,
+    "source_unchanged_during_copy": true,
+    "readback": "in progress when this record was written"
+  },
+  "artifact_hashing": {
+    "files": 7226,
+    "bytes": 277669956591,
+    "problems": 0,
+    "summary": {
+      "manifest-output": {
+        "match": 15
+      },
+      "model": {
+        "match": 1
+      },
+      "hub-file": {
+        "match": 9
+      },
+      "fidelity": {
+        "match": 6300
+      },
+      "reference-array": {
+        "match": 900
+      }
+    }
+  },
+  "large_artifacts": [
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/blk-17-ffn_down-weight-q2_k.gguf",
+      "bytes": 6672793088,
+      "sha256": "23d44881e35101cd22da5ffd254aee019bcf4ace48518a06835ac7713b1c2543",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/blk-17-ffn_down-weight-q2_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/blk-0-ffn_down-weight-q2_k.gguf",
+      "bytes": 6672793088,
+      "sha256": "cdc5be8afd4e286e3c8cd64c9024ecd5ad16a1832669b521add1d7112508e7ee",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/blk-0-ffn_down-weight-q2_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/blk-0-attn_v-weight-q2_k.gguf",
+      "bytes": 6708731392,
+      "sha256": "21014512f8bd2aaf521a43825739525bcfd990f3c1c6c558f4b70a48d91ea3c3",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/blk-0-attn_v-weight-q2_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/blk-3-attn_v-weight-q2_k.gguf",
+      "bytes": 6708731392,
+      "sha256": "d2500a0531d7e2cc8f2d9a711e4fd2f4edae092ee96bd58c82a41ad5d74d8340",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/blk-3-attn_v-weight-q2_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/token_embd-weight-q3_k.gguf",
+      "bytes": 5867429376,
+      "sha256": "535588282592e76eaafef7a45a5bdfcb6b32746cff4c8ff6f2e1f7711aca686e",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/token_embd-weight-q3_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/blk-3-attn_v-weight-q3_k.gguf",
+      "bytes": 6708837888,
+      "sha256": "9152fd982001a5d2d4eedf11a8d8bdd059593b4e4fb734e39a74cb81e406a2b0",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/blk-3-attn_v-weight-q3_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/blk-0-ffn_down-weight-q3_k.gguf",
+      "bytes": 6675082752,
+      "sha256": "ee23af2a84810d1aa3f54c8099bfb80a429a4c321ec26bf9fc5d6c6c706f3e10",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/blk-0-ffn_down-weight-q3_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/blk-0-attn_v-weight-q3_k.gguf",
+      "bytes": 6708837888,
+      "sha256": "9b851de361f308581358ccffb8086503c6da77c962e91a5d36ee725afa4e24ed",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/blk-0-attn_v-weight-q3_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "pilot/c8/artifacts/token_embd-weight-q2_k.gguf",
+      "bytes": 5812903424,
+      "sha256": "27f2c8ddaccadee7f98ad29cddae0ce20dbf6796cce4e9f254eda409ef9ab4d6",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/c8/artifacts/token_embd-weight-q2_k-evidence/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "stage1/models/tiny-aya-global-diag-q3ks.gguf",
+      "bytes": 1660984832,
+      "sha256": "ff5a51a3818a88ab2ba04bd153df5ea5808fc00996ddf66e3a967a634f33e95e",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/t3-builds/diag-q3ks/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "stage1/models/tiny-aya-global-diag-q6k.gguf",
+      "bytes": 2759532032,
+      "sha256": "eb55f4fa08b5b45420abb5723fec8131ad038a2ca0e75fce6d05fe1c51ae95b0",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/t3-builds/diag-q6k/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "stage1/models/tiny-aya-global-diag-q3km.gguf",
+      "bytes": 1799740928,
+      "sha256": "5386a0785fe7770eb7dcf9b1dea4a9d5589a6f093acaa8fd7faed8ac5bddcf78",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/t3-builds/diag-q3km/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "stage1/models/tiny-aya-global-diag-q2k.gguf",
+      "bytes": 1481973248,
+      "sha256": "90cefaac61b3adb71255b2bad2a44d40bea05dd5b306d40377fe9097a9c4bd8a",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/t3-builds/diag-q2k/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "stage1/models/tiny-aya-global-diag-iq3s.gguf",
+      "bytes": 1665998336,
+      "sha256": "145a8c482bf6d69c69a3d61faa4afeb354a2ea541b7d62045fe1eee1957d16f7",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/t3-builds/diag-iq3s/manifest.json"
+    },
+    {
+      "group": "manifest-output",
+      "path": "stage1/models/diag-one-blk17-down-q3k.gguf",
+      "bytes": 6675082752,
+      "sha256": "1da94376d4023fc590ce81693ac21b5ad62b16db143940238fc1a86d3d01dcaa",
+      "status": "match",
+      "manifest": "pilot/article2-2026-11-01/export-probe-v1/manifest.json"
+    },
+    {
+      "group": "model",
+      "path": "stage1/models/tiny-aya-global-control-bf16.gguf",
+      "bytes": 6710484480,
+      "sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+      "status": "match",
+      "manifest": "BF16 control, pinned source of every build"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/config.json",
+      "bytes": 1961,
+      "sha256": "458a9265b6a96e5ad4bbe1857716bd69e434f062f8b32fae48f5f06197d26384",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/generation_config.json",
+      "bytes": 132,
+      "sha256": "0efa696e1ebc0484f8e16fcd1141dba1e897c4699ff971052e43ce5d6d4bf4d0",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/model-00001-of-00002.safetensors",
+      "bytes": 4992396352,
+      "sha256": "0590022d0efe06f12e08e1e94302f069dff404341b426f7435c6303725635fb1",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/model-00002-of-00002.safetensors",
+      "bytes": 1706092176,
+      "sha256": "2ac3809931d113785058809f27775620e0b8aec6fbc7e163c9c09c08b5f90dab",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/model.safetensors.index.json",
+      "bytes": 23597,
+      "sha256": "5e87be717ff88ed7fd1e03aa1de1399daef2f2d2e3ee539c3ad1b0ed9d1ae74e",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/special_tokens_map.json",
+      "bytes": 567,
+      "sha256": "2b7ce39630f8a18705331a9b32c3b2236e96e7410791f98a9f8b6494e3ab2ea6",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/tokenizer.json",
+      "bytes": 21376527,
+      "sha256": "2227ea9c52e8afb3f98bfed2679008b275f2664de69dfde174b374389eb0225d",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global/tokenizer_config.json",
+      "bytes": 8169,
+      "sha256": "fb56a3ef7659346aae196a2ab877355f1e7fd871c36843f709bb2e23c606d972",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global"
+    },
+    {
+      "group": "hub-file",
+      "path": "stage1/models/tiny-aya-global-GGUF/tiny-aya-global-q4_k_m.gguf",
+      "bytes": 2143977056,
+      "sha256": "d01d995272af305b2b843efcff8a10cf9869cf53e764cb72b0e91b777484570a",
+      "status": "match",
+      "manifest": "CohereLabs/tiny-aya-global-GGUF"
+    },
+    {
+      "group": "model",
+      "path": "stage1/models/tiny-aya-global-local-q4_k_m.gguf",
+      "bytes": 2143976960,
+      "sha256": "5823bd1e52be1027a7ba6f31b43edfd40ae1766020cddec967f0d76618948290",
+      "status": "match",
+      "manifest": "local Q4_K_M control, sha from local-q4-host1 fidelity identity"
+    }
+  ],
+  "fidelity_folders": {
+    "diag-iq3s-host1": {
+      "manifest_sha256": "1388a024818ac84508c4c99128cf747e88cb93314c775bf288656f2eaeb5e020",
+      "listed": 900,
+      "present": 900,
+      "missing": 0,
+      "arrays_not_in_manifest": 0,
+      "matches_committed_fidelity_manifest_sha256": true
+    },
+    "diag-q2k-host1": {
+      "manifest_sha256": "a3b57d03a86d5447438328893d88362d328535c1a56216afb45fab4ebf836b39",
+      "listed": 900,
+      "present": 900,
+      "missing": 0,
+      "arrays_not_in_manifest": 0,
+      "matches_committed_fidelity_manifest_sha256": true
+    },
+    "diag-q3km-host1": {
+      "manifest_sha256": "b75574847a071d223a6c27eb6929cd5c98bd459f46387e50e3a47a01331a84c5",
+      "listed": 900,
+      "present": 900,
+      "missing": 0,
+      "arrays_not_in_manifest": 0,
+      "matches_committed_fidelity_manifest_sha256": true
+    },
+    "diag-q3ks-host1": {
+      "manifest_sha256": "0efdf18db8060c945887f0a4b738a2892b2952cf3ca603540cb66d8a5736eed8",
+      "listed": 900,
+      "present": 900,
+      "missing": 0,
+      "arrays_not_in_manifest": 0,
+      "matches_committed_fidelity_manifest_sha256": true
+    },
+    "diag-q6k-host1": {
+      "manifest_sha256": "dc85928546d4f859324b89a3c091915c58ab52d69d677c773fb63e7155feabc3",
+      "listed": 900,
+      "present": 900,
+      "missing": 0,
+      "arrays_not_in_manifest": 0,
+      "matches_committed_fidelity_manifest_sha256": true
+    },
+    "local-q4-host1": {
+      "manifest_sha256": "e96fee85e86f54510e45032b2b43d8bafbb4f8c01ebfb65676ad31eaacebfb53",
+      "listed": 900,
+      "present": 900,
+      "missing": 0,
+      "arrays_not_in_manifest": 0,
+      "matches_committed_fidelity_manifest_sha256": true
+    },
+    "reference": {
+      "manifest_sha256": "9964b004736d733b872e3a4f2e294631f7b4744894d4626b60a928d2f193aa6e",
+      "listed": 900,
+      "present": 900,
+      "missing": 0,
+      "arrays_not_in_manifest": 900,
+      "manifest_matches_resume_guide": true,
+      "arrays_verified_against_per_question_cache_sha256": {
+        "match": 900
+      },
+      "arrays_bytes": 185342214656
+    }
+  },
+  "t3_build_manifests": "identical to the committed copies under reports/article2-pilot/builds for all five builds",
+  "instrument_revalidation": {
+    "diag-q3km": {
+      "questions": 3,
+      "wrapper_exit_code": 0,
+      "identity_identical": true,
+      "per_question": [
+        {
+          "file": "eng_Latn-000.json",
+          "non_timing_fields_identical": true,
+          "mean_kl_nats": {
+            "recorded": 0.10359322739978576,
+            "rerun": 0.10359322739978576
+          },
+          "top1_agreement": {
+            "recorded": 0.8193548387096774,
+            "rerun": 0.8193548387096774
+          }
+        },
+        {
+          "file": "eng_Latn-001.json",
+          "non_timing_fields_identical": true,
+          "mean_kl_nats": {
+            "recorded": 0.06414999322416892,
+            "rerun": 0.06414999322416892
+          },
+          "top1_agreement": {
+            "recorded": 0.864406779661017,
+            "rerun": 0.864406779661017
+          }
+        },
+        {
+          "file": "eng_Latn-002.json",
+          "non_timing_fields_identical": true,
+          "mean_kl_nats": {
+            "recorded": 0.11865829379544664,
+            "rerun": 0.11865829379544664
+          },
+          "top1_agreement": {
+            "recorded": 0.8529411764705882,
+            "rerun": 0.8529411764705882
+          }
+        }
+      ]
+    },
+    "local-q4": {
+      "questions": 3,
+      "wrapper_exit_code": 0,
+      "identity_identical": true,
+      "per_question": [
+        {
+          "file": "eng_Latn-000.json",
+          "non_timing_fields_identical": true,
+          "mean_kl_nats": {
+            "recorded": 0.03317789636737286,
+            "rerun": 0.03317789636737286
+          },
+          "top1_agreement": {
+            "recorded": 0.9161290322580645,
+            "rerun": 0.9161290322580645
+          }
+        },
+        {
+          "file": "eng_Latn-001.json",
+          "non_timing_fields_identical": true,
+          "mean_kl_nats": {
+            "recorded": 0.02261059176418581,
+            "rerun": 0.02261059176418581
+          },
+          "top1_agreement": {
+            "recorded": 0.903954802259887,
+            "rerun": 0.903954802259887
+          }
+        },
+        {
+          "file": "eng_Latn-002.json",
+          "non_timing_fields_identical": true,
+          "mean_kl_nats": {
+            "recorded": 0.03636246991836467,
+            "rerun": 0.03636246991836467
+          },
+          "top1_agreement": {
+            "recorded": 0.9117647058823529,
+            "rerun": 0.9117647058823529
+          }
+        }
+      ]
+    }
+  },
+  "c8_state": {
+    "ledger_plan_sha256": "e7ccdb50be254ee8bdde307f73c58bc9a9c9d68882a40aa453b9b516ec8be64f",
+    "ledger_rows": [
+      {
+        "id": "a04b11fde1da407fb6756b6c9adb5605",
+        "name": "export-token_embd.weight-Q2_K",
+        "status": "passed",
+        "seconds": 22.936106740962714,
+        "started_unix": 1793591599.9720995,
+        "ended_unix": 1793591622.9069812,
+        "artifact_bytes": 5813063305
+      },
+      {
+        "id": "99dc190e5c654f2f963a5b97cdbc265f",
+        "name": "export-token_embd.weight-Q3_K",
+        "status": "passed",
+        "seconds": 21.850372429937124,
+        "started_unix": 1793591623.1860394,
+        "ended_unix": 1793591645.0346422,
+        "artifact_bytes": 11680597379
+      },
+      {
+        "id": "d4210535a74a4c05baa7cf943b3e0b19",
+        "name": "export-blk.0.attn_v.weight-Q2_K",
+        "status": "passed",
+        "seconds": 18.670130042126402,
+        "started_unix": 1793591645.1846786,
+        "ended_unix": 1793591663.854807,
+        "artifact_bytes": 18389432548
+      },
+      {
+        "id": "5bdaffa998c140af9566c0a68cb90cb8",
+        "name": "export-blk.0.attn_v.weight-Q3_K",
+        "status": "passed",
+        "seconds": 49.52512409398332,
+        "started_unix": 1793591664.0082211,
+        "ended_unix": 1793591713.5296845,
+        "artifact_bytes": 25098387689
+      },
+      {
+        "id": "0aeffbd7b4cf4695a0158ed8cb5163bc",
+        "name": "export-blk.3.attn_v.weight-Q2_K",
+        "status": "passed",
+        "seconds": 48.069701835978776,
+        "started_unix": 1793591713.680807,
+        "ended_unix": 1793591761.746957,
+        "artifact_bytes": 31807235189
+      },
+      {
+        "id": "89157b4e3e8642a4ad3772d633562ff1",
+        "name": "export-blk.3.attn_v.weight-Q3_K",
+        "status": "passed",
+        "seconds": 88.39932443597354,
+        "started_unix": 1793591762.1612232,
+        "ended_unix": 1793591850.5553436,
+        "artifact_bytes": 38516198422
+      },
+      {
+        "id": "cbf4e77c85234839b3ab9a17fac4ecf5",
+        "name": "export-blk.0.ffn_down.weight-Q2_K",
+        "status": "passed",
+        "seconds": 54.194085970986634,
+        "started_unix": 1793591850.8062978,
+        "ended_unix": 1793591904.9987884,
+        "artifact_bytes": 45189109216
+      },
+      {
+        "id": "87d53923427e40b8824e80226a06b7aa",
+        "name": "export-blk.0.ffn_down.weight-Q3_K",
+        "status": "passed",
+        "seconds": 56.44457320892252,
+        "started_unix": 1793591905.1550875,
+        "ended_unix": 1793591961.5979083,
+        "artifact_bytes": 51864310693
+      },
+      {
+        "id": "e0ea5ffc1e78425dad7c8a3a4b3b46e0",
+        "name": "export-blk.17.ffn_down.weight-Q2_K",
+        "status": "passed",
+        "seconds": 54.770505867898464,
+        "started_unix": 1793591961.7472253,
+        "ended_unix": 1793592016.5139995,
+        "artifact_bytes": 58537222639
+      },
+      {
+        "id": "495052238ab54d079da3b548613e0055",
+        "name": "export-blk.17.ffn_down.weight-Q3_K",
+        "status": "active",
+        "seconds": 0.0,
+        "started_unix": 1793592016.6805646,
+        "ended_unix": null,
+        "artifact_bytes": null
+      }
+    ],
+    "spent_native_seconds": 414.8599246267695,
+    "lock": {
+      "path": "pilot/c8/resource-operation.lock",
+      "exists": true,
+      "content": "495052238ab54d079da3b548613e0055",
+      "mtime": "2026-11-01T20:00:16"
+    },
+    "interrupted": [
+      {
+        "evidence_dir": "pilot/c8/artifacts/blk-17-ffn_down-weight-q3_k-evidence",
+        "files": {
+          "quantize.log": 51248
+        }
+      },
+      {
+        "partial": "pilot/c8/artifacts/blk-17-ffn_down-weight-q3_k.partial.gguf",
+        "bytes": 197132288,
+        "mtime": "2026-11-01T20:00:48",
+        "sha256": "73356be327e8d4edca9416bd18317793cf103574acefaffbb613fc447a0ee8d7"
+      }
+    ],
+    "zero_length_logs": [
+      "blk-17-ffn_down-weight-Q3_K-export.log"
+    ]
+  }
+}
