@@ -1,0 +1,60 @@
+{
+  "schema": "c8-recovery-receipt-v1",
+  "recorded_unix": 1794070226.946063,
+  "plan_sha256": "e7ccdb50be254ee8bdde307f73c58bc9a9c9d68882a40aa453b9b516ec8be64f",
+  "operation": {
+    "id": "495052238ab54d079da3b548613e0055",
+    "category": "native",
+    "name": "export-blk.17.ffn_down.weight-Q3_K",
+    "pid": 1915,
+    "started_unix": 1793592016.6805646,
+    "seconds": 31.383294582366943,
+    "status": "failed",
+    "ended_unix": 1793592048.0638592,
+    "artifact_bytes": 58734424311,
+    "error": "C: exhausted on 2026-11-01; process ended by I/O errors (storage incident)",
+    "recovery_receipt": "recovery/recovery-receipt-2026-11-07.json"
+  },
+  "charged_seconds": 31.383294582366943,
+  "reason": "C: exhausted on 2026-11-01; process ended by I/O errors (storage incident)",
+  "ledger_before": {
+    "path": "recovery/resource-ledger.before-recovery-495052238ab54d079da3b548613e0055.json",
+    "sha256": "e0108f31e72810f31a949cba01696277fad4de5c8ed4bf78528183da95dcdaf1"
+  },
+  "ledger_after_sha256": "cb3c2f2477d0dc4c5bef5681a731fe50ba2722a9dd314b1028b858723d072c77",
+  "lock_removed": {
+    "path": "resource-operation.lock",
+    "content": "495052238ab54d079da3b548613e0055"
+  },
+  "preserved": [
+    {
+      "original": "artifacts/blk-17-ffn_down-weight-q3_k.partial.gguf",
+      "preserved": "recovery/interrupted/495052238ab54d079da3b548613e0055/blk-17-ffn_down-weight-q3_k.partial.gguf",
+      "kind": "file",
+      "bytes": 197132288,
+      "sha256": "73356be327e8d4edca9416bd18317793cf103574acefaffbb613fc447a0ee8d7",
+      "mtime_unix": 1793592048.0638592
+    },
+    {
+      "original": "artifacts/blk-17-ffn_down-weight-q3_k-evidence",
+      "preserved": "recovery/interrupted/495052238ab54d079da3b548613e0055/blk-17-ffn_down-weight-q3_k-evidence",
+      "kind": "directory",
+      "entries": {
+        "quantize.log": {
+          "bytes": 51248,
+          "sha256": "a676fc4774177337450a29b8c2061d6dd24317c1c7eafe994c711254e2048bed",
+          "mtime_unix": 1793592048.059859
+        }
+      }
+    },
+    {
+      "original": "logs/blk-17-ffn_down-weight-Q3_K-export.log",
+      "preserved": "recovery/interrupted/495052238ab54d079da3b548613e0055/blk-17-ffn_down-weight-Q3_K-export.log",
+      "kind": "file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_unix": 1793592016.5231826
+    }
+  ],
+  "scope": "Closes one interrupted ledger row with its observed elapsed time; spent budget retained, nothing deleted, frozen caps and plan unchanged"
+}

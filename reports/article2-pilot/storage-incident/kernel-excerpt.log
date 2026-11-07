@@ -1,0 +1,65 @@
+[1284116.824686] EXT4-fs (sdf): mounted filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4 r/w with ordered data mode. Quota mode: none.
+[1286466.110203] EXT4-fs (sdf): unmounting filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4.
+[1286469.993201] EXT4-fs (sdf): mounted filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4 r/w with ordered data mode. Quota mode: none.
+[1286487.908752] EXT4-fs (sdf): unmounting filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4.
+[1286496.052886] EXT4-fs (sdf): mounted filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4 r/w with ordered data mode. Quota mode: none.
+[1286562.897186] EXT4-fs (sdf): unmounting filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4.
+[1286566.021873] EXT4-fs (sdf): mounted filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4 r/w with ordered data mode. Quota mode: none.
+[1286602.325456] EXT4-fs (sdf): unmounting filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4.
+[1286669.711342] EXT4-fs (sdf): mounted filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4 r/w with ordered data mode. Quota mode: none.
+[1286686.500803] EXT4-fs (sdf): unmounting filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4.
+[1286793.868997] EXT4-fs (sdf): mounted filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4 r/w with ordered data mode. Quota mode: none.
+[1287269.190564] I/O error, dev sdf, sector 105560488 op 0x0:(READ) flags 0x80700 phys_seg 1 prio class 2
+[1287269.190538] I/O error, dev sdf, sector 936039424 op 0x1:(WRITE) flags 0x0 phys_seg 17 prio class 2
+[1287269.190591] I/O error, dev sdf, sector 1091134784 op 0x1:(WRITE) flags 0x9800 phys_seg 48 prio class 2
+[1287269.190584] I/O error, dev sdf, sector 938584064 op 0x1:(WRITE) flags 0x4000 phys_seg 10 prio class 2
+[1287269.190953] I/O error, dev sdf, sector 936039944 op 0x1:(WRITE) flags 0x4000 phys_seg 78 prio class 2
+[1287269.190958] I/O error, dev sdf, sector 936042504 op 0x1:(WRITE) flags 0x4000 phys_seg 49 prio class 2
+[1287269.190961] I/O error, dev sdf, sector 936045064 op 0x1:(WRITE) flags 0x4000 phys_seg 29 prio class 2
+[1287269.190962] I/O error, dev sdf, sector 936047624 op 0x1:(WRITE) flags 0x4000 phys_seg 11 prio class 2
+[1287269.190964] I/O error, dev sdf, sector 936050184 op 0x1:(WRITE) flags 0x0 phys_seg 2 prio class 2
+[1287269.191057] I/O error, dev sdf, sector 938586624 op 0x1:(WRITE) flags 0x4000 phys_seg 4 prio class 2
+[1287269.191048] Buffer I/O error on dev sdf, logical block 136391848, lost sync page write
+[1287269.193031] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117006273)
+[1287269.193106] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117325696)
+[1287269.193198] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117008256)
+[1287269.193202] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117009344)
+[1287269.193205] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117010232)
+[1287269.193207] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117011074)
+[1287269.193206] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117327744)
+[1287269.193209] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117011782)
+[1287269.193211] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117012238)
+[1287269.193212] EXT4-fs warning (device sdf): ext4_end_bio:353: I/O error 10 writing to inode 525495 starting block 117329792)
+[1287269.193385] Buffer I/O error on dev sdf, logical block 134184960, lost sync page write
+[1287269.193385] EXT4-fs error (device sdf): ext4_journal_check_start:84: comm rs:main Q:Reg: Detected aborted journal
+[1287269.193388] JBD2: I/O error when updating journal superblock for sdf-8.
+[1287269.193327] EXT4-fs error (device sdf): ext4_check_bdev_write_error:224: comm kworker/u64:0: Error while async write back metadata
+[1287269.193428] Buffer I/O error on dev sdf, logical block 0, lost sync page write
+[1287269.193432] EXT4-fs (sdf): I/O error while writing superblock
+[1287269.193433] EXT4-fs (sdf): Remounting filesystem read-only
+[1287269.195118] Buffer I/O error on dev sdf, logical block 0, lost sync page write
+[1287269.195121] EXT4-fs (sdf): I/O error while writing superblock
+[1287269.195122] EXT4-fs (sdf): Remounting filesystem read-only
+[1287269.218433] Buffer I/O error on device sdf, logical block 117323776
+[1287269.219129] Buffer I/O error on device sdf, logical block 117323777
+[1287269.219649] Buffer I/O error on device sdf, logical block 117323778
+[1287269.220137] Buffer I/O error on device sdf, logical block 117323779
+[1287269.220610] Buffer I/O error on device sdf, logical block 117323780
+[1287269.221069] Buffer I/O error on device sdf, logical block 117323781
+[1287269.221533] Buffer I/O error on device sdf, logical block 117323782
+[1287269.221989] Buffer I/O error on device sdf, logical block 117323783
+[1287269.222431] Buffer I/O error on device sdf, logical block 117323784
+[1287269.223648] Buffer I/O error on device sdf, logical block 117323785
+[1287273.026727] Buffer I/O error on dev sdf, logical block 134220986, lost async page write
+[1287273.027376] Buffer I/O error on dev sdf, logical block 118540288, lost async page write
+[1287273.027805] Buffer I/O error on dev sdf, logical block 16222580, lost async page write
+[1287273.028179] Buffer I/O error on dev sdf, logical block 43723, lost async page write
+[1287273.028510] Buffer I/O error on dev sdf, logical block 4964, lost async page write
+[1287273.028805] Buffer I/O error on dev sdf, logical block 4755, lost async page write
+[1287311.106420] EXT4-fs (sdf): unmounting filesystem 4efdab4c-66e5-4bde-af6c-c2cb4346f0b4.
+[1287311.118347] I/O error, dev sdf, sector 0 op 0x1:(WRITE) flags 0x3800 phys_seg 1 prio class 2
+[1287311.118818] I/O error, dev sdf, sector 0 op 0x1:(WRITE) flags 0x3800 phys_seg 1 prio class 2
+[1287311.119224] Buffer I/O error on dev sdf, logical block 0, lost sync page write
+[1287311.119556] EXT4-fs (sdf): I/O error while writing superblock
+[1287584.062982] WSL (1 - LaunchDistro) ERROR: UtilMount:1793: mount(/dev/sdf, /distro, ext4, 0x0, discard,errors=remount-ro,data=ordered) failed 6
+[1287702.859765] WSL (1 - LaunchDistro) ERROR: UtilMount:1793: mount(/dev/sdf, /distro, ext4, 0x0, discard,errors=remount-ro,data=ordered) failed 6

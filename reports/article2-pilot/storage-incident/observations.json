@@ -1,0 +1,16 @@
+{
+  "schema": "c8-host-storage-incident-v1",
+  "observed_at": "2026-11-01T20:10:00.4168511-08:00",
+  "host_c_free_bytes": 35417014272,
+  "recovery_destination_free_bytes": 6699860008960,
+  "recovery_destination_drive_type": 4,
+  "ubuntu_vhd_bytes": 352505036800,
+  "ubuntu_vhd_sparse": false,
+  "initial_observed_host_c_free_bytes": 10911744,
+  "ubuntu_start_error": "Wsl/Service/CreateInstance/E_FAIL, failure step 2, code 6",
+  "backup_export_error": "Wsl/Service/ERROR_SHARING_VIOLATION",
+  "native_comparative_probe_started": false,
+  "filesystem_repair_performed": false,
+  "global_wsl_shutdown_performed": false,
+  "backup_completed": false
+}

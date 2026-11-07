@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "implementation_sha256": "3c93e5cfe892da82e4b6ce70cd8f308e69875a0f1b703b7a4e5b07a6771880f7",
+  "kernel_sha256": "33ed8dcc6869ae1a92ad80e2a90a29961e83668bdcb6a304852b58a2269d8d5d",
+  "reference_sha256": "7c3d2d5edaac1851b66a125aa7fb214d30fe1433b4989b5f7ba05ab2167b3786",
+  "rows": 8,
+  "vocabulary": 262144,
+  "dtype": "float64",
+  "torch": "2.13.0+cu130",
+  "times": {
+    "original": {
+      "median_seconds": 0.002202245988883078,
+      "samples": [
+        0.002197599969804287,
+        0.0027266768738627434,
+        0.002617412945255637,
+        0.002235444961115718,
+        0.00222675409168005,
+        0.0021916190162301064,
+        0.002201610943302512,
+        0.002190919127315283,
+        0.002202881034463644,
+        0.002187249017879367
+      ]
+    },
+    "blocked": {
+      "median_seconds": 0.0007562660612165928,
+      "samples": [
+        0.0007653571665287018,
+        0.0008561189752072096,
+        0.0007085399702191353,
+        0.0007471749559044838,
+        0.0006717159412801266,
+        0.0007029990665614605,
+        0.0009029649663716555,
+        0.0008345770183950663,
+        0.0006938481237739325,
+        0.0008030820172280073
+      ]
+    }
+  },
+  "cpu_oracle_max_errors": {
+    "original": 1.580488940677166e-15,
+    "blocked": 3.046933365336013e-15
+  },
+  "interpretation": "Isolated reduction timings on fixed perturbed real logits; excludes model inference, disk I/O and host/device copies."
+}
