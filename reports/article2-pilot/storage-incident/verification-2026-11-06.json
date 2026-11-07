@@ -15,7 +15,17 @@
     "copy_finished": "2026-11-06T19:58:32-08:00",
     "robocopy_exit": 1,
     "source_unchanged_during_copy": true,
-    "readback": "in progress when this record was written"
+    "readback": {
+      "verified": true,
+      "hash_match": true,
+      "bytes_match": true,
+      "destination_sha256": "ef4714bca042482de4ced8290ed13f322896ff606c1213e7c7065047abb4c0eb",
+      "destination_bytes": 352540688384,
+      "readback_started": "2026-11-06T20:06:49-08:00",
+      "readback_finished": "2026-11-07T08:47:21-08:00",
+      "readback_seconds": 45632,
+      "method": ".NET FileStream 4 MB buffer, 16 MB reads, incremental SHA-256"
+    }
   },
   "artifact_hashing": {
     "files": 7226,
