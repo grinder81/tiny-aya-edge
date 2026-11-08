@@ -1,0 +1,98 @@
+{
+  "schema": "t3-reference-arrays-release-v1",
+  "reference": "pilot/t3-fidelity/reference",
+  "expected_table_sha256": "cfb6c7ed852310d257f283531439460025f760661479af243ac83a8b5e05a9d7",
+  "receipt_sha256": "8bdc3e93a44a9dedf3fcc5790790273bb170142aa7eeee4e39ed530d5204d475",
+  "archive_destination": "recovery-share\\tiny-aya-archive\\t3-fidelity-reference",
+  "manifest_sha256": "9964b004736d733b872e3a4f2e294631f7b4744894d4626b60a928d2f193aa6e",
+  "arrays_to_delete": 900,
+  "bytes_to_release": 185342214656,
+  "files_kept": 902,
+  "kept_kinds": {
+    "records": 900,
+    "other": [
+      "identity.json",
+      "manifest.json"
+    ]
+  },
+  "spot_check": [
+    {
+      "file": "ben_Beng-000.npy",
+      "bytes": 263192704,
+      "sha256_ok": true
+    },
+    {
+      "file": "ben_Beng-100.npy",
+      "bytes": 225443968,
+      "sha256_ok": true
+    },
+    {
+      "file": "ben_Beng-200.npy",
+      "bytes": 344981632,
+      "sha256_ok": true
+    },
+    {
+      "file": "eng_Latn-000.npy",
+      "bytes": 162529408,
+      "sha256_ok": true
+    },
+    {
+      "file": "eng_Latn-100.npy",
+      "bytes": 170918016,
+      "sha256_ok": true
+    },
+    {
+      "file": "eng_Latn-200.npy",
+      "bytes": 191889536,
+      "sha256_ok": true
+    },
+    {
+      "file": "hin_Deva-000.npy",
+      "bytes": 232784000,
+      "sha256_ok": true
+    },
+    {
+      "file": "hin_Deva-100.npy",
+      "bytes": 213909632,
+      "sha256_ok": true
+    },
+    {
+      "file": "hin_Deva-200.npy",
+      "bytes": 336593024,
+      "sha256_ok": true
+    }
+  ],
+  "problems": [],
+  "disk_before": {
+    "total": 1081101176832,
+    "used": 402414006272,
+    "free": 623694815232
+  },
+  "mode": "execute",
+  "started_utc": "2026-11-08T04:05:19+00:00",
+  "arrays_deleted": 900,
+  "bytes_released": 185342214656,
+  "files_remaining": 902,
+  "remaining_non_record": [
+    "identity.json",
+    "manifest.json"
+  ],
+  "disk_after": {
+    "total": 1081101176832,
+    "used": 217067847680,
+    "free": 809040973824
+  },
+  "finished_utc": "2026-11-08T04:05:20+00:00",
+  "pointer": {
+    "schema": "t3-reference-archived-pointer-v1",
+    "note": "The 900 float32 logit arrays of this reference cache were released locally after a verified copy; the per-question records, manifest.json and identity.json remain. Restore by copying the archive folder back here and running the expected-hash check.",
+    "archive_destination": "recovery-share\\tiny-aya-archive\\t3-fidelity-reference",
+    "archive_receipt_sha256": "8bdc3e93a44a9dedf3fcc5790790273bb170142aa7eeee4e39ed530d5204d475",
+    "expected_table_sha256": "cfb6c7ed852310d257f283531439460025f760661479af243ac83a8b5e05a9d7",
+    "manifest_sha256": "9964b004736d733b872e3a4f2e294631f7b4744894d4626b60a928d2f193aa6e",
+    "arrays_released": 900,
+    "bytes_released": 185342214656,
+    "files_remaining": 902,
+    "released_utc": "2026-11-08T04:05:20+00:00"
+  }
+}

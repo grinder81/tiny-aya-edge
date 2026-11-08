@@ -1,0 +1,24 @@
+{
+  "source_sha256": "0e2f666ac8fb50a7f53d14164147beeca35905b76b93eb90e0e3a963eb203b4b",
+  "source_bytes": 6710484480,
+  "quantizer_revision": "797de63b2fa7396dcc8caca76834c699ac84e1c3",
+  "quantizer_binary_sha256": "6a2c2efac5f38ebe2c1994befd0dee745cb24ec5c33d6a2c5a50fb8b9fe1e5f0",
+  "specification_git_blob": "700a0f601e6503d95b485ad5d048c20b4ef96910",
+  "implementation_sha256": "9ef28b4bf1b0ed44c494f3cc1aab8b3f89b1beaa72cc8df6f0802f945cc4a386",
+  "command": [
+    "/home/shohag/tiny-aya-stage1/llama.cpp/build/bin/llama-quantize",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-control-bf16.gguf",
+    "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-diag-q6k.partial.gguf",
+    "Q6_K",
+    "8"
+  ],
+  "file_type": "Q6_K",
+  "importance_matrix": null,
+  "calibration": null,
+  "scope": "T3 diagnostic precision point; no training",
+  "output_sha256": "eb55f4fa08b5b45420abb5723fec8131ad038a2ca0e75fce6d05fe1c51ae95b0",
+  "output_bytes": 2759532032,
+  "output_path": "/home/shohag/tiny-aya-stage1/models/tiny-aya-global-diag-q6k.gguf",
+  "seconds": 20.690871983068064,
+  "status": "complete"
+}

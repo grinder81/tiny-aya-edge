@@ -1,0 +1,20 @@
+{
+  "schema": "t3-reference-archive-receipt-v1",
+  "destination": "recovery-share\\tiny-aya-archive\\t3-fidelity-reference",
+  "source": "distro:pilot\\t3-fidelity\\reference",
+  "expected_files": 1802,
+  "expected_bytes": 185342703426,
+  "manifest_sha256": "9964b004736d733b872e3a4f2e294631f7b4744894d4626b60a928d2f193aa6e",
+  "readback_files": 1802,
+  "readback_bytes": 185342703426,
+  "readback_seconds": 28894.7,
+  "readback_rate_mb_per_s": 6.4,
+  "workers": 3,
+  "missing": [],
+  "extras": [],
+  "mismatches": [],
+  "started": "2026-11-07T12:00:03",
+  "finished": "2026-11-07T20:01:38",
+  "method": "Python 3.14 on Windows, 3 concurrent readers, 8 MB unbuffered reads from the network share, SHA-256 per file",
+  "verified": true
+}

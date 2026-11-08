@@ -12,3 +12,4 @@ results/a3-live-validation/**/*.time -text
 results/a3-live-validation/**/*.json.gz -text
 docs/a3-*.md text eol=lf
 results/a3-live-validation/README.md text eol=lf
+reports/article2-pilot/**/*.json -text

@@ -1,0 +1,10 @@
+{
+  "scope": "CPU build and vocabulary-only checks; no inference",
+  "output_sha256": "145a8c482bf6d69c69a3d61faa4afeb354a2ea541b7d62045fe1eee1957d16f7",
+  "bytes": 1665998336,
+  "matched_tensor_types_and_payloads": 290,
+  "prediction_report_sha256": "228d4a7c7d5e04bc09b6eead88c46481007f3a1c8d568c9e11976f9d50326192",
+  "contexts": 900,
+  "candidates": 3600,
+  "failures": []
+}
